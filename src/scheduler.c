@@ -60,13 +60,13 @@ void* task_thread(void* arg) {
 
 // Sample activities
 void system_fetch(Task* t) {
-    printf("[System Fetch] Task %d running.\n", t->id);
-    // Simulate system monitoring
+    printf("[System Monitor] Task %d running.\n", t->id);
+    system("bash scripts/monitor_scheduler.sh");
 }
 
 void ethernet_fetch(Task* t) {
     printf("[Ethernet Fetch] Task %d running.\n", t->id);
-    // Simulate ethernet data fetching
+    system("bash scripts/ethernet_fetch.sh");
 }
 
 void logging(Task* t) {
