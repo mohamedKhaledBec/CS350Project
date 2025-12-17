@@ -1,1 +1,3 @@
-
+sudo: unable to read password: Input/output error
+sudo: unable to restore terminal settings: Illegal seek
+sudo: a password is required
