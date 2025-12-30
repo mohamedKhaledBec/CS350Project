@@ -300,8 +300,6 @@ static void load_priority_config(void) {
                     /* Validate change */
                     validate_config_change(id, new_priority, t->interval);
                     
-                    printf("%s[CONFIG]%s Task %d priority: %d -> %d%s\n",
-                           CLR_CYAN, CLR_WHITE, id, t->priority, new_priority, CLR_RESET);
                     log_msg("[CONFIG] Task %d priority changed: %d -> %d\n", 
                             id, t->priority, new_priority);
                     
@@ -332,8 +330,6 @@ static void load_interval_config(void) {
                     /* Validate change */
                     validate_config_change(id, t->priority, new_interval);
                     
-                    printf("%s[CONFIG]%s Task %d interval: %ds -> %ds%s\n",
-                           CLR_CYAN, CLR_WHITE, id, t->interval, new_interval, CLR_RESET);
                     log_msg("[CONFIG] Task %d interval changed: %d -> %d\n", 
                             id, t->interval, new_interval);
                     
@@ -561,12 +557,6 @@ static void task_analyzer(Task* t) {
     system("./build/analyze 50.0 60.0 75.0 logs/netdump.log > /dev/null 2>&1");
 }
 
-static void task_reporter(Task* t) {
-    (void)t;
-    log_msg("[TASK] Report Generator running\n");
-    system("./build/report_generator logs/system_report.html > /dev/null 2>&1");
-}
-
 /* ============================================================================
  *                            STATUS DISPLAY
  * ============================================================================ */
@@ -674,7 +664,7 @@ static void scheduler_init(void) {
     g_tasks[0] = create_task(1, TASK_NAMES[0], 0, 5,  task_system_monitor);
     g_tasks[1] = create_task(2, TASK_NAMES[1], 1, 10, task_network_fetch);
     g_tasks[2] = create_task(3, TASK_NAMES[2], 2, 15, task_analyzer);
-    g_tasks[3] = create_task(4, TASK_NAMES[3], 3, 10, task_reporter);
+    g_tasks[3] = NULL;  /* Reporter removed - GUI handles display */
     
     /* Register tasks in priority queues */
     for (int i = 0; i < MAX_TASKS; i++) {

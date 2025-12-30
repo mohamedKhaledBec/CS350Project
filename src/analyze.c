@@ -32,13 +32,15 @@
 #define CPU_WARN_THRESHOLD      70
 #define RAM_WARN_THRESHOLD      75
 #define DISK_WARN_THRESHOLD     80
-#define NET_WARN_THRESHOLD      5
 
 /* Critical thresholds (percentage) */
 #define CPU_CRIT_THRESHOLD      90
 #define RAM_CRIT_THRESHOLD      90
 #define DISK_CRIT_THRESHOLD     95
-#define NET_CRIT_THRESHOLD      10
+
+/* Network thresholds (packets/sec) */
+#define NET_WARN_THRESHOLD      50      /* Warning at 50 packets/sec */
+#define NET_CRIT_THRESHOLD      100     /* Critical at 100 packets/sec */
 
 /* File paths */
 #define ALERTS_LOG              "logs/alerts.log"
@@ -182,22 +184,49 @@ static void log_alert(const char* component, AlertLevel level, const char* messa
  *                          PACKET COUNTING
  * ============================================================================ */
 
+static long g_prev_packet_count = 0;
+static time_t g_prev_packet_time = 0;
+
 static int count_packets(const char* filepath) {
-    FILE* fp = fopen(filepath, "r");
+    FILE* fp = fopen("/proc/net/dev", "r");
     if (!fp) return 0;
     
-    int count = 0;
     char line[256];
+    long total = 0;
+    
+    /* Skip header lines */
+    if (fgets(line, sizeof(line), fp) == NULL) { fclose(fp); return 0; }
+    if (fgets(line, sizeof(line), fp) == NULL) { fclose(fp); return 0; }
     
     while (fgets(line, sizeof(line), fp)) {
-        /* Skip comments and empty lines */
-        if (line[0] != '#' && line[0] != '\n' && strlen(line) > 1) {
-            count++;
+        /* Skip loopback interface */
+        if (strstr(line, "lo:")) continue;
+        
+        char iface[32];
+        long rx, tx;
+        if (sscanf(line, "%[^:]: %*d %ld %*d %*d %*d %*d %*d %*d %*d %ld",
+                   iface, &rx, &tx) >= 2) {
+            total += (rx + tx);
+        }
+    }
+    fclose(fp);
+    
+    /* Calculate packets per second */
+    time_t now = time(NULL);
+    int packets_per_sec = 0;
+    
+    if (g_prev_packet_time > 0) {
+        long time_delta = (long)(now - g_prev_packet_time);
+        if (time_delta > 0) {
+            long packet_delta = total - g_prev_packet_count;
+            packets_per_sec = (int)(packet_delta / time_delta);
         }
     }
     
-    fclose(fp);
-    return count;
+    g_prev_packet_count = total;
+    g_prev_packet_time = now;
+    
+    return packets_per_sec;
 }
 
 /* ============================================================================
@@ -305,12 +334,12 @@ static void analyze_metrics(SystemMetrics* metrics) {
     
     /* Analyze Network */
     AlertLevel net_level = check_threshold((double)metrics->packets, NET_WARN_THRESHOLD, NET_CRIT_THRESHOLD);
-    print_metric_result("Network", (double)metrics->packets, " pkts", net_level);
-    fprintf(report, "  Network:       %6d pkts  [%s]\n", metrics->packets, level_to_string(net_level));
+    print_metric_result("Network", (double)metrics->packets, " packets/sec", net_level);
+    fprintf(report, "  Network:       %6d pkt/s  [%s]\n", metrics->packets, level_to_string(net_level));
     
     if (net_level != LEVEL_OK) {
-        char msg[128];
-        snprintf(msg, sizeof(msg), "Network activity: %d packets (threshold: %d)",
+        char msg[256];
+        snprintf(msg, sizeof(msg), "High network activity: %d packets/sec (threshold: %d pkt/s)",
                  metrics->packets, net_level == LEVEL_CRITICAL ? NET_CRIT_THRESHOLD : NET_WARN_THRESHOLD);
         log_alert("NETWORK", net_level, msg);
     }

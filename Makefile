@@ -77,8 +77,7 @@ all: setup $(OUT_SCHEDULER) $(OUT_ANALYZE) $(OUT_REPORT) $(OUT_METRICS)
 	@echo "╚═══════════════════════════════════════════════════════════════╝"
 	@echo ""
 	@echo "  Core components built successfully."
-	@echo "  Run 'make gtk_gui' to build GTK3 GUI (requires gtk+-3.0)"
-	@echo "  Run 'make run' to start the scheduler"
+	@echo "  Run 'make gui' to launch the system monitor."
 	@echo ""
 
 # Create required directories
@@ -133,11 +132,6 @@ gtk_gui: $(OUT_GTK_GUI)
 # Alias for gtk_gui
 gui: gtk_gui
 
-# Run scheduler
-run: $(OUT_SCHEDULER)
-	@echo "Starting Real-Time Scheduler..."
-	@$(OUT_SCHEDULER)
-
 # Run analyzer with test data
 analyze: $(OUT_ANALYZE)
 	@$(OUT_ANALYZE) 45.2 62.8 58.3 $(LOGS_DIR)/net_log.txt
@@ -183,23 +177,11 @@ help:
 	@echo "║  CS350 REAL-TIME SYSTEM MONITOR - BUILD SYSTEM                ║"
 	@echo "╚═══════════════════════════════════════════════════════════════╝"
 	@echo ""
-	@echo "  BUILD TARGETS:"
+	@echo "  AVAILABLE TARGETS:"
+	@echo ""
 	@echo "    make all          Build all core components"
-	@echo "    make debug        Build with debug symbols"
-	@echo "    make gtk_gui      Build GTK3 GUI (requires gtk+-3.0)"
-	@echo ""
-	@echo "  RUN TARGETS:"
-	@echo "    make run          Launch scheduler with monitoring"
-	@echo "    make gui          Build and launch GTK3 GUI"
-	@echo "    make analyze      Run metrics analyzer"
-	@echo "    make report       Generate HTML system report"
-	@echo ""
-	@echo "  UTILITY TARGETS:"
-	@echo "    make export-metrics  Export metrics to JSON"
-	@echo ""
-	@echo "  CLEANUP TARGETS:"
-	@echo "    make clean        Remove build directory"
-	@echo "    make clean-logs   Remove generated logs"
+	@echo "    make gui          Build and launch GTK3 system monitor"
+	@echo "    make setup        Create required directories"
 	@echo "    make reset        Full cleanup (build + logs)"
 	@echo ""
 	@echo "  REQUIREMENTS:"
