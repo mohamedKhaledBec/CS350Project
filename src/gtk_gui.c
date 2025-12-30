@@ -33,6 +33,7 @@
 #include <string.h>
 #include <time.h>
 #include <unistd.h>
+#include <stdarg.h>
 
 /* ============================================================================
  *                              CONSTANTS
@@ -45,6 +46,10 @@
 /* Configuration file paths */
 #define PRIORITY_CONFIG_FILE    "config/priority_override.conf"
 #define INTERVAL_CONFIG_FILE    "config/interval_override.conf"
+
+/* Log file paths */
+#define SCHEDULER_LOG_FILE      "logs/scheduler.log"
+#define GUI_LOG_FILE            "logs/gui.log"
 
 /* Alert thresholds */
 #define CPU_WARNING_THRESHOLD   70.0
@@ -122,6 +127,42 @@ static double g_cached_cpu = 0.0;
 static double g_cached_ram = 0.0;
 static double g_cached_disk = 0.0;
 static int g_cached_packets = 0;
+
+/* Scheduler log file handle */
+static FILE* g_scheduler_log = NULL;
+static int g_scheduler_tick_count = 0;
+
+/*
+ * scheduler_log()
+ * Writes timestamped messages to the scheduler log file.
+ */
+static void scheduler_log(const char* format, ...) {
+    if (!g_scheduler_log) {
+        g_mkdir_with_parents("logs", 0755);
+        g_scheduler_log = fopen(SCHEDULER_LOG_FILE, "a");
+        if (g_scheduler_log) {
+            time_t now = time(NULL);
+            fprintf(g_scheduler_log, "\n=== CS350 GUI Scheduler Session Started ===\n");
+            fprintf(g_scheduler_log, "Started: %s\n", ctime(&now));
+        }
+    }
+    
+    if (g_scheduler_log) {
+        time_t now = time(NULL);
+        struct tm* t = localtime(&now);
+        char ts[32];
+        strftime(ts, sizeof(ts), "%H:%M:%S", t);
+        
+        fprintf(g_scheduler_log, "[%s] ", ts);
+        
+        va_list args;
+        va_start(args, format);
+        vfprintf(g_scheduler_log, format, args);
+        va_end(args);
+        
+        fflush(g_scheduler_log);
+    }
+}
 
 /*
  * read_metrics_from_log()
@@ -243,25 +284,43 @@ static void init_scheduler(void) {
 /*
  * execute_task_system_monitor()
  * Same as scheduler: runs monitor_scheduler.sh
- * Script writes to: logs/system_report.log
+ * Script writes to: logs/system_metrics.log, logs/system_report.log
  */
 static void execute_task_system_monitor(void) {
     g_task_last_run[0] = time(NULL);
-    system("bash scripts/monitor_scheduler.sh");
+    scheduler_log("[TASK] System Monitor starting\n");
+    
+    int ret = system("bash scripts/monitor_scheduler.sh > /dev/null 2>&1");
+    
     g_task_last_completed[0] = time(NULL);
     g_task_exec_count[0]++;
+    
+    if (ret == 0) {
+        scheduler_log("[TASK] System Monitor completed (exec #%d)\n", g_task_exec_count[0]);
+    } else {
+        scheduler_log("[ERROR] System Monitor failed with code %d\n", ret);
+    }
 }
 
 /*
  * execute_task_network_fetch()
  * Same as scheduler: runs ethernet_fetch.sh
- * Script writes to: logs/netdump.log, data/ethernet_data.txt
+ * Script writes to: logs/network_metrics.log, logs/netdump.log
  */
 static void execute_task_network_fetch(void) {
     g_task_last_run[1] = time(NULL);
-    system("bash scripts/ethernet_fetch.sh");
+    scheduler_log("[TASK] Network Fetch starting\n");
+    
+    int ret = system("bash scripts/ethernet_fetch.sh > /dev/null 2>&1");
+    
     g_task_last_completed[1] = time(NULL);
     g_task_exec_count[1]++;
+    
+    if (ret == 0) {
+        scheduler_log("[TASK] Network Fetch completed (exec #%d)\n", g_task_exec_count[1]);
+    } else {
+        scheduler_log("[ERROR] Network Fetch failed with code %d\n", ret);
+    }
 }
 
 /*
@@ -271,9 +330,18 @@ static void execute_task_network_fetch(void) {
  */
 static void execute_task_analyzer(void) {
     g_task_last_run[2] = time(NULL);
-    system("./build/analyze 50.0 60.0 75.0 logs/netdump.log");
+    scheduler_log("[TASK] Analyzer starting\n");
+    
+    int ret = system("./build/analyze 50.0 60.0 75.0 logs/netdump.log > /dev/null 2>&1");
+    
     g_task_last_completed[2] = time(NULL);
     g_task_exec_count[2]++;
+    
+    if (ret == 0) {
+        scheduler_log("[TASK] Analyzer completed (exec #%d)\n", g_task_exec_count[2]);
+    } else {
+        scheduler_log("[ERROR] Analyzer failed with code %d (may need 'make all' first)\n", ret);
+    }
 }
 
 /*
@@ -283,10 +351,20 @@ static void execute_task_analyzer(void) {
  */
 static void execute_task_reporter(void) {
     g_task_last_run[3] = time(NULL);
+    scheduler_log("[TASK] Report Generator starting\n");
+    
     if (access("./build/report_generator", F_OK) == 0) {
-        system("./build/report_generator");
+        int ret = system("./build/report_generator > /dev/null 2>&1");
         g_task_last_completed[3] = time(NULL);
         g_task_exec_count[3]++;
+        
+        if (ret == 0) {
+            scheduler_log("[TASK] Report Generator completed (exec #%d)\n", g_task_exec_count[3]);
+        } else {
+            scheduler_log("[ERROR] Report Generator failed with code %d\n", ret);
+        }
+    } else {
+        scheduler_log("[ERROR] Report Generator not found - run 'make all' first\n");
     }
 }
 
@@ -309,6 +387,10 @@ static void scheduler_tick(TaskRow tasks[], int count) {
     init_scheduler();
     
     time_t now = time(NULL);
+    g_scheduler_tick_count++;
+    
+    /* Log tick */
+    scheduler_log("\n=== TICK %d ===\n", g_scheduler_tick_count);
     
     /* Build list of ready tasks sorted by priority */
     int ready_tasks[NUM_TASKS];
@@ -319,7 +401,13 @@ static void scheduler_tick(TaskRow tasks[], int count) {
         double elapsed = difftime(now, g_task_last_run[i]);
         if (elapsed >= tasks[i].interval) {
             ready_tasks[ready_count++] = i;
+            scheduler_log("[READY] Task %d (%s) ready - interval %ds elapsed\n", 
+                         i + 1, tasks[i].name, tasks[i].interval);
         }
+    }
+    
+    if (ready_count == 0) {
+        return;  /* No tasks ready */
     }
     
     /* Sort ready tasks by priority (bubble sort - small array) */
@@ -334,10 +422,14 @@ static void scheduler_tick(TaskRow tasks[], int count) {
         }
     }
     
+    scheduler_log("[DISPATCH] Executing %d ready task(s) in priority order\n", ready_count);
+    
     /* Execute ALL ready tasks in priority order */
     for (int i = 0; i < ready_count; i++) {
         int task_idx = ready_tasks[i];
         if (task_idx >= 0 && task_idx < NUM_TASKS) {
+            scheduler_log("[DISPATCH] Task %d (%s) P%d gets CPU\n", 
+                         task_idx + 1, tasks[task_idx].name, tasks[task_idx].priority);
             g_task_functions[task_idx]();
         }
     }
@@ -483,6 +575,7 @@ static const char* check_starvation_risk(AppWidgets* widgets, int changed_task, 
  */
 static void update_starvation_indicators(AppWidgets* widgets) {
     time_t now = time(NULL);
+    static int starvation_logged[NUM_TASKS] = {0};  /* Track if we've logged starvation */
     
     for (int i = 0; i < NUM_TASKS; i++) {
         if (widgets->tasks[i].status_label == NULL) continue;
@@ -501,6 +594,13 @@ static void update_starvation_indicators(AppWidgets* widgets) {
         
         /* Update status label based on actual last_run time with suggestions */
         if (widgets->tasks[i].last_run >= STARVATION_THRESHOLD) {
+            /* Log starvation warning (only once per starvation event) */
+            if (!starvation_logged[i]) {
+                scheduler_log("[STARVATION WARNING] Task %d (%s) idle for %d seconds!\n",
+                             i + 1, widgets->tasks[i].name, since_last_run);
+                starvation_logged[i] = 1;
+            }
+            
             /* Task is STARVING - suggest HIGHER priority (higher number) */
             int suggested_priority = (widgets->tasks[i].priority < 3) ? widgets->tasks[i].priority + 1 : 3;
             int suggested_interval = widgets->tasks[i].interval / 2;
@@ -521,9 +621,11 @@ static void update_starvation_indicators(AppWidgets* widgets) {
                 suggested_priority);
             gtk_label_set_markup(GTK_LABEL(widgets->tasks[i].status_label), risk_msg);
             g_free(risk_msg);
+            starvation_logged[i] = 0;  /* Reset so we log if it becomes starving */
         } else {
             gtk_label_set_markup(GTK_LABEL(widgets->tasks[i].status_label),
                 "<span foreground='#22c55e'>● OK</span>");
+            starvation_logged[i] = 0;  /* Reset starvation log flag */
         }
     }
 }
@@ -735,6 +837,17 @@ static void on_window_destroy(GtkWidget* widget, gpointer data) {
     if (widgets->timer_id > 0) {
         g_source_remove(widgets->timer_id);
         widgets->timer_id = 0;
+    }
+    
+    /* Close scheduler log */
+    if (g_scheduler_log) {
+        scheduler_log("\n=== Scheduler Session Ended ===\n");
+        scheduler_log("Total ticks: %d\n", g_scheduler_tick_count);
+        scheduler_log("Task execution counts: T1=%d, T2=%d, T3=%d, T4=%d\n",
+                     g_task_exec_count[0], g_task_exec_count[1],
+                     g_task_exec_count[2], g_task_exec_count[3]);
+        fclose(g_scheduler_log);
+        g_scheduler_log = NULL;
     }
     
     g_free(widgets);

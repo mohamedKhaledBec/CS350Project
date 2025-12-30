@@ -168,6 +168,37 @@ reset: clean clean-logs
 	@echo "Full reset complete"
 
 # ==============================================================================
+#                          LOG MANAGEMENT TARGETS
+# ==============================================================================
+
+# Archive logs that exceed size threshold
+archive-logs:
+	@echo "Archiving logs..."
+	@chmod +x scripts/archive_logs.sh
+	@bash scripts/archive_logs.sh
+
+# Force archive all logs regardless of size
+archive-all:
+	@echo "Force archiving all logs..."
+	@chmod +x scripts/archive_logs.sh
+	@bash scripts/archive_logs.sh --force
+
+# View log summary
+view-logs:
+	@chmod +x scripts/view_logs.sh
+	@bash scripts/view_logs.sh all
+
+# View specific log (usage: make view-log LOG=scheduler)
+view-log:
+	@chmod +x scripts/view_logs.sh
+	@bash scripts/view_logs.sh $(LOG) -n 30
+
+# List archived logs
+list-archives:
+	@chmod +x scripts/view_logs.sh
+	@bash scripts/view_logs.sh --archive
+
+# ==============================================================================
 #                             HELP TARGET
 # ==============================================================================
 
@@ -177,11 +208,22 @@ help:
 	@echo "║  CS350 REAL-TIME SYSTEM MONITOR - BUILD SYSTEM                ║"
 	@echo "╚═══════════════════════════════════════════════════════════════╝"
 	@echo ""
-	@echo "  AVAILABLE TARGETS:"
-	@echo ""
+	@echo "  BUILD TARGETS:"
 	@echo "    make all          Build all core components"
 	@echo "    make gui          Build and launch GTK3 system monitor"
+	@echo "    make debug        Build with debug symbols"
 	@echo "    make setup        Create required directories"
+	@echo ""
+	@echo "  LOG MANAGEMENT:"
+	@echo "    make archive-logs   Archive logs exceeding size threshold"
+	@echo "    make archive-all    Force archive all logs"
+	@echo "    make view-logs      View summary of all logs"
+	@echo "    make view-log LOG=X View specific log (scheduler/metrics/etc)"
+	@echo "    make list-archives  List all archived log files"
+	@echo ""
+	@echo "  CLEANUP:"
+	@echo "    make clean        Remove build artifacts"
+	@echo "    make clean-logs   Remove all log files"
 	@echo "    make reset        Full cleanup (build + logs)"
 	@echo ""
 	@echo "  REQUIREMENTS:"
