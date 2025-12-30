@@ -1,22 +1,26 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -pthread
 BUILD_DIR = build
+LOGS_DIR = logs
 
-# Detect OS for proper commands
-ifeq ($(OS),Windows_NT)
-    RM = if exist $(BUILD_DIR) rmdir /s /q $(BUILD_DIR)
-    RM_FILES = if exist logs\*.log del /q logs\*.log && if exist logs\*.html del /q logs\*.html && if exist ui\metrics.json del /q ui\metrics.json
-    MKDIR = if not exist $(BUILD_DIR) mkdir $(BUILD_DIR)
-else
-    RM = rm -rf $(BUILD_DIR)
-    RM_FILES = rm -f logs/*.log logs/*.html ui/metrics.json
-    MKDIR = mkdir -p $(BUILD_DIR)
-endif
+# Linux-only tooling
+RM = rm -rf $(BUILD_DIR)
+RM_FILES = rm -f logs/*.log logs/*.html ui/metrics.json
+MKDIR = mkdir -p $(BUILD_DIR)
+MKDIR_LOGS = mkdir -p $(LOGS_DIR)
 
-all: $(BUILD_DIR) scheduler analyze report_generator metrics_exporter terminal_ui ncurses_gui gtk_gui
+all: setup $(BUILD_DIR) scheduler analyze report_generator metrics_exporter terminal_ui gtk_live
 
+	@echo "make setup-sudo     - pre-cache sudo token (will prompt once)"
 $(BUILD_DIR):
 	$(MKDIR)
+
+setup:
+	$(MKDIR_LOGS)
+
+setup-sudo:
+	@echo "Caching sudo credentials (you may be prompted)..."
+	sudo -v
 
 report_generator: src/report_generator.c | $(BUILD_DIR)
 	$(CC) $(CFLAGS) src/report_generator.c -o $(BUILD_DIR)/report_generator
@@ -42,11 +46,15 @@ clean:
 clean-logs:
 	$(RM_FILES)
 
+reset: clean clean-logs
+	@echo "Reset complete: build/ removed and logs cleared."
+
 monitor:
 	cat scripts/monitor_scheduler.sh
 
-run: scheduler
-	cd build && ./scheduler
+run: all
+	@echo "Launching monitor with UI selection (debug console, GTK, or terminal UI)..."
+	@bash scripts/launch_with_ui.sh
 
 ui: terminal_ui
 	@echo Starting Terminal UI (Live)...
@@ -58,8 +66,8 @@ gui: gtk_live
 
 launch: all
 	@echo "Starting monitor with UI..."
-	@chmod +x launch_with_ui.sh
-	@./launch_with_ui.sh
+	@chmod +x scripts/launch_with_ui.sh
+	@bash scripts/launch_with_ui.sh
 
 export-metrics: metrics_exporter
 	$(BUILD_DIR)/metrics_exporter ui/metrics.json
@@ -68,4 +76,20 @@ generate-report: report_generator
 	$(BUILD_DIR)/report_generator logs/system_report.html
 	@echo HTML report generated at logs/system_report.html
 
-.PHONY: all clean clean-logs report_generator scheduler analyze monitor run ui gui export-metrics generate-report metrics_exporter terminal_ui gtk_live launch
+archive-loop:
+	@chmod +x scripts/archive_loop.sh
+	@bash scripts/archive_loop.sh
+
+help:
+	@echo "CS350 Project - Make targets"
+	@echo "================================"
+	@echo "make all            - build everything (scheduler, UIs, analyzers)"
+	@echo "make run            - run scheduler (console)"
+	@echo "make gui            - launch GTK live monitor"
+	@echo "make ui             - launch terminal UI"
+	@echo "make export-metrics - emit metrics JSON for the web dashboard"
+	@echo "make generate-report- build HTML report (logging/report task)"
+	@echo "make clean          - remove build directory"
+	@echo "make clean-logs     - prune logs and generated HTML"
+
+.PHONY: all clean clean-logs reset report_generator scheduler analyze monitor run ui gui export-metrics generate-report metrics_exporter terminal_ui gtk_live launch setup help setup-sudo archive-loop

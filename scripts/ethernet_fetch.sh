@@ -11,24 +11,20 @@ echo "Project directory: $PROJECT_DIR"
 mkdir -p "$PROJECT_DIR/data"
 mkdir -p "$PROJECT_DIR/logs"
 
-# Install tcpdump if not available
-if ! command -v tcpdump &> /dev/null; then
-    echo "Installing tcpdump..."
-    sudo apt-get update && sudo apt-get install -y tcpdump
-fi
-
+# Capture network packets without prompting for sudo install
 echo "Fetching network data at $(date)"
 
-# Capture network packets
-if command -v tcpdump &> /dev/null; then
+if command -v tcpdump >/dev/null 2>&1 && sudo -n true >/dev/null 2>&1; then
     echo "Running tcpdump for 5 seconds..."
-    sudo timeout 5 tcpdump -n -i any -c 10 2>&1 | tee "$PROJECT_DIR/logs/netdump.log"
-    echo ""
+    sudo timeout 5 tcpdump -n -i any -c 10 2>/dev/null | tee "$PROJECT_DIR/logs/netdump.log"
     echo "Network data captured at $(date)" | tee -a "$PROJECT_DIR/data/ethernet_data.txt"
     cat "$PROJECT_DIR/logs/netdump.log" >> "$PROJECT_DIR/data/ethernet_data.txt"
     echo "Data saved to: $PROJECT_DIR/data/ethernet_data.txt"
 else
-    echo "tcpdump not available. Skipping network capture."
+    echo "tcpdump unavailable or sudo not cached; writing interface stats instead." | tee "$PROJECT_DIR/logs/netdump.log"
+    ip -s link 2>/dev/null | tee -a "$PROJECT_DIR/logs/netdump.log"
+    echo "Interface stats captured at $(date)" | tee -a "$PROJECT_DIR/data/ethernet_data.txt"
+    cat "$PROJECT_DIR/logs/netdump.log" >> "$PROJECT_DIR/data/ethernet_data.txt"
 fi
 
 echo "Network fetch completed."

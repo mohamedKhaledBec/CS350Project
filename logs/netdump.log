@@ -1,7 +1,13 @@
-tcpdump: data link type LINUX_SLL2
-tcpdump: verbose output suppressed, use -v[v]... for full protocol decode
-listening on any, link-type LINUX_SLL2 (Linux cooked v2), snapshot length 262144 bytes
-
-0 packets captured
-0 packets received by filter
-0 packets dropped by kernel
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         23812     236      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         23812     236      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        822973    1557      0       0       0     993 
+    TX:  bytes packets errors dropped carrier collsns           
+         44994     605      0       0       0       0 

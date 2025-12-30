@@ -1,23 +1,75 @@
+/**
+ * @file analyze.c
+ * @brief System Metrics Analyzer for Real-Time Linux Monitor
+ * 
+ * This module analyzes system metrics (CPU, RAM, Disk, Network) and generates
+ * alerts when thresholds are exceeded. Part of CS350 Real-Time Systems Project.
+ * 
+ * @author CS350 Student Project
+ * @date 2024
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <unistd.h>
+#include <libgen.h>
+#include <linux/limits.h>
 
-#define CPU_THRESHOLD 80
-#define RAM_THRESHOLD 85
-#define DISK_THRESHOLD 90
-#define PACKET_THRESHOLD 8
+/* Threshold constants for alert generation */
+#define CPU_THRESHOLD     80    /* CPU usage percentage threshold */
+#define RAM_THRESHOLD     85    /* RAM usage percentage threshold */
+#define DISK_THRESHOLD    90    /* Disk usage percentage threshold */
+#define PACKET_THRESHOLD  8     /* Network packets per second threshold */
 
+/* Global path to project root directory */
+static char g_project_root[PATH_MAX] = {0};
+
+/**
+ * @brief Structure to hold system metrics snapshot
+ */
 typedef struct {
-    double cpu;
-    double ram;
-    double disk;
-    int packet_count;
-    char timestamp[64];
+    double cpu;           /* CPU usage percentage */
+    double ram;           /* RAM usage percentage */
+    double disk;          /* Disk usage percentage */
+    int packet_count;     /* Network packet count */
+    char timestamp[64];   /* Timestamp string */
 } SystemMetrics;
 
+/**
+ * @brief Initialize project root path based on executable location
+ * @param argv0 The argv[0] from main
+ */
+static void init_project_root(const char *argv0) {
+    char exe_path[PATH_MAX];
+    
+    /* Try to get path from /proc/self/exe (Linux-specific) */
+    ssize_t len = readlink("/proc/self/exe", exe_path, sizeof(exe_path) - 1);
+    if (len != -1) {
+        exe_path[len] = '\0';
+        /* Go up from build/ to project root */
+        char *dir = dirname(exe_path);
+        char *parent = dirname(dir);
+        strncpy(g_project_root, parent, PATH_MAX - 1);
+    } else {
+        /* Fallback: use current directory */
+        if (getcwd(g_project_root, sizeof(g_project_root)) == NULL) {
+            strncpy(g_project_root, ".", PATH_MAX - 1);
+        }
+    }
+    (void)argv0;  /* Suppress unused warning */
+}
+
+/**
+ * @brief Log an alert message to the alerts log file
+ * @param message Alert message to log
+ */
 void log_alert(const char *message) {
-    FILE *fp = fopen("../logs/alerts.log", "a");
+    char log_path[PATH_MAX];
+    snprintf(log_path, sizeof(log_path), "%s/logs/alerts.log", g_project_root);
+    
+    FILE *fp = fopen(log_path, "a");
     if (!fp) {
         perror("Error opening alerts log");
         return;
@@ -48,8 +100,15 @@ int count_packets(const char *netfile) {
     return count;
 }
 
+/**
+ * @brief Analyze system metrics and generate alerts if thresholds exceeded
+ * @param metrics Pointer to SystemMetrics structure with current values
+ */
 void analyze_metrics(SystemMetrics *metrics) {
-    FILE *report = fopen("../logs/analysis_report.log", "a");
+    char report_path[PATH_MAX];
+    snprintf(report_path, sizeof(report_path), "%s/logs/analysis_report.log", g_project_root);
+    
+    FILE *report = fopen(report_path, "a");
     if (!report) {
         perror("Error opening report file");
         return;
@@ -106,15 +165,29 @@ void analyze_metrics(SystemMetrics *metrics) {
 int main(int argc, char *argv[]) {
     if (argc != 5) {
         fprintf(stderr, "Usage: %s <cpu> <ram> <disk> <netlog>\n", argv[0]);
+        fprintf(stderr, "  cpu    - CPU usage percentage (0-100)\n");
+        fprintf(stderr, "  ram    - RAM usage percentage (0-100)\n");
+        fprintf(stderr, "  disk   - Disk usage percentage (0-100)\n");
+        fprintf(stderr, "  netlog - Path to network log file\n");
         return 1;
     }
+    
+    /* Initialize project root for proper path resolution */
+    init_project_root(argv[0]);
     
     SystemMetrics metrics;
     metrics.cpu = atof(argv[1]);
     metrics.ram = atof(argv[2]);
     metrics.disk = atof(argv[3]);
     
-    // Count packets in network log
+    /* Validate input ranges */
+    if (metrics.cpu < 0 || metrics.cpu > 100 ||
+        metrics.ram < 0 || metrics.ram > 100 ||
+        metrics.disk < 0 || metrics.disk > 100) {
+        fprintf(stderr, "Warning: Metrics should be in range 0-100\n");
+    }
+    
+    /* Count packets in network log */
     metrics.packet_count = count_packets(argv[4]);
     
     // Get timestamp

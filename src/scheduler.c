@@ -1,6 +1,23 @@
-// scheduler.c
-// Sample code for 3 activities: system fetch, ethernet fetch, logging
-// Each activity is a task with its own priority
+/**
+ * @file scheduler.c
+ * @brief Preemptive Priority Scheduler for Real-Time Linux System Monitor
+ * 
+ * Implements a real-time task scheduler with the following features:
+ *   - Preemptive priority scheduling (4 priority levels, 0 = highest)
+ *   - Time quantum-based execution (2 seconds per slice)
+ *   - Thread-safe task management with mutexes and condition variables
+ *   - Dynamic priority/interval adjustment via config files
+ *   - Comprehensive logging system
+ * 
+ * Task Architecture:
+ *   Task 1 (P0): System metrics collection (CPU, RAM, Disk)
+ *   Task 2 (P1): Network/Ethernet monitoring
+ *   Task 3 (P2): Data analysis and alert generation
+ *   Task 4 (P3): Logging and report generation
+ * 
+ * @author CS350 Student Project
+ * @date 2024
+ */
 
 #include <pthread.h>
 #include <stdio.h>
@@ -10,13 +27,31 @@
 #include <string.h>
 #include <time.h>
 #include <stdarg.h>
+#include <signal.h>
 
-#define MAX_PRIORITY 4
-#define TIME_QUANTUM 2  // Each task gets 2 seconds per tick
-#define VERBOSE_MODE 0  // Set to 1 for detailed terminal output, 0 for quiet
+/*============================================================================
+ *                              CONSTANTS
+ *===========================================================================*/
+#define MAX_PRIORITY    4       /* Number of priority levels (0-3) */
+#define TIME_QUANTUM    2       /* Time slice per task in seconds */
+#define VERBOSE_MODE    0       /* 1 = detailed output, 0 = quiet */
+#define PRIORITY_CFG    "config/priority_override.conf"
+#define INTERVAL_CFG    "config/interval_override.conf"
 
-FILE* log_file = NULL;  // Global log file
+/*============================================================================
+ *                           GLOBAL VARIABLES
+ *===========================================================================*/
+FILE* log_file = NULL;              /* Log file handle */
+static volatile int g_running = 1;  /* Control flag for graceful shutdown */
 
+/*============================================================================
+ *                              LOGGING
+ *===========================================================================*/
+/**
+ * @brief Thread-safe logging function with optional console output
+ * @param format Printf-style format string
+ * @param ... Variable arguments
+ */
 void log_message(const char* format, ...) {
     va_list args;
     
@@ -36,33 +71,194 @@ void log_message(const char* format, ...) {
     }
 }
 
+/*============================================================================
+ *                            DATA TYPES
+ *===========================================================================*/
+/**
+ * @brief Task execution states
+ */
 typedef enum {
-    TASK_READY,
-    TASK_RUNNING,
-    TASK_IDLE,
-    TASK_PREEMPTED  // New state for interrupted tasks
+    TASK_READY,     /* Task is ready to execute */
+    TASK_RUNNING,   /* Task is currently executing */
+    TASK_IDLE,      /* Task completed its work, waiting for next interval */
+    TASK_PREEMPTED  /* Task was interrupted by higher priority task */
 } task_state_t;
 
+/**
+ * @brief Task Control Block (TCB)
+ * 
+ * Contains all information needed to manage a schedulable task.
+ */
 typedef struct Task {
-    int id;
-    int priority;
-    task_state_t state;
-    pthread_mutex_t lock;
-    pthread_cond_t cond;  // For preemption signaling
-    void (*task_func)(struct Task*);
-    struct Task* next;
-    time_t last_run;
-    int interval; // in seconds
-    int cycle_count;
-    time_t slice_start;  // When current slice started
-    int time_used;       // Time used in current slice
-    int preempt_flag;    // Flag to signal preemption
-    int execution_count; // Track number of executions
+    int id;                     /* Unique task identifier (1-4) */
+    int priority;               /* Priority level (0=highest, 3=lowest) */
+    task_state_t state;         /* Current execution state */
+    pthread_mutex_t lock;       /* Mutex for thread-safe access */
+    pthread_cond_t cond;        /* Condition variable for synchronization */
+    void (*task_func)(struct Task*);  /* Task function pointer */
+    struct Task* next;          /* Next task in priority queue */
+    time_t last_run;            /* Timestamp of last execution */
+    int interval;               /* Execution interval in seconds */
+    int cycle_count;            /* Number of scheduling cycles */
+    time_t slice_start;         /* Start time of current time slice */
+    int time_used;              /* Time consumed in current slice */
+    int preempt_flag;           /* Flag indicating preemption request */
+    int execution_count;        /* Total number of executions */
 } Task;
 
-Task* priority_queues[MAX_PRIORITY];
-Task* current_running_task = NULL;  // Track currently running task
-pthread_mutex_t scheduler_lock;     // Global scheduler lock
+/*============================================================================
+ *                         SCHEDULER DATA STRUCTURES
+ *===========================================================================*/
+Task* priority_queues[MAX_PRIORITY];    /* Priority-based ready queues */
+Task* tasks_list[MAX_PRIORITY];         /* Master list of all tasks */
+Task* current_running_task = NULL;      /* Currently executing task */
+pthread_mutex_t scheduler_lock;         /* Global scheduler lock */
+
+/* Forward declarations */
+void register_task(Task* task);
+
+/*============================================================================
+ *                          UTILITY FUNCTIONS
+ *===========================================================================*/
+/**
+ * @brief Signal handler for graceful shutdown
+ * @param sig Signal number
+ */
+static void signal_handler(int sig) {
+    (void)sig;
+    printf("\nReceived shutdown signal, cleaning up...\n");
+    g_running = 0;
+}
+
+/**
+ * @brief Convert task state enum to string
+ * @param s Task state
+ * @return String representation of state
+ */
+static const char* state_name(task_state_t s) {
+    switch (s) {
+        case TASK_READY: return "READY";
+        case TASK_RUNNING: return "RUNNING";
+        case TASK_IDLE: return "IDLE";
+        case TASK_PREEMPTED: return "PREEMPTED";
+        default: return "UNKNOWN";
+    }
+}
+
+static void print_tick_status(int tick) {
+    printf("\n========== TICK %d ==========%s\n", tick, VERBOSE_MODE ? " (verbose off)" : "");
+    printf("ID  PRI   STATE       EXEC  LAST_RUN_DIFF(s)\n");
+    printf("-------------------------------------------\n");
+
+    pthread_mutex_lock(&scheduler_lock);
+    for (int i = 0; i < MAX_PRIORITY; ++i) {
+        Task* t = tasks_list[i];
+        if (!t) { continue; }
+        pthread_mutex_lock(&t->lock);
+        time_t now = time(NULL);
+        int since = (int)difftime(now, t->last_run);
+        printf("%-2d  %-3d  %-10s  %-4d  %4d\n",
+               t->id,
+               t->priority,
+               state_name(t->state),
+               t->execution_count,
+               since);
+        pthread_mutex_unlock(&t->lock);
+    }
+    pthread_mutex_unlock(&scheduler_lock);
+    printf("-------------------------------------------\n");
+}
+
+static void clear_priority_queues(void) {
+    for (int i = 0; i < MAX_PRIORITY; ++i) {
+        priority_queues[i] = NULL;
+    }
+}
+
+static void rebuild_priority_queues(void) {
+    clear_priority_queues();
+    for (int i = 0; i < MAX_PRIORITY; ++i) {
+        if (tasks_list[i]) {
+            register_task(tasks_list[i]);
+        }
+    }
+    current_running_task = NULL;
+}
+
+static void apply_priority_overrides(void) {
+    FILE* fp = fopen(PRIORITY_CFG, "r");
+    int changed = 0;
+    
+    if (fp) {
+        char line[128];
+        while (fgets(line, sizeof(line), fp)) {
+            int id = -1;
+            int new_p = -1;
+            if (sscanf(line, "%d %d", &id, &new_p) == 2) {
+                if (id >= 1 && id <= MAX_PRIORITY && new_p >= 0 && new_p < MAX_PRIORITY) {
+                    Task* t = tasks_list[id - 1];
+                    if (t && t->priority != new_p) {
+                        printf("↺ Updating Task %d priority: %d -> %d\n", id, t->priority, new_p);
+                        log_message("[PRIORITY] Task %d priority changed from %d to %d\n", id, t->priority, new_p);
+                        t->priority = new_p;
+                        t->state = TASK_READY;
+                        t->preempt_flag = 0;
+                        changed = 1;
+                    }
+                }
+            }
+        }
+        fclose(fp);
+    }
+
+    fp = fopen(INTERVAL_CFG, "r");
+    if (fp) {
+        char line[128];
+        while (fgets(line, sizeof(line), fp)) {
+            int id = -1;
+            int new_intv = -1;
+            if (sscanf(line, "%d %d", &id, &new_intv) == 2) {
+                if (id >= 1 && id <= MAX_PRIORITY && new_intv >= 1 && new_intv <= 300) {
+                    Task* t = tasks_list[id - 1];
+                    if (t && t->interval != new_intv) {
+                        printf("↻ Updating Task %d interval: %d -> %d seconds\n", id, t->interval, new_intv);
+                        log_message("[INTERVAL] Task %d interval changed from %d to %d seconds\n", id, t->interval, new_intv);
+                        t->interval = new_intv;
+                        changed = 1;
+                    }
+                }
+            }
+        }
+        fclose(fp);
+    }
+
+    if (changed) {
+        pthread_mutex_lock(&scheduler_lock);
+
+        // Preempt any currently running task so it can be rescheduled
+        if (current_running_task) {
+            pthread_mutex_lock(&current_running_task->lock);
+            current_running_task->preempt_flag = 1;
+            current_running_task->state = TASK_PREEMPTED;
+            pthread_cond_signal(&current_running_task->cond);
+            pthread_mutex_unlock(&current_running_task->lock);
+            current_running_task = NULL;
+        }
+
+        // Reset all tasks to READY and clear preempt flags
+        for (int i = 0; i < MAX_PRIORITY; ++i) {
+            if (tasks_list[i]) {
+                pthread_mutex_lock(&tasks_list[i]->lock);
+                tasks_list[i]->state = TASK_READY;
+                tasks_list[i]->preempt_flag = 0;
+                pthread_mutex_unlock(&tasks_list[i]->lock);
+            }
+        }
+
+        rebuild_priority_queues();
+        pthread_mutex_unlock(&scheduler_lock);
+    }
+}
 
 void register_task(Task* task) {
     int p = task->priority;
@@ -190,12 +386,24 @@ void* task_thread(void* arg) {
     return NULL;
 }
 
-// Initialize system
+/*============================================================================
+ *                        SYSTEM INITIALIZATION
+ *===========================================================================*/
+/**
+ * @brief Initialize system resources and directories
+ * 
+ * Creates necessary directories, opens log file, and prepares
+ * shell scripts for execution.
+ */
 void init_system() {
     printf("Initializing Real-Time System Monitor...\n");
     
-    // Open log file
-    log_file = fopen("../logs/scheduler.log", "w");
+    /* Setup signal handlers for graceful shutdown */
+    signal(SIGINT, signal_handler);
+    signal(SIGTERM, signal_handler);
+    
+    /* Open log file */
+    log_file = fopen("logs/scheduler.log", "w");
     if (log_file) {
         fprintf(log_file, "=== SCHEDULER LOG START ===\n");
         fprintf(log_file, "Timestamp: %s\n", __DATE__ " " __TIME__);
@@ -207,12 +415,6 @@ void init_system() {
     getcwd(cwd, sizeof(cwd));
     printf("Current directory: %s\n", cwd);
     
-    // Change to parent directory to access scripts
-    if (chdir("..") == 0) {
-        getcwd(cwd, sizeof(cwd));
-        printf("Changed to project root: %s\n", cwd);
-    }
-    
     // Make scripts executable
     system("chmod +x scripts/monitor_scheduler.sh 2>/dev/null");
     system("chmod +x scripts/ethernet_fetch.sh 2>/dev/null");
@@ -220,6 +422,7 @@ void init_system() {
     // Create necessary directories
     system("mkdir -p logs 2>/dev/null");
     system("mkdir -p data 2>/dev/null");
+    system("mkdir -p config 2>/dev/null");
     
     printf("System initialized.\n");
     printf("Verbose mode: %s (change VERBOSE_MODE in source to toggle)\n", 
@@ -227,34 +430,58 @@ void init_system() {
     printf("Scheduler log: logs/scheduler.log\n\n");
 }
 
-// Sample activities
+/*============================================================================
+ *                            TASK FUNCTIONS
+ *===========================================================================*/
+/**
+ * @brief Task 1: System metrics collection (CPU, RAM, Disk)
+ * @param t Pointer to the executing task's TCB
+ */
 void system_fetch(Task* t) {
-    (void)t; // Unused parameter
+    (void)t; /* Unused - task info available if needed */
     log_message("[System Monitor] Running\n");
     system("bash scripts/monitor_scheduler.sh");
 }
 
+/**
+ * @brief Task 2: Network/Ethernet monitoring
+ * @param t Pointer to the executing task's TCB
+ */
 void ethernet_fetch(Task* t) {
-    (void)t; // Unused parameter
+    (void)t;
     log_message("[Ethernet Fetch] Running\n");
     system("bash scripts/ethernet_fetch.sh");
 }
 
+/**
+ * @brief Task 3: Data analysis and alert generation
+ * @param t Pointer to the executing task's TCB
+ */
 void analyze_data(Task* t) {
-    (void)t; // Unused parameter
+    (void)t;
     log_message("[Analyzer] Running\n");
     system("./build/analyze 50.0 60.0 75.0 logs/netdump.log");
 }
 
+/**
+ * @brief Task 4: Logging and status reporting
+ * @param t Pointer to the executing task's TCB
+ */
 void logging(Task* t) {
-    (void)t; // Unused parameter
+    (void)t;
     log_message("[Logger] System monitoring cycle complete.\n");
     printf("✓ Monitoring cycle complete\n");
 }
 
+/**
+ * @brief Initialize scheduler data structures
+ * 
+ * Clears priority queues, task lists, and initializes the global scheduler lock.
+ */
 void init_scheduler() {
+    clear_priority_queues();
     for (int i = 0; i < MAX_PRIORITY; ++i) {
-        priority_queues[i] = NULL;
+        tasks_list[i] = NULL;
     }
     current_running_task = NULL;
     pthread_mutex_init(&scheduler_lock, NULL);
@@ -285,6 +512,7 @@ int main() {
     pthread_mutex_init(&tasks[0]->lock, NULL);
     pthread_cond_init(&tasks[0]->cond, NULL);
     tasks[0]->task_func = system_fetch;
+    tasks_list[0] = tasks[0];
     register_task(tasks[0]);
 
     tasks[1] = malloc(sizeof(Task));
@@ -299,6 +527,7 @@ int main() {
     pthread_mutex_init(&tasks[1]->lock, NULL);
     pthread_cond_init(&tasks[1]->cond, NULL);
     tasks[1]->task_func = ethernet_fetch;
+    tasks_list[1] = tasks[1];
     register_task(tasks[1]);
 
     tasks[2] = malloc(sizeof(Task));
@@ -313,6 +542,7 @@ int main() {
     pthread_mutex_init(&tasks[2]->lock, NULL);
     pthread_cond_init(&tasks[2]->cond, NULL);
     tasks[2]->task_func = analyze_data;
+    tasks_list[2] = tasks[2];
     register_task(tasks[2]);
 
     tasks[3] = malloc(sizeof(Task));
@@ -327,6 +557,7 @@ int main() {
     pthread_mutex_init(&tasks[3]->lock, NULL);
     pthread_cond_init(&tasks[3]->cond, NULL);
     tasks[3]->task_func = logging;
+    tasks_list[3] = tasks[3];
     register_task(tasks[3]);
 
     // Start threads
@@ -342,10 +573,17 @@ int main() {
         if (!VERBOSE_MODE && tick_count % 5 == 1) {
             printf("\n[Tick %d] Scheduler running...\n", tick_count);
         }
+
+        // Print a clear snapshot each tick
+        print_tick_status(tick_count);
+
+        // Apply any priority overrides from UI
+        apply_priority_overrides();
         
         // Check each task's readiness based on interval
         for (int i = 0; i < MAX_PRIORITY; ++i) {
-            Task* t = tasks[i];
+            Task* t = tasks_list[i];
+            if (!t) { continue; }
             time_t now = time(NULL);
             
             // If task completed its quantum or waiting for interval, make it READY
