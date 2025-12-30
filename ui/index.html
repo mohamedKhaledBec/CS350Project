@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time System Monitor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            color: #1e3c72;
+            font-size: 2.5em;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .status-indicator {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #10b981;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .refresh-info {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .metric-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .metric-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .metric-icon {
+            font-size: 2em;
+        }
+
+        .metric-title {
+            font-size: 1.1em;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .metric-value {
+            font-size: 3em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .metric-bar {
+            height: 10px;
+            background: #e5e7eb;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .metric-fill {
+            height: 100%;
+            transition: width 0.5s ease, background 0.3s ease;
+            border-radius: 10px;
+        }
+
+        .cpu { color: #3b82f6; }
+        .cpu-bar { background: #3b82f6; }
+        .ram { color: #8b5cf6; }
+        .ram-bar { background: #8b5cf6; }
+        .disk { color: #ec4899; }
+        .disk-bar { background: #ec4899; }
+        .network { color: #10b981; }
+        .network-bar { background: #10b981; }
+
+        .alerts-section {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .alert-item {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .alert-message {
+            font-weight: 600;
+            color: #991b1b;
+        }
+
+        .alert-time {
+            font-size: 0.85em;
+            color: #666;
+        }
+
+        .no-alerts {
+            text-align: center;
+            color: #10b981;
+            padding: 30px;
+            font-size: 1.2em;
+        }
+
+        .chart-container {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            margin-bottom: 25px;
+        }
+
+        .chart {
+            height: 300px;
+            display: flex;
+            align-items: flex-end;
+            gap: 15px;
+            padding: 20px 0;
+        }
+
+        .bar {
+            flex: 1;
+            background: linear-gradient(to top, #3b82f6, #60a5fa);
+            border-radius: 8px 8px 0 0;
+            min-height: 20px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .bar:hover {
+            opacity: 0.8;
+        }
+
+        .bar-label {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.75em;
+            color: #666;
+            white-space: nowrap;
+        }
+
+        .controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            background: white;
+            color: #1e3c72;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .tasks-section {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .task-item {
+            background: #f9fafb;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .task-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .priority-badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+
+        .priority-0 { background: #fee2e2; color: #991b1b; }
+        .priority-1 { background: #fef3c7; color: #92400e; }
+        .priority-2 { background: #dbeafe; color: #1e40af; }
+        .priority-3 { background: #d1fae5; color: #065f46; }
+
+        .task-status {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+
+        .status-running { background: #d1fae5; color: #065f46; }
+        .status-ready { background: #fef3c7; color: #92400e; }
+        .status-idle { background: #e5e7eb; color: #4b5563; }
+        .status-preempted { background: #fee2e2; color: #991b1b; }
+
+        @media (max-width: 768px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>
+                <span class="status-indicator"></span>
+                Real-Time System Monitor
+            </h1>
+            <div class="refresh-info">
+                Auto-refresh: <strong>5s</strong><br>
+                Last update: <span id="lastUpdate">--:--:--</span>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="btn" onclick="refreshData()">🔄 Refresh Now</button>
+            <button class="btn" onclick="toggleAutoRefresh()">⏸️ Pause Auto-Refresh</button>
+            <button class="btn" onclick="exportData()">📊 Export Report</button>
+        </div>
+
+        <div class="dashboard">
+            <div class="metric-card">
+                <div class="metric-header">
+                    <span class="metric-icon">💻</span>
+                    <span class="metric-title">CPU Usage</span>
+                </div>
+                <div class="metric-value cpu" id="cpuValue">--%</div>
+                <div class="metric-bar">
+                    <div class="metric-fill cpu-bar" id="cpuBar" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-header">
+                    <span class="metric-icon">🧠</span>
+                    <span class="metric-title">RAM Usage</span>
+                </div>
+                <div class="metric-value ram" id="ramValue">--%</div>
+                <div class="metric-bar">
+                    <div class="metric-fill ram-bar" id="ramBar" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-header">
+                    <span class="metric-icon">💾</span>
+                    <span class="metric-title">Disk Usage</span>
+                </div>
+                <div class="metric-value disk" id="diskValue">--%</div>
+                <div class="metric-bar">
+                    <div class="metric-fill disk-bar" id="diskBar" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-header">
+                    <span class="metric-icon">🌐</span>
+                    <span class="metric-title">Network Packets</span>
+                </div>
+                <div class="metric-value network" id="networkValue">--</div>
+                <div class="metric-bar">
+                    <div class="metric-fill network-bar" id="networkBar" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tasks-section">
+            <h2 class="section-title">🔧 Active Tasks</h2>
+            <div id="tasksList">
+                <div class="task-item">
+                    <div class="task-info">
+                        <span class="priority-badge priority-0">Priority 0</span>
+                        <span><strong>Task 1:</strong> System Monitor</span>
+                    </div>
+                    <span class="task-status status-idle">IDLE</span>
+                </div>
+                <div class="task-item">
+                    <div class="task-info">
+                        <span class="priority-badge priority-1">Priority 1</span>
+                        <span><strong>Task 2:</strong> Ethernet Fetch</span>
+                    </div>
+                    <span class="task-status status-idle">IDLE</span>
+                </div>
+                <div class="task-item">
+                    <div class="task-info">
+                        <span class="priority-badge priority-2">Priority 2</span>
+                        <span><strong>Task 3:</strong> Analyzer</span>
+                    </div>
+                    <span class="task-status status-idle">IDLE</span>
+                </div>
+                <div class="task-item">
+                    <div class="task-info">
+                        <span class="priority-badge priority-3">Priority 3</span>
+                        <span><strong>Task 4:</strong> Logging</span>
+                    </div>
+                    <span class="task-status status-idle">IDLE</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h2 class="section-title">📈 CPU History (Last 20 Samples)</h2>
+            <div class="chart" id="cpuChart"></div>
+        </div>
+
+        <div class="alerts-section">
+            <h2 class="section-title">⚠️ Recent Alerts</h2>
+            <div id="alertsList">
+                <div class="no-alerts">✓ No alerts - All systems operational</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let autoRefresh = true;
+        let refreshInterval;
+        let cpuHistory = [];
+        const MAX_HISTORY = 20;
+
+        // Fetch real system data from JSON export
+        async function fetchSystemData() {
+            try {
+                const response = await fetch('metrics.json');
+                if (!response.ok) {
+                    throw new Error('Metrics file not found');
+                }
+                const data = await response.json();
+                
+                return {
+                    cpu: data.metrics.cpu,
+                    ram: data.metrics.ram,
+                    disk: data.metrics.disk,
+                    packets: data.metrics.packets,
+                    timestamp: data.timestamp,
+                    alerts: data.alerts || []
+                };
+            } catch (error) {
+                console.warn('Could not fetch real metrics, using simulated data:', error);
+                // Fallback to simulated data
+                return {
+                    cpu: Math.random() * 100,
+                    ram: Math.random() * 100,
+                    disk: Math.random() * 100,
+                    packets: Math.floor(Math.random() * 20),
+                    timestamp: new Date().toLocaleTimeString(),
+                    alerts: []
+                };
+            }
+        }
+
+        async function updateMetrics() {
+            const data = await fetchSystemData();
+            
+            // Update CPU
+            document.getElementById('cpuValue').textContent = data.cpu.toFixed(1) + '%';
+            document.getElementById('cpuBar').style.width = data.cpu + '%';
+            
+            // Update RAM
+            document.getElementById('ramValue').textContent = data.ram.toFixed(1) + '%';
+            document.getElementById('ramBar').style.width = data.ram + '%';
+            
+            // Update Disk
+            document.getElementById('diskValue').textContent = data.disk.toFixed(1) + '%';
+            document.getElementById('diskBar').style.width = data.disk + '%';
+            
+            // Update Network
+            document.getElementById('networkValue').textContent = data.packets;
+            const networkPercent = (data.packets / 20) * 100;
+            document.getElementById('networkBar').style.width = networkPercent + '%';
+            
+            // Update timestamp
+            const displayTime = data.timestamp.includes(':') ? 
+                data.timestamp.split(' ')[1] || data.timestamp : 
+                new Date().toLocaleTimeString();
+            document.getElementById('lastUpdate').textContent = displayTime;
+            
+            // Update CPU history chart
+            cpuHistory.push(data.cpu);
+            if (cpuHistory.length > MAX_HISTORY) {
+                cpuHistory.shift();
+            }
+            updateChart();
+            
+            // Update alerts
+            updateAlerts(data.alerts);
+        }
+
+        function updateChart() {
+            const chart = document.getElementById('cpuChart');
+            chart.innerHTML = '';
+            
+            const maxValue = Math.max(...cpuHistory, 100);
+            
+            cpuHistory.forEach((value, index) => {
+                const bar = document.createElement('div');
+                bar.className = 'bar';
+                const height = (value / maxValue) * 100;
+                bar.style.height = height + '%';
+                
+                const label = document.createElement('div');
+                label.className = 'bar-label';
+                label.textContent = Math.round(value) + '%';
+                bar.appendChild(label);
+                
+                chart.appendChild(bar);
+            });
+        }
+
+        function updateAlerts(alerts) {
+            const alertsList = document.getElementById('alertsList');
+            
+            if (!alerts || alerts.length === 0) {
+                alertsList.innerHTML = '<div class="no-alerts">✓ No alerts - All systems operational</div>';
+            } else {
+                alertsList.innerHTML = alerts.map(alert => `
+                    <div class="alert-item">
+                        <div class="alert-message">${alert.message}</div>
+                        <div class="alert-time">${alert.time}</div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function refreshData() {
+            updateMetrics();
+        }
+
+        function toggleAutoRefresh() {
+            autoRefresh = !autoRefresh;
+            const btn = event.target;
+            
+            if (autoRefresh) {
+                btn.textContent = '⏸️ Pause Auto-Refresh';
+                startAutoRefresh();
+            } else {
+                btn.textContent = '▶️ Resume Auto-Refresh';
+                clearInterval(refreshInterval);
+            }
+        }
+
+        function startAutoRefresh() {
+            refreshInterval = setInterval(updateMetrics, 5000);
+        }
+
+        function exportData() {
+            window.open('../logs/system_report.html', '_blank');
+        }
+
+        // Initialize
+        updateMetrics();
+        startAutoRefresh();
+
+        console.log('Real-Time System Monitor UI loaded');
+        console.log('Fetching data from metrics.json');
+        console.log('To update metrics, run: make export-metrics');
+        console.log('To generate HTML report, run: make generate-report');
+    </script>
+</body>
+</html>
