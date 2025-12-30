@@ -24,8 +24,10 @@
 #include <time.h>
 #include <unistd.h>
 #include <sys/statvfs.h>
+#include <sys/stat.h>
 #include <libgen.h>
 #include <linux/limits.h>
+#include <errno.h>
 
 /* ============================================================================
  *                              CONSTANTS
@@ -101,14 +103,19 @@ static void init_paths(void) {
     
     if (len != -1) {
         exe_path[len] = '\0';
+        /* Executable is in build/, go up one level to project root */
         char* dir = dirname(exe_path);
         char* parent = dirname(dir);
         strncpy(g_project_root, parent, PATH_MAX - 1);
     } else {
+        /* Fallback: use current working directory */
         if (getcwd(g_project_root, sizeof(g_project_root)) == NULL) {
             strncpy(g_project_root, ".", PATH_MAX - 1);
         }
     }
+    
+    /* Debug: print resolved path */
+    fprintf(stderr, "[DEBUG] Project root resolved to: %s\n", g_project_root);
 }
 
 /*
@@ -298,6 +305,7 @@ static void write_html_header(FILE* html, const char* timestamp) {
         "<html lang=\"en\">\n"
         "<head>\n"
         "    <meta charset=\"UTF-8\">\n"
+        "    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n"
         "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
         "    <title>System Monitor Report - %s</title>\n"
         "    <style>\n"
@@ -640,10 +648,16 @@ static void write_html_content(FILE* html, SystemMetrics* metrics,
  * Main function to generate the complete HTML report.
  */
 static void generate_report(const char* output_file) {
+    /* Ensure logs directory exists */
+    char logs_dir[PATH_MAX];
+    snprintf(logs_dir, sizeof(logs_dir), "%s/logs", g_project_root);
+    mkdir(logs_dir, 0755);
+    
     FILE* html = fopen(output_file, "w");
     if (!html) {
-        fprintf(stderr, "%s[ERROR]%s Cannot create report: %s%s\n", 
-                "\033[1;31m", CLR_WHITE, output_file, CLR_RESET);
+        fprintf(stderr, "%s[ERROR]%s Cannot create report: %s (errno: %d)%s\n", 
+                "\033[1;31m", CLR_WHITE, output_file, errno, CLR_RESET);
+        perror("fopen");
         return;
     }
     

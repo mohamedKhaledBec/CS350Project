@@ -14,17 +14,41 @@ mkdir -p "$PROJECT_DIR/logs"
 # Capture network packets without prompting for sudo install
 echo "Fetching network data at $(date)"
 
-if command -v tcpdump >/dev/null 2>&1 && sudo -n true >/dev/null 2>&1; then
-    echo "Running tcpdump for 5 seconds..."
-    sudo timeout 5 tcpdump -n -i any -c 10 2>/dev/null | tee "$PROJECT_DIR/logs/netdump.log"
-    echo "Network data captured at $(date)" | tee -a "$PROJECT_DIR/data/ethernet_data.txt"
-    cat "$PROJECT_DIR/logs/netdump.log" >> "$PROJECT_DIR/data/ethernet_data.txt"
-    echo "Data saved to: $PROJECT_DIR/data/ethernet_data.txt"
-else
-    echo "tcpdump unavailable or sudo not cached; writing interface stats instead." | tee "$PROJECT_DIR/logs/netdump.log"
-    ip -s link 2>/dev/null | tee -a "$PROJECT_DIR/logs/netdump.log"
-    echo "Interface stats captured at $(date)" | tee -a "$PROJECT_DIR/data/ethernet_data.txt"
-    cat "$PROJECT_DIR/logs/netdump.log" >> "$PROJECT_DIR/data/ethernet_data.txt"
-fi
+# Get packet counts from /proc/net/dev (always available, no sudo needed)
+total_rx=0
+total_tx=0
+
+while read -r line; do
+    # Skip header lines and loopback
+    if [[ "$line" == *"Inter-"* ]] || [[ "$line" == *"face"* ]] || [[ "$line" == *"lo:"* ]]; then
+        continue
+    fi
+    # Parse: interface: rx_bytes rx_packets ... tx_bytes tx_packets
+    if [[ "$line" =~ ^[[:space:]]*([^:]+):[[:space:]]*([0-9]+)[[:space:]]+([0-9]+) ]]; then
+        rx_packets=$(echo "$line" | awk '{print $3}')
+        tx_packets=$(echo "$line" | awk '{print $11}')
+        total_rx=$((total_rx + rx_packets))
+        total_tx=$((total_tx + tx_packets))
+    fi
+done < /proc/net/dev
+
+total_packets=$((total_rx + total_tx))
+
+# Save metrics in parseable format
+{
+    echo "=== NETWORK METRICS ==="
+    echo "TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')"
+    echo "RX_PACKETS=$total_rx"
+    echo "TX_PACKETS=$total_tx"
+    echo "TOTAL_PACKETS=$total_packets"
+} > "$PROJECT_DIR/logs/network_metrics.log"
+
+echo "RX Packets: $total_rx"
+echo "TX Packets: $total_tx"
+echo "Total: $total_packets"
+
+# Also save detailed interface stats
+ip -s link 2>/dev/null > "$PROJECT_DIR/logs/netdump.log"
+echo "Network data captured at $(date)" >> "$PROJECT_DIR/data/ethernet_data.txt"
 
 echo "Network fetch completed."

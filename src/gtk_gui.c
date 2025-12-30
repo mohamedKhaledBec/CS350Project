@@ -1,18 +1,25 @@
 /*
  * ============================================================================
- * File:        gtk_gui.c
+ * File:        gtk_gui.c (Main GUI + Scheduler)
  * Project:     CS350 Real-Time System Monitor
- * Description: GTK3 Graphical User Interface
+ * Description: GTK3 GUI with integrated preemptive priority scheduler
  * Author:      CS350 Student Project
  * Date:        2024
  * ============================================================================
  * 
+ * This is the MAIN application that runs both the GUI and scheduler.
+ * Uses the same scheduling logic as scheduler.c:
+ *   - Preemptive priority scheduling (lower number = higher priority)
+ *   - Tasks run when their interval elapses
+ *   - Highest priority ready task runs first
+ *   - Starvation detection with suggested fixes
+ * 
  * Features:
  *   - Real-time system metrics (CPU, RAM, Disk, Network)
- *   - Scheduler task control with priority/interval adjustment
- *   - Starvation warning indicators
+ *   - Integrated task scheduler (executes same scripts as scheduler.c)
+ *   - Starvation detection with suggested priority/interval values
  *   - Modern dark theme with color-coded visual feedback
- *   - System performance monitoring via /proc filesystem
+ *   - Live task execution tracking
  * 
  * Build:
  *   gcc -o gtk_gui gtk_gui.c $(pkg-config --cflags --libs gtk+-3.0)
@@ -26,7 +33,6 @@
 #include <string.h>
 #include <time.h>
 #include <unistd.h>
-#include <sys/statvfs.h>
 
 /* ============================================================================
  *                              CONSTANTS
@@ -102,144 +108,239 @@ static const char* TASK_NAMES[NUM_TASKS] = {
     "Report Generator"
 };
 
-static const int DEFAULT_INTERVALS[NUM_TASKS] = {5, 10, 15, 10};
+/* Default intervals and priorities - MUST match scheduler.c */
+/* P3 = highest priority, P0 = lowest priority */
+static const int DEFAULT_INTERVALS[NUM_TASKS] = {5, 10, 15, 25};
+static const int DEFAULT_PRIORITIES[NUM_TASKS] = {3, 2, 1, 2};
 
 /* ============================================================================
  *                         SYSTEM METRICS FUNCTIONS
  * ============================================================================ */
 
+/* Cached metrics from log files */
+static double g_cached_cpu = 0.0;
+static double g_cached_ram = 0.0;
+static double g_cached_disk = 0.0;
+static int g_cached_packets = 0;
+
 /*
- * get_cpu_usage()
- * Reads /proc/stat to calculate current CPU usage percentage.
- * Uses delta between readings for accurate measurement.
+ * read_metrics_from_log()
+ * Reads system metrics from logs/system_metrics.log (written by monitor_scheduler.sh)
  */
-static double get_cpu_usage(void) {
-    static long prev_idle = 0;
-    static long prev_total = 0;
+static void read_metrics_from_log(void) {
+    FILE* fp = fopen("logs/system_metrics.log", "r");
+    if (!fp) return;
     
-    FILE* fp = fopen("/proc/stat", "r");
-    if (!fp) return 0.0;
-    
-    char buffer[256];
-    if (fgets(buffer, sizeof(buffer), fp) == NULL) {
-        fclose(fp);
-        return 0.0;
+    char line[256];
+    while (fgets(line, sizeof(line), fp)) {
+        double value;
+        if (sscanf(line, "CPU=%lf", &value) == 1) {
+            g_cached_cpu = value;
+        } else if (sscanf(line, "RAM=%lf", &value) == 1) {
+            g_cached_ram = value;
+        } else if (sscanf(line, "DISK=%lf", &value) == 1) {
+            g_cached_disk = value;
+        }
     }
     fclose(fp);
-    
-    long user, nice, system, idle, iowait, irq, softirq;
-    if (sscanf(buffer, "cpu %ld %ld %ld %ld %ld %ld %ld",
-               &user, &nice, &system, &idle, &iowait, &irq, &softirq) != 7) {
-        return 0.0;
-    }
-    
-    long total = user + nice + system + idle + iowait + irq + softirq;
-    long total_idle = idle + iowait;
-    
-    /* First reading - no delta available */
-    if (prev_total == 0) {
-        prev_idle = total_idle;
-        prev_total = total;
-        return 0.0;
-    }
-    
-    long diff_total = total - prev_total;
-    long diff_idle = total_idle - prev_idle;
-    
-    prev_idle = total_idle;
-    prev_total = total;
-    
-    if (diff_total == 0) return 0.0;
-    return (100.0 * (diff_total - diff_idle)) / diff_total;
 }
 
 /*
- * get_ram_usage()
- * Reads /proc/meminfo to calculate RAM usage percentage.
+ * read_network_from_log()
+ * Reads packet count from logs/network_metrics.log (written by ethernet_fetch.sh)
  */
-static double get_ram_usage(void) {
-    FILE* fp = fopen("/proc/meminfo", "r");
-    if (!fp) return 0.0;
+static long g_prev_total_packets = 0;
+static time_t g_prev_network_time = 0;
+
+static void read_network_from_log(void) {
+    FILE* fp = fopen("logs/network_metrics.log", "r");
+    if (!fp) return;
     
-    long total = 0, available = 0;
     char line[256];
+    long total_packets = 0;
     
     while (fgets(line, sizeof(line), fp)) {
-        if (strncmp(line, "MemTotal:", 9) == 0) {
-            sscanf(line, "MemTotal: %ld kB", &total);
-        } else if (strncmp(line, "MemAvailable:", 13) == 0) {
-            sscanf(line, "MemAvailable: %ld kB", &available);
+        if (sscanf(line, "TOTAL_PACKETS=%ld", &total_packets) == 1) {
             break;
         }
     }
     fclose(fp);
     
-    if (total == 0) return 0.0;
-    return ((double)(total - available) / total) * 100.0;
+    /* Calculate packets per second since last reading */
+    time_t now = time(NULL);
+    if (g_prev_network_time > 0 && g_prev_total_packets > 0) {
+        long time_delta = (long)(now - g_prev_network_time);
+        if (time_delta > 0) {
+            long packet_delta = total_packets - g_prev_total_packets;
+            if (packet_delta >= 0) {
+                g_cached_packets = (int)(packet_delta / time_delta);
+            }
+        }
+    }
+    
+    g_prev_total_packets = total_packets;
+    g_prev_network_time = now;
+}
+
+/*
+ * get_cpu_usage()
+ * Returns CPU usage from cached metrics (read from bash script output)
+ */
+static double get_cpu_usage(void) {
+    return g_cached_cpu;
+}
+
+/*
+ * get_ram_usage()
+ * Returns RAM usage from cached metrics (read from bash script output)
+ */
+static double get_ram_usage(void) {
+    return g_cached_ram;
 }
 
 /*
  * get_disk_usage()
- * Uses statvfs() to get root filesystem usage percentage.
+ * Returns disk usage from cached metrics (read from bash script output)
  */
 static double get_disk_usage(void) {
-    struct statvfs stat;
-    if (statvfs("/", &stat) != 0) return 0.0;
-    
-    unsigned long total = stat.f_blocks * stat.f_frsize;
-    unsigned long available = stat.f_bavail * stat.f_frsize;
-    
-    if (total == 0) return 0.0;
-    return ((double)(total - available) / total) * 100.0;
+    return g_cached_disk;
 }
 
 /*
  * get_network_packets()
- * Reads /proc/net/dev to get network packet counts.
+ * Returns packet count from cached metrics (read from bash script output)
  */
-static long g_prev_packet_count = 0;
-static time_t g_prev_packet_time = 0;
-
 static int get_network_packets(void) {
-    FILE* fp = fopen("/proc/net/dev", "r");
-    if (!fp) return 0;
+    return g_cached_packets;
+}
+
+/* ============================================================================
+ *                           TASK EXECUTION
+ * ============================================================================ */
+
+/* Task tracking - initialized to -1 to indicate "never run" */
+static time_t g_task_last_run[NUM_TASKS] = {-1, -1, -1, -1};
+static time_t g_task_last_completed[NUM_TASKS] = {-1, -1, -1, -1};
+static int g_task_exec_count[NUM_TASKS] = {0};
+static int g_scheduler_initialized = 0;
+
+/*
+ * init_scheduler()
+ * Initialize task execution times to current time
+ */
+static void init_scheduler(void) {
+    if (g_scheduler_initialized) return;
     
-    char line[256];
-    long total_packets = 0;
-    
-    /* Skip header lines */
-    if (fgets(line, sizeof(line), fp) == NULL) { fclose(fp); return 0; }
-    if (fgets(line, sizeof(line), fp) == NULL) { fclose(fp); return 0; }
-    
-    while (fgets(line, sizeof(line), fp)) {
-        /* Skip loopback interface */
-        if (strstr(line, "lo:")) continue;
-        
-        char iface[32];
-        long rx_packets, tx_packets;
-        if (sscanf(line, "%[^:]: %*d %ld %*d %*d %*d %*d %*d %*d %*d %ld",
-                   iface, &rx_packets, &tx_packets) >= 2) {
-            total_packets += (rx_packets + tx_packets);
-        }
-    }
-    fclose(fp);
-    
-    /* Calculate packets per second */
     time_t now = time(NULL);
-    int packets_per_sec = 0;
+    for (int i = 0; i < NUM_TASKS; i++) {
+        /* Stagger initial ready times so tasks don't all fire at once */
+        g_task_last_run[i] = now;
+        g_task_last_completed[i] = now;
+    }
+    g_scheduler_initialized = 1;
+}
+
+/*
+ * execute_task_system_monitor()
+ * Same as scheduler: runs monitor_scheduler.sh
+ * Script writes to: logs/system_report.log
+ */
+static void execute_task_system_monitor(void) {
+    g_task_last_run[0] = time(NULL);
+    system("bash scripts/monitor_scheduler.sh");
+    g_task_last_completed[0] = time(NULL);
+    g_task_exec_count[0]++;
+}
+
+/*
+ * execute_task_network_fetch()
+ * Same as scheduler: runs ethernet_fetch.sh
+ * Script writes to: logs/netdump.log, data/ethernet_data.txt
+ */
+static void execute_task_network_fetch(void) {
+    g_task_last_run[1] = time(NULL);
+    system("bash scripts/ethernet_fetch.sh");
+    g_task_last_completed[1] = time(NULL);
+    g_task_exec_count[1]++;
+}
+
+/*
+ * execute_task_analyzer()
+ * Same as scheduler: runs analyze executable
+ * Program writes to: logs/analysis_report.log, logs/alerts.log
+ */
+static void execute_task_analyzer(void) {
+    g_task_last_run[2] = time(NULL);
+    system("./build/analyze 50.0 60.0 75.0 logs/netdump.log");
+    g_task_last_completed[2] = time(NULL);
+    g_task_exec_count[2]++;
+}
+
+/*
+ * execute_task_reporter()
+ * Same as scheduler: runs report_generator executable
+ * Program writes to: logs/system_report.html
+ */
+static void execute_task_reporter(void) {
+    g_task_last_run[3] = time(NULL);
+    if (access("./build/report_generator", F_OK) == 0) {
+        system("./build/report_generator");
+        g_task_last_completed[3] = time(NULL);
+        g_task_exec_count[3]++;
+    }
+}
+
+/* Function pointers array (same pattern as scheduler) */
+typedef void (*TaskFunc)(void);
+static TaskFunc g_task_functions[NUM_TASKS] = {
+    execute_task_system_monitor,
+    execute_task_network_fetch,
+    execute_task_analyzer,
+    execute_task_reporter
+};
+
+/*
+ * scheduler_tick()
+ * Executes ALL ready tasks in priority order (preemptive priority scheduling)
+ * All ready tasks execute each tick, highest priority first
+ */
+static void scheduler_tick(TaskRow tasks[], int count) {
+    /* Initialize scheduler on first call */
+    init_scheduler();
     
-    if (g_prev_packet_time > 0) {
-        long time_delta = (long)(now - g_prev_packet_time);
-        if (time_delta > 0) {
-            long packet_delta = total_packets - g_prev_packet_count;
-            packets_per_sec = (int)(packet_delta / time_delta);
+    time_t now = time(NULL);
+    
+    /* Build list of ready tasks sorted by priority */
+    int ready_tasks[NUM_TASKS];
+    int ready_count = 0;
+    
+    for (int i = 0; i < count; i++) {
+        /* Check if task interval has elapsed */
+        double elapsed = difftime(now, g_task_last_run[i]);
+        if (elapsed >= tasks[i].interval) {
+            ready_tasks[ready_count++] = i;
         }
     }
     
-    g_prev_packet_count = total_packets;
-    g_prev_packet_time = now;
+    /* Sort ready tasks by priority (bubble sort - small array) */
+    /* Higher priority NUMBER = higher priority (P3 > P2 > P1 > P0) */
+    for (int i = 0; i < ready_count - 1; i++) {
+        for (int j = 0; j < ready_count - i - 1; j++) {
+            if (tasks[ready_tasks[j]].priority < tasks[ready_tasks[j+1]].priority) {
+                int tmp = ready_tasks[j];
+                ready_tasks[j] = ready_tasks[j+1];
+                ready_tasks[j+1] = tmp;
+            }
+        }
+    }
     
-    return packets_per_sec;
+    /* Execute ALL ready tasks in priority order */
+    for (int i = 0; i < ready_count; i++) {
+        int task_idx = ready_tasks[i];
+        if (task_idx >= 0 && task_idx < NUM_TASKS) {
+            g_task_functions[task_idx]();
+        }
+    }
 }
 
 /* ============================================================================
@@ -251,12 +352,12 @@ static int get_network_packets(void) {
  * Loads task priorities and intervals from config files.
  */
 static void load_task_config(TaskRow tasks[], int count) {
-    /* Initialize defaults */
+    /* Initialize defaults - MUST match scheduler.c defaults */
     for (int i = 0; i < count; i++) {
         tasks[i].id = i + 1;
         strncpy(tasks[i].name, TASK_NAMES[i], sizeof(tasks[i].name) - 1);
         tasks[i].name[sizeof(tasks[i].name) - 1] = '\0';
-        tasks[i].priority = i;  /* Default: task 1 has priority 0 (highest) */
+        tasks[i].priority = DEFAULT_PRIORITIES[i];  /* Use same defaults as scheduler */
         tasks[i].interval = DEFAULT_INTERVALS[i];
         tasks[i].last_run = 0;
         tasks[i].spin_priority = NULL;
@@ -376,28 +477,50 @@ static const char* check_starvation_risk(AppWidgets* widgets, int changed_task, 
 
 /*
  * update_starvation_indicators()
- * Updates visual indicators for task starvation status.
+ * Updates visual indicators for task starvation status based on actual execution.
+ * Suggests recommended priority/interval when starving.
+ * Note: Higher priority NUMBER = HIGHER priority (P3 is highest, P0 is lowest)
  */
 static void update_starvation_indicators(AppWidgets* widgets) {
+    time_t now = time(NULL);
+    
     for (int i = 0; i < NUM_TASKS; i++) {
         if (widgets->tasks[i].status_label == NULL) continue;
         
-        /* Simulate last_run increment (in real system, read from scheduler) */
-        widgets->tasks[i].last_run++;
-        
-        /* Reset on simulated execution based on priority */
-        if (widgets->update_count % (widgets->tasks[i].interval + 
-            widgets->tasks[i].priority * 2) == 0) {
-            widgets->tasks[i].last_run = 0;
+        /* Calculate seconds since last completion */
+        int since_last_run;
+        if (g_task_last_completed[i] <= 0 || g_task_exec_count[i] == 0) {
+            /* Never run yet - check how long since scheduler started */
+            since_last_run = g_scheduler_initialized ? 
+                (int)difftime(now, g_task_last_run[i]) : 0;
+        } else {
+            since_last_run = (int)difftime(now, g_task_last_completed[i]);
         }
         
-        /* Update status label */
+        widgets->tasks[i].last_run = since_last_run;
+        
+        /* Update status label based on actual last_run time with suggestions */
         if (widgets->tasks[i].last_run >= STARVATION_THRESHOLD) {
-            gtk_label_set_markup(GTK_LABEL(widgets->tasks[i].status_label),
-                "<span foreground='#ef4444'>⚠ STARVING</span>");
+            /* Task is STARVING - suggest HIGHER priority (higher number) */
+            int suggested_priority = (widgets->tasks[i].priority < 3) ? widgets->tasks[i].priority + 1 : 3;
+            int suggested_interval = widgets->tasks[i].interval / 2;
+            if (suggested_interval < 5) suggested_interval = 5;
+            
+            gchar* starving_msg = g_strdup_printf(
+                "<span foreground='#ef4444'>⚠ STARVING</span>\n"
+                "<span foreground='#94a3b8' size='small'>↑ Priority to P%d or interval %ds</span>",
+                suggested_priority, suggested_interval);
+            gtk_label_set_markup(GTK_LABEL(widgets->tasks[i].status_label), starving_msg);
+            g_free(starving_msg);
         } else if (widgets->tasks[i].last_run >= STARVATION_THRESHOLD / 2) {
-            gtk_label_set_markup(GTK_LABEL(widgets->tasks[i].status_label),
-                "<span foreground='#f59e0b'>○ At Risk</span>");
+            /* Task is AT RISK - suggest higher priority */
+            int suggested_priority = (widgets->tasks[i].priority < 3) ? widgets->tasks[i].priority + 1 : 3;
+            gchar* risk_msg = g_strdup_printf(
+                "<span foreground='#f59e0b'>○ At Risk</span>\n"
+                "<span foreground='#94a3b8' size='small'>↑ Priority to P%d</span>",
+                suggested_priority);
+            gtk_label_set_markup(GTK_LABEL(widgets->tasks[i].status_label), risk_msg);
+            g_free(risk_msg);
         } else {
             gtk_label_set_markup(GTK_LABEL(widgets->tasks[i].status_label),
                 "<span foreground='#22c55e'>● OK</span>");
@@ -494,12 +617,20 @@ static const char* get_status_color(double value, double warn, double crit) {
 /*
  * update_display()
  * Timer callback to refresh all GUI elements with current system metrics.
+ * Also runs scheduler tick to execute tasks.
  */
 static gboolean update_display(gpointer data) {
     AppWidgets* widgets = (AppWidgets*)data;
     widgets->update_count++;
     
-    /* Get current system metrics */
+    /* Run scheduler tick - executes tasks based on priority */
+    scheduler_tick(widgets->tasks, NUM_TASKS);
+    
+    /* Read metrics from log files (populated by bash scripts) */
+    read_metrics_from_log();
+    read_network_from_log();
+    
+    /* Get current system metrics from cached values */
     double cpu = get_cpu_usage();
     double ram = get_ram_usage();
     double disk = get_disk_usage();
@@ -546,25 +677,29 @@ static gboolean update_display(gpointer data) {
     /* Update starvation indicators */
     update_starvation_indicators(widgets);
     
-    /* Update task info display */
+    /* Update task info display with actual execution counts */
     gchar* task_info = g_strdup_printf(
-        "╔══════════════════════════════════════════════════════════╗\n"
-        "║  SCHEDULER TASK STATUS                                   ║\n"
-        "╠══════════════════════════════════════════════════════════╣\n"
-        "║  ID │ Task Name          │ Priority │ Interval │ Status ║\n"
-        "╠══════════════════════════════════════════════════════════╣\n"
-        "║  1  │ %-18s │    P%d    │   %3ds   │  %s   ║\n"
-        "║  2  │ %-18s │    P%d    │   %3ds   │  %s   ║\n"
-        "║  3  │ %-18s │    P%d    │   %3ds   │  %s   ║\n"
-        "║  4  │ %-18s │    P%d    │   %3ds   │  %s   ║\n"
-        "╚══════════════════════════════════════════════════════════╝",
+        "╔════════════════════════════════════════════════════════════════════╗\n"
+        "║  SCHEDULER TASK STATUS (Live Execution)                           ║\n"
+        "╠════════════════════════════════════════════════════════════════════╣\n"
+        "║  ID │ Task Name          │ Pri │ Int  │ Runs │ Last Run │ Status  ║\n"
+        "╠════════════════════════════════════════════════════════════════════╣\n"
+        "║  1  │ %-18s │ P%d  │ %3ds │ %4d │  %3ds    │   %s    ║\n"
+        "║  2  │ %-18s │ P%d  │ %3ds │ %4d │  %3ds    │   %s    ║\n"
+        "║  3  │ %-18s │ P%d  │ %3ds │ %4d │  %3ds    │   %s    ║\n"
+        "║  4  │ %-18s │ P%d  │ %3ds │ %4d │  %3ds    │   %s    ║\n"
+        "╚════════════════════════════════════════════════════════════════════╝",
         widgets->tasks[0].name, widgets->tasks[0].priority, widgets->tasks[0].interval,
+        g_task_exec_count[0], widgets->tasks[0].last_run,
         widgets->tasks[0].last_run < STARVATION_THRESHOLD/2 ? "OK" : "⚠",
         widgets->tasks[1].name, widgets->tasks[1].priority, widgets->tasks[1].interval,
+        g_task_exec_count[1], widgets->tasks[1].last_run,
         widgets->tasks[1].last_run < STARVATION_THRESHOLD/2 ? "OK" : "⚠",
         widgets->tasks[2].name, widgets->tasks[2].priority, widgets->tasks[2].interval,
+        g_task_exec_count[2], widgets->tasks[2].last_run,
         widgets->tasks[2].last_run < STARVATION_THRESHOLD/2 ? "OK" : "⚠",
         widgets->tasks[3].name, widgets->tasks[3].priority, widgets->tasks[3].interval,
+        g_task_exec_count[3], widgets->tasks[3].last_run,
         widgets->tasks[3].last_run < STARVATION_THRESHOLD/2 ? "OK" : "⚠"
     );
     gtk_text_buffer_set_text(widgets->tasks_buffer, task_info, -1);

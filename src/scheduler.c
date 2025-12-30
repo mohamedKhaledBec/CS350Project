@@ -416,8 +416,8 @@ static void rebuild_queues(void) {
 static void check_preemption(void) {
     if (!g_current_task) return;
     
-    /* Look for higher priority ready tasks */
-    for (int p = 0; p < g_current_task->priority; p++) {
+    /* Look for higher priority ready tasks (higher number = higher priority) */
+    for (int p = MAX_PRIORITY - 1; p > g_current_task->priority; p--) {
         Task* t = g_priority_queues[p];
         while (t) {
             if (t->state == TASK_READY) {
@@ -451,8 +451,8 @@ static void scheduler_tick(void) {
     
     check_preemption();
     
-    /* Find highest priority READY task */
-    for (int p = 0; p < MAX_PRIORITY; p++) {
+    /* Find highest priority READY task (P3 = highest, P0 = lowest) */
+    for (int p = MAX_PRIORITY - 1; p >= 0; p--) {
         Task* t = g_priority_queues[p];
         while (t) {
             if (t->state == TASK_READY) {
@@ -555,6 +555,27 @@ static void task_analyzer(Task* t) {
     (void)t;
     log_msg("[TASK] Analyzer running\n");
     system("./build/analyze 50.0 60.0 75.0 logs/netdump.log > /dev/null 2>&1");
+}
+
+static void task_reporter(Task* t) {
+    (void)t;
+    log_msg("[TASK] Report Generator running\n");
+    
+    /* Check if report_generator exists */
+    if (access("./build/report_generator", F_OK) != 0) {
+        log_msg("[ERROR] report_generator not found. Run 'make all' first.\n");
+        fprintf(stderr, "%s[ERROR]%s report_generator executable not found in build/\n", 
+                CLR_RED, CLR_RESET);
+        return;
+    }
+    
+    /* Run report generator and capture errors */
+    int ret = system("./build/report_generator 2>&1");
+    if (ret != 0) {
+        log_msg("[ERROR] report_generator failed with exit code %d\n", ret);
+    } else {
+        log_msg("[SUCCESS] Report generated successfully\n");
+    }
 }
 
 /* ============================================================================
@@ -660,11 +681,16 @@ static void scheduler_init(void) {
     
     printf("%s[INIT]%s Creating tasks...%s\n", CLR_GREEN, CLR_WHITE, CLR_RESET);
     
-    /* Create tasks with default configuration */
-    g_tasks[0] = create_task(1, TASK_NAMES[0], 0, 5,  task_system_monitor);
-    g_tasks[1] = create_task(2, TASK_NAMES[1], 1, 10, task_network_fetch);
-    g_tasks[2] = create_task(3, TASK_NAMES[2], 2, 15, task_analyzer);
-    g_tasks[3] = NULL;  /* Reporter removed - GUI handles display */
+    /* Create tasks with default configuration
+     * Priorities: P3 = highest, P0 = lowest
+     * - P3: System Monitor (highest, runs every 5s)
+     * - P2: Network Fetch & Report Generator (share priority)
+     * - P1: Analyzer (lower priority, less frequent)
+     */
+    g_tasks[0] = create_task(1, TASK_NAMES[0], 3, 5,  task_system_monitor);
+    g_tasks[1] = create_task(2, TASK_NAMES[1], 2, 10, task_network_fetch);
+    g_tasks[2] = create_task(3, TASK_NAMES[2], 1, 15, task_analyzer);
+    g_tasks[3] = create_task(4, TASK_NAMES[3], 2, 25, task_reporter);
     
     /* Register tasks in priority queues */
     for (int i = 0; i < MAX_TASKS; i++) {
