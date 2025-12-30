@@ -565,28 +565,34 @@ int main() {
         pthread_create(&threads[i], NULL, task_thread, tasks[i]);
     }
 
-    // Scheduler main loop - dispatcher runs continuously
+    /*========================================================================
+     *                         MAIN SCHEDULER LOOP
+     *=======================================================================*/
+    printf("Scheduler running. Press Ctrl+C to stop gracefully.\n\n");
     int tick_count = 0;
-    while (1) {
+    
+    while (g_running) {
         tick_count++;
         log_message("\n=== SCHEDULER TICK %d ===\n", tick_count);
+        
         if (!VERBOSE_MODE && tick_count % 5 == 1) {
             printf("\n[Tick %d] Scheduler running...\n", tick_count);
         }
 
-        // Print a clear snapshot each tick
+        /* Print task status snapshot */
         print_tick_status(tick_count);
 
-        // Apply any priority overrides from UI
+        /* Apply any priority/interval overrides from config files */
         apply_priority_overrides();
         
-        // Check each task's readiness based on interval
+        /* Check each task's readiness based on interval */
         for (int i = 0; i < MAX_PRIORITY; ++i) {
             Task* t = tasks_list[i];
-            if (!t) { continue; }
+            if (!t) continue;
+            
             time_t now = time(NULL);
             
-            // If task completed its quantum or waiting for interval, make it READY
+            /* Transition IDLE/PREEMPTED tasks to READY when interval expires */
             if (t->state == TASK_IDLE || t->state == TASK_PREEMPTED) {
                 if ((now - t->last_run) >= t->interval) {
                     pthread_mutex_lock(&t->lock);
@@ -597,24 +603,41 @@ int main() {
             }
         }
         
-        // Find highest priority READY task and give it CPU
+        /* Dispatch highest priority ready task */
         scheduler_tick();
         
-        sleep(2); // Main tick every 2 seconds
+        sleep(TIME_QUANTUM);  /* Main tick interval */
     }
 
-    // Cleanup (not reached)
-    if (log_file) {
-        fprintf(log_file, "\n=== SCHEDULER LOG END ===\n");
-        fclose(log_file);
-    }
+    /*========================================================================
+     *                           CLEANUP
+     *=======================================================================*/
+    printf("\nShutting down scheduler...\n");
+    log_message("\n=== SCHEDULER SHUTDOWN ===\n");
     
+    /* Cancel and join all task threads */
     for (int i = 0; i < MAX_PRIORITY; ++i) {
         pthread_cancel(threads[i]);
         pthread_join(threads[i], NULL);
+    }
+    
+    /* Destroy synchronization primitives and free memory */
+    for (int i = 0; i < MAX_PRIORITY; ++i) {
         pthread_mutex_destroy(&tasks[i]->lock);
+        pthread_cond_destroy(&tasks[i]->cond);
         free(tasks[i]);
     }
+    pthread_mutex_destroy(&scheduler_lock);
+    
+    /* Close log file */
+    if (log_file) {
+        fprintf(log_file, "\n=== SCHEDULER LOG END ===\n");
+        fprintf(log_file, "Total ticks: %d\n", tick_count);
+        fclose(log_file);
+        log_file = NULL;
+    }
+    
+    printf("Scheduler stopped. Total ticks: %d\n", tick_count);
     return 0;
 }
 

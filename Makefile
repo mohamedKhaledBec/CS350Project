@@ -1,7 +1,27 @@
+# ==============================================================================
+# CS350 Real-Time System Monitoring Project - Build System
+# ==============================================================================
+# A preemptive priority scheduler with live system monitoring for Linux
+# 
+# Main targets:
+#   make all           - Build all components
+#   make run           - Launch scheduler with UI selection menu
+#   make gui           - Launch GTK live monitor directly
+#   make ui            - Launch terminal UI directly
+#   make clean         - Remove build artifacts
+#   make help          - Show all available targets
+# ==============================================================================
+
 CC = gcc
-CFLAGS = -Wall -Wextra -pthread
+CFLAGS = -Wall -Wextra -Wpedantic -std=c11 -pthread -D_GNU_SOURCE
+CFLAGS_DEBUG = $(CFLAGS) -g -O0 -DDEBUG
+CFLAGS_RELEASE = $(CFLAGS) -O2
+
 BUILD_DIR = build
 LOGS_DIR = logs
+
+# Default to release build
+CFLAGS := $(CFLAGS_RELEASE)
 
 # Linux-only tooling
 RM = rm -rf $(BUILD_DIR)
@@ -9,9 +29,9 @@ RM_FILES = rm -f logs/*.log logs/*.html ui/metrics.json
 MKDIR = mkdir -p $(BUILD_DIR)
 MKDIR_LOGS = mkdir -p $(LOGS_DIR)
 
-all: setup $(BUILD_DIR) scheduler analyze report_generator metrics_exporter terminal_ui gtk_live
+all: setup $(BUILD_DIR) scheduler analyze report_generator metrics_exporter terminal_ui
+	@echo "Build complete. Optional: run 'make gtk_live' if GTK3 is installed."
 
-	@echo "make setup-sudo     - pre-cache sudo token (will prompt once)"
 $(BUILD_DIR):
 	$(MKDIR)
 
@@ -81,15 +101,35 @@ archive-loop:
 	@bash scripts/archive_loop.sh
 
 help:
-	@echo "CS350 Project - Make targets"
-	@echo "================================"
-	@echo "make all            - build everything (scheduler, UIs, analyzers)"
-	@echo "make run            - run scheduler (console)"
-	@echo "make gui            - launch GTK live monitor"
-	@echo "make ui             - launch terminal UI"
-	@echo "make export-metrics - emit metrics JSON for the web dashboard"
-	@echo "make generate-report- build HTML report (logging/report task)"
-	@echo "make clean          - remove build directory"
-	@echo "make clean-logs     - prune logs and generated HTML"
+	@echo ""
+	@echo "CS350 Real-Time System Monitoring Project"
+	@echo "=========================================="
+	@echo ""
+	@echo "Build Targets:"
+	@echo "  make all            - Build all core components"
+	@echo "  make debug          - Build with debug symbols"
+	@echo "  make gtk_live       - Build GTK GUI (requires gtk+-3.0)"
+	@echo ""
+	@echo "Run Targets:"
+	@echo "  make run            - Launch scheduler with UI menu"
+	@echo "  make gui            - Launch GTK live monitor"
+	@echo "  make ui             - Launch terminal UI"
+	@echo ""
+	@echo "Utility Targets:"
+	@echo "  make export-metrics - Export metrics to JSON"
+	@echo "  make generate-report- Generate HTML report"
+	@echo "  make archive-loop   - Start log archiver"
+	@echo "  make setup-sudo     - Pre-cache sudo credentials"
+	@echo ""
+	@echo "Cleanup Targets:"
+	@echo "  make clean          - Remove build directory"
+	@echo "  make clean-logs     - Remove generated logs"
+	@echo "  make reset          - Full cleanup (build + logs)"
+	@echo ""
 
-.PHONY: all clean clean-logs reset report_generator scheduler analyze monitor run ui gui export-metrics generate-report metrics_exporter terminal_ui gtk_live launch setup help setup-sudo archive-loop
+# Debug build target
+debug: CFLAGS := $(CFLAGS_DEBUG)
+debug: clean all
+	@echo "Debug build complete."
+
+.PHONY: all clean clean-logs reset report_generator scheduler analyze monitor run ui gui export-metrics generate-report metrics_exporter terminal_ui gtk_live launch setup help setup-sudo archive-loop debug

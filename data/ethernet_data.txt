@@ -3330,3 +3330,1151 @@ tcpdump unavailable or sudo not cached; writing interface stats instead.
         822973    1557      0       0       0     993 
     TX:  bytes packets errors dropped carrier collsns           
          44994     605      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:15:54 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         25752     256      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         25752     256      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        845281    1699      0       0       0    1071 
+    TX:  bytes packets errors dropped carrier collsns           
+         49026     669      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:15:56 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         25752     256      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         25752     256      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        845323    1700      0       0       0    1071 
+    TX:  bytes packets errors dropped carrier collsns           
+         49068     670      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:15:58 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         25752     256      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         25752     256      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        845323    1700      0       0       0    1071 
+    TX:  bytes packets errors dropped carrier collsns           
+         49068     670      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:16:06 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         25752     256      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         25752     256      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        845323    1700      0       0       0    1071 
+    TX:  bytes packets errors dropped carrier collsns           
+         49068     670      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:16:08 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         25752     256      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         25752     256      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        845323    1700      0       0       0    1071 
+    TX:  bytes packets errors dropped carrier collsns           
+         49068     670      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:16:10 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         25752     256      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         25752     256      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        845323    1700      0       0       0    1071 
+    TX:  bytes packets errors dropped carrier collsns           
+         49068     670      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:16:12 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         25752     256      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         25752     256      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        845323    1700      0       0       0    1071 
+    TX:  bytes packets errors dropped carrier collsns           
+         49068     670      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:16:14 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         25752     256      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         25752     256      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        845323    1700      0       0       0    1071 
+    TX:  bytes packets errors dropped carrier collsns           
+         49068     670      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:16:16 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         25752     256      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         25752     256      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        845323    1700      0       0       0    1071 
+    TX:  bytes packets errors dropped carrier collsns           
+         49068     670      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:16:22 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         25752     256      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         25752     256      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        845323    1700      0       0       0    1071 
+    TX:  bytes packets errors dropped carrier collsns           
+         49068     670      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:16:27 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         25752     256      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         25752     256      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        845413    1701      0       0       0    1071 
+    TX:  bytes packets errors dropped carrier collsns           
+         49158     671      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:16:29 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         25752     256      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         25752     256      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        845413    1701      0       0       0    1071 
+    TX:  bytes packets errors dropped carrier collsns           
+         49158     671      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:16:31 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         25752     256      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         25752     256      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        845455    1702      0       0       0    1071 
+    TX:  bytes packets errors dropped carrier collsns           
+         49200     672      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:16:33 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         25752     256      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         25752     256      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        845497    1703      0       0       0    1071 
+    TX:  bytes packets errors dropped carrier collsns           
+         49242     673      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:16:39 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         25752     256      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         25752     256      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        845497    1703      0       0       0    1071 
+    TX:  bytes packets errors dropped carrier collsns           
+         49242     673      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:16:41 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         25752     256      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         25752     256      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        845497    1703      0       0       0    1071 
+    TX:  bytes packets errors dropped carrier collsns           
+         49242     673      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:16:43 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         25752     256      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         25752     256      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        845497    1703      0       0       0    1071 
+    TX:  bytes packets errors dropped carrier collsns           
+         49242     673      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:16:45 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         25752     256      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         25752     256      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        845497    1703      0       0       0    1071 
+    TX:  bytes packets errors dropped carrier collsns           
+         49242     673      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:16:47 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         25752     256      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         25752     256      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        845497    1703      0       0       0    1071 
+    TX:  bytes packets errors dropped carrier collsns           
+         49242     673      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:16:49 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         25752     256      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         25752     256      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        845497    1703      0       0       0    1071 
+    TX:  bytes packets errors dropped carrier collsns           
+         49242     673      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:16:55 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         25752     256      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         25752     256      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        845497    1703      0       0       0    1071 
+    TX:  bytes packets errors dropped carrier collsns           
+         49242     673      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:16:57 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         25752     256      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         25752     256      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        845497    1703      0       0       0    1071 
+    TX:  bytes packets errors dropped carrier collsns           
+         49242     673      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:17:02 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         25752     256      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         25752     256      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        845587    1704      0       0       0    1071 
+    TX:  bytes packets errors dropped carrier collsns           
+         49332     674      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:17:04 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         25752     256      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         25752     256      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        845587    1704      0       0       0    1071 
+    TX:  bytes packets errors dropped carrier collsns           
+         49332     674      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:17:06 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         25752     256      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         25752     256      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        845587    1704      0       0       0    1071 
+    TX:  bytes packets errors dropped carrier collsns           
+         49332     674      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:17:12 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        846259    1712      0       0       0    1071 
+    TX:  bytes packets errors dropped carrier collsns           
+         50004     682      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:17:14 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        846455    1714      0       0       0    1071 
+    TX:  bytes packets errors dropped carrier collsns           
+         50200     684      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:17:16 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        846651    1716      0       0       0    1071 
+    TX:  bytes packets errors dropped carrier collsns           
+         50396     686      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:17:18 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        846847    1718      0       0       0    1071 
+    TX:  bytes packets errors dropped carrier collsns           
+         50592     688      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:17:20 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        849997    1732      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         50788     690      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:17:22 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        850193    1734      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         50984     692      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:17:28 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        850823    1741      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         51614     699      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:17:30 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        851019    1743      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         51810     701      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:17:32 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        851215    1745      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         52006     703      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:17:37 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        851501    1748      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         52292     706      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:17:39 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        851739    1751      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         52530     709      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:17:45 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        852327    1757      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         53118     715      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:17:47 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        852523    1759      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         53314     717      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:17:49 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        852719    1761      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         53510     719      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:17:51 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        852957    1764      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         53748     722      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:17:53 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        853153    1766      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         53944     724      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:17:55 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        853349    1768      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         54140     726      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:18:01 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        853937    1774      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         54728     732      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:18:03 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        854133    1776      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         54924     734      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:18:05 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        854329    1778      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         55120     736      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:18:07 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        854567    1781      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         55358     739      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:18:09 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        854763    1783      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         55554     741      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:18:18 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        855483    1791      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         56274     749      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:18:20 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        855679    1793      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         56470     751      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:18:22 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        855875    1795      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         56666     753      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:18:24 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        856071    1797      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         56862     755      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:18:26 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        856267    1799      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         57058     757      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:18:28 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        856463    1801      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         57254     759      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:18:34 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        857093    1808      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         57884     766      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:18:36 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        857331    1811      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         58122     769      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:18:38 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        857527    1813      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         58318     771      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:18:40 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        857723    1815      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         58514     773      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:18:42 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        857919    1817      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         58710     775      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:18:44 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        858115    1819      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         58906     777      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:18:53 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        858793    1826      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         59584     784      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:18:55 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        859031    1829      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         59822     787      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:18:57 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        859227    1831      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         60018     789      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:18:59 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        859423    1833      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         60214     791      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:19:01 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        859619    1835      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         60410     793      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:19:03 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        859815    1837      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         60606     795      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:19:09 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        860403    1843      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         61194     801      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:19:11 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        860599    1845      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         61390     803      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:19:13 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        860795    1847      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         61586     805      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:19:15 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        861033    1850      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         61824     808      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:19:17 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        861229    1852      0       0       0    1083 
+    TX:  bytes packets errors dropped carrier collsns           
+         62020     810      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:19:19 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        864379    1866      0       0       0    1095 
+    TX:  bytes packets errors dropped carrier collsns           
+         62216     812      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:19:28 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        865099    1874      0       0       0    1095 
+    TX:  bytes packets errors dropped carrier collsns           
+         62936     820      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:19:30 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        865295    1876      0       0       0    1095 
+    TX:  bytes packets errors dropped carrier collsns           
+         63132     822      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:19:32 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        865491    1878      0       0       0    1095 
+    TX:  bytes packets errors dropped carrier collsns           
+         63328     824      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:19:34 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        865687    1880      0       0       0    1095 
+    TX:  bytes packets errors dropped carrier collsns           
+         63524     826      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:19:36 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        865883    1882      0       0       0    1095 
+    TX:  bytes packets errors dropped carrier collsns           
+         63720     828      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:19:38 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        866121    1885      0       0       0    1095 
+    TX:  bytes packets errors dropped carrier collsns           
+         63958     831      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:19:44 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        866709    1891      0       0       0    1095 
+    TX:  bytes packets errors dropped carrier collsns           
+         64546     837      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:19:46 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        866905    1893      0       0       0    1095 
+    TX:  bytes packets errors dropped carrier collsns           
+         64742     839      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:19:48 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        867101    1895      0       0       0    1095 
+    TX:  bytes packets errors dropped carrier collsns           
+         64938     841      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:19:50 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        867297    1897      0       0       0    1095 
+    TX:  bytes packets errors dropped carrier collsns           
+         65134     843      0       0       0       0 
+Interface stats captured at Tue Dec 30 13:19:52 +03 2025
+tcpdump unavailable or sudo not cached; writing interface stats instead.
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+         26266     262      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+         26266     262      0       0       0       0 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:18:bb:60 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+        867493    1899      0       0       0    1095 
+    TX:  bytes packets errors dropped carrier collsns           
+         65330     845      0       0       0       0 

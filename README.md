@@ -1,6 +1,14 @@
 # CS350 Real-Time System Monitoring Project
 
-A comprehensive real-time system monitoring solution featuring **preemptive priority scheduling**, automated metrics collection, HTML report generation, and a modern web-based user interface.
+A comprehensive real-time system monitoring solution featuring **preemptive priority scheduling**, automated metrics collection, HTML report generation, and multiple user interface options.
+
+## 🎯 Project Overview
+
+This project implements a **real-time system monitor** for Linux systems, demonstrating core concepts from real-time systems including:
+- Preemptive priority scheduling with 4 priority levels
+- Thread synchronization using mutexes and condition variables
+- Periodic task execution with configurable intervals
+- Live system metrics collection from `/proc` filesystem
 
 ## 🌟 Features
 
@@ -9,86 +17,115 @@ A comprehensive real-time system monitoring solution featuring **preemptive prio
 - **Preemption support**: Higher priority tasks can interrupt lower priority tasks
 - **Condition variables** for efficient task synchronization
 - **Thread-safe** implementation with mutexes
-- **Time quantum**: 2-second time slices per task
+- **Configurable time quantum**: Default 2-second time slices per task
+- **Graceful shutdown** via signal handling (Ctrl+C)
 
 ### 2. **System Monitoring Tasks**
-- **Task 1 (Priority 0)**: System metrics collection (CPU, RAM, Disk)
-- **Task 2 (Priority 1)**: Ethernet/Network monitoring
-- **Task 3 (Priority 2)**: Data analysis and alert generation
-- **Task 4 (Priority 3)**: Logging and reporting
+| Task | Priority | Default Interval | Function |
+|------|----------|-----------------|----------|
+| System Monitor | P0 (Highest) | 5 seconds | CPU, RAM, Disk metrics |
+| Ethernet Fetch | P1 | 10 seconds | Network packet capture |
+| Data Analyzer | P2 | 15 seconds | Threshold analysis & alerts |
+| Logging/Report | P3 (Lowest) | 10 seconds | Status logging |
 
-### 3. **HTML Report Generator**
-- Beautiful, responsive HTML reports
-- Real-time metrics display with color-coded warnings
-- Alert history tracking
-- Historical data tables
-- Professional styling with gradients and shadows
+### 3. **Multiple User Interfaces**
+- **Terminal UI**: ncurses-style live dashboard with color-coded progress bars
+- **GTK3 GUI**: Modern graphical interface with real-time controls
+- **Web Dashboard**: Responsive HTML reports with visualizations
 
-### 4. **Terminal-Based User Interface**
-- **Live dashboard** in the terminal with auto-refresh (2-second intervals)
-- **Color-coded metrics**: CPU, RAM, Disk, Network with progress bars
-- **Task status table**: Shows all tasks with execution counts
-- **Alert monitoring**: Real-time alert display in terminal
-- **Unicode box drawing**: Beautiful professional layout
-- **ANSI colors**: Green/Yellow/Red for status indication
-- **No browser needed**: Pure terminal-based monitoring
+### 4. **Alert System**
+- Configurable thresholds for CPU, RAM, Disk, and Network
+- Alert logging with timestamps
+- Visual warnings in all UI modes
 
 ## 📁 Project Structure
 
 ```
 CS350Project/
-├── src/
-│   ├── scheduler.c          # Main scheduler with preemption
-│   ├── analyze.c             # System metrics analyzer
-│   ├── report_generator.c    # HTML report generator
-│   ├── metrics_exporter.c    # JSON data exporter for UI
-│   └── terminal_ui.c         # Terminal dashboard UI
-├── build/                    # Compiled binaries
+├── src/                          # Source code
+│   ├── scheduler.c               # Preemptive priority scheduler (main)
+│   ├── analyze.c                 # System metrics analyzer
+│   ├── report_generator.c        # HTML report generator
+│   ├── metrics_exporter.c        # JSON data exporter for web UI
+│   ├── terminal_ui.c             # Terminal dashboard UI
+│   └── gtk_live_gui.c            # GTK3 graphical interface
+├── build/                        # Compiled binaries
 ├── scripts/
-│   ├── monitor_scheduler.sh  # System monitoring script
-│   └── ethernet_fetch.sh     # Network monitoring script
-├── logs/                     # Generated logs and reports
+│   ├── monitor_scheduler.sh      # System metrics collection script
+│   ├── ethernet_fetch.sh         # Network monitoring script
+│   ├── launch_with_ui.sh         # UI launcher with menu
+│   └── archive_loop.sh           # Log archival automation
+├── logs/                         # Generated logs and reports
+│   └── archives/                 # Archived log bundles
 ├── ui/
-│   ├── index.html           # Web-based dashboard
-│   └── metrics.json         # Real-time metrics data
+│   ├── index.html                # Web-based dashboard
+│   └── metrics.json              # Real-time metrics data
 ├── config/
-│   └── sysmon.conf          # Configuration files
-├── data/                    # Data storage
-└── Makefile                 # Build system
-
+│   ├── sysmon.conf               # Main configuration
+│   ├── priority_override.conf    # Dynamic priority adjustment
+│   └── interval_override.conf    # Dynamic interval adjustment
+├── data/                         # Data storage
+├── Makefile                      # Build system
+└── README.md                     # This file
 ```
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- GCC compiler
-- pthread library
-- Bash (for monitoring scripts)
-- Modern web browser (for UI)
+- **GCC compiler** (with C11 support)
+- **pthread library** (POSIX threads)
+- **Linux system** (uses /proc filesystem)
+- **Bash shell** (for monitoring scripts)
+- **GTK3 development libraries** (optional, for GUI)
+  ```bash
+  # Ubuntu/Debian
+  sudo apt-get install libgtk-3-dev
+  
+  # Fedora/RHEL
+  sudo dnf install gtk3-devel
+  ```
 
 ### Building the Project
 
 ```bash
-# Build all components
+# Build all core components
 make all
 
+# Build with debug symbols
+make debug
+
 # Build individual components
-make scheduler          # Build scheduler
-make analyze            # Build analyzer
-make report_generator   # Build report generator
-make metrics_exporter   # Build JSON exporter
+make scheduler          # Build scheduler only
+make analyze            # Build analyzer only
+make terminal_ui        # Build terminal UI only
+make gtk_live           # Build GTK GUI (requires GTK3)
+
+# Clean build artifacts
+make clean
 ```
 
 ### Running the System
 
-#### 1. Start the Scheduler
+#### Option 1: Interactive Launcher (Recommended)
 ```bash
 make run
-# Or directly:
-cd build && ./scheduler
+# Presents menu:
+#   1) Debug console only
+#   2) GTK Live GUI
+#   3) Terminal UI
 ```
 
-#### 2. Generate Reports
+#### Option 2: Terminal UI
+```bash
+make ui
+```
+
+#### Option 3: GTK GUI
+```bash
+make gui   # Requires GTK3 libraries
+```
+
+### Generating Reports
 ```bash
 # Generate HTML report
 make generate-report
@@ -97,7 +134,21 @@ make generate-report
 make export-metrics
 ```
 
-#### 3. Open the Terminal UI
+### Configuration
+
+**Dynamic Priority Adjustment** (`config/priority_override.conf`):
+```
+# Format: task_id new_priority
+1 0    # Task 1 -> Priority 0
+2 1    # Task 2 -> Priority 1
+```
+
+**Dynamic Interval Adjustment** (`config/interval_override.conf`):
+```
+# Format: task_id interval_seconds
+1 5     # Task 1 runs every 5 seconds
+2 10    # Task 2 runs every 10 seconds
+```
 ```bash
 # Option 1: Direct file access
 open ui/index.html   # macOS
@@ -224,119 +275,116 @@ Time 3: Task 3 returns to READY queue
 4. **Alerts Section**: Recent system alerts and warnings
 5. **Control Panel**: Refresh, pause, and export controls
 
-### Color Codingterminal dashboard
-make export-metrics   # Generate JSON for web
+### Color Coding
+- 🟢 **Green**: Normal range
 - 🟡 **Yellow**: Warning threshold exceeded
 - 🔴 **Red**: Critical threshold exceeded
 
 ## 📝 File Outputs
 
 ### Logs Directory
-- `alerts.log`: All system alerts with timestamps
-- `analysis_report.log`: Detailed analysis results
-- `system_report.html`: Generated HTML report
-- `netdump.log`: Network activity logs
+| File | Description |
+|------|-------------|
+| `scheduler.log` | Detailed scheduler activity log |
+| `alerts.log` | System alerts with timestamps |
+| `analysis_report.log` | Detailed analysis results |
+| `system_report.html` | Generated HTML report |
+| `netdump.log` | Network activity logs |
 
 ### UI Directory
-- `indpen terminal UI** (in another terminal):
-   ```bash
-   make ui
-   ```
+| File | Description |
+|------|-------------|
+| `index.html` | Web-based dashboard |
+| `metrics.json` | JSON data for web UI |
 
-3. **Observe console output**:
-   ```
-   Initializing Real-Time System Monitor...
-   Verbose mode: OFF
+## 🧪 Testing the System
 
-   === SCHEDULER STARTING ===
-
-   [Tick 1] Scheduler running...
-   → Task 1 running (P0)
-   ✓ Monitoring cycle complete
-
-   ⚡ PREEMPTION: Task 2 → Task 1
-   ```
-
-4. **Check terminal UI**:
-   - Color-coded metrics (Green/Yellow/Red)
-   - Task execution counts incrementing
-   - Live preemption events
-## 🧪 Testing Preemption
-
-To test the preemption system:
+### Testing Preemption
 
 1. **Start the scheduler**:
    ```bash
-   make run
+   make run   # Select option 1 for debug console
    ```
 
-2. **Observe console output**:
+2. **Observe preemption in action**:
    ```
    [SCHEDULER] Task 3 (Priority 2) gets CPU
    [TASK 3] Starting execution
    [DISPATCHER] Task 1 is now READY (interval due)
    [PREEMPTION] Task 1 (Priority 0) preempting Task 3 (Priority 2)
+   ⚡ PREEMPTION: Task 3 → Task 1
    [TASK 3] Was preempted, returning to READY state
    [SCHEDULER] Task 1 (Priority 0) gets CPU
    ```
 
-3. **Check metrics**:
-   - Task execution counts
-   - Preemption occurrences
-   - Time slice usage
+### Testing Dynamic Configuration
+
+1. **Modify priority** while scheduler is running:
+   ```bash
+   echo "1 2" > config/priority_override.conf  # Task 1 → Priority 2
+   ```
+
+2. **Modify interval**:
+   ```bash
+   echo "1 3" > config/interval_override.conf  # Task 1 runs every 3s
+   ```
+
+3. **Changes apply on next scheduler tick** (within 2 seconds)
 
 ## 📈 Performance Metrics
 
 The system tracks:
-- **Execution count**: Number of times each task ran
-- **TEnsure scheduler has run and generated logs
-   - Check logs/ directory exists
-   - Wait a few seconds for data to accumulate
-
-2. **Terminal colors not showing**:
-   - Use Windows Terminal, iTerm2, or modern terminal
-   - WSL/Linux terminals support ANSI colors by defaulterrupted
-- **Response time**: Time from READY to RUNNING
+- **Execution count**: Number of times each task completed
+- **Time used**: CPU time consumed per execution
+- **Preemptions**: Number of times task was interrupted
+- **Interval compliance**: Actual vs. configured intervals
 
 ## 🔍 Troubleshooting
 
 ### Common Issues
 
-1. **UI shows no data**:
-   - Run `make export-metrics` to generate metrics.json
-   - Ensure scheduler has run and generated logs
+| Problem | Solution |
+|---------|----------|
+| UI shows no data | Run `make export-metrics` first |
+| No scheduler output | Check `logs/scheduler.log` exists |
+| Terminal colors broken | Use modern terminal (Windows Terminal, iTerm2) |
+| GTK build fails | Install GTK3: `sudo apt install libgtk-3-dev` |
+| Permission denied | Run `chmod +x scripts/*.sh` |
 
-2. **Scheduler not compiling**:
-   - Check pthread library: `gcc -pthread`
-   - Verify GCC version: `gcc --version`
+### Debug Build
 
-3. **Scripts not executable**:
-   - Run: `chmod +x scripts/*.sh`
-
-4. **Port already in use (HTTP server)**:
-   - Try different port: `python -m http.server 8080`
-
-## 🎯 Future Enhancements
-
-- [ ] WebSocket support for real-time streaming
-- [ ] Database integration for long-term metrics
-- [ ] Email/SMS alerts for critical events
-- [ ] Machine learning for anomaly detection
-- [ ] Multi-node monitoring support
-- [ ] REST API for external integrations
+For verbose output and debugging:
+```bash
+make debug
+```
 
 ## 📚 Technical Details
 
-### Threading Model
-- **Main thread**: Scheduler dispatcher
-- **Worker threads**: One per task (4 total)
-- **Synchronization**: Mutexes and condition variables
-
 ### Scheduling Algorithm
-- **Type**: Preemptive priority scheduling
-- **Priority levels**: 4 (0-3)
-- **Time quantum**: 2 seconds
-- **Preemption**: Yes (higher priority interrupts lower)
+- **Type**: Preemptive Priority Scheduling
+- **Priority Levels**: 4 (0 = highest, 3 = lowest)
+- **Time Quantum**: 2 seconds
+- **Preemption**: Immediate on higher priority task becoming READY
+
+### Thread Synchronization
+- **Mutexes**: Per-task lock + global scheduler lock
+- **Condition Variables**: For task wake-up signaling
+- **Atomic Operations**: Preempt flag checking
+
+### System Calls Used
+- `/proc/stat` - CPU statistics
+- `/proc/meminfo` - Memory information
+- `statvfs()` - Disk usage
+- `/proc/net/dev` - Network statistics
+
+## 👨‍🎓 Author
+
+**CS350 Real-Time Systems Course Project**  
+*Demonstrating preemptive scheduling, thread synchronization, and system monitoring*
+
+## 📄 License
+
+This project is for educational purposes as part of CS350 coursework.
 
 ### Data Flow
 ```

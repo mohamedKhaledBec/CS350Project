@@ -85,6 +85,11 @@ void log_alert(const char *message) {
     fclose(fp);
 }
 
+/**
+ * @brief Count non-comment lines in network log file
+ * @param netfile Path to the network log file
+ * @return Number of packet entries in the log
+ */
 int count_packets(const char *netfile) {
     FILE *fp = fopen(netfile, "r");
     if (!fp) return 0;
@@ -92,6 +97,7 @@ int count_packets(const char *netfile) {
     int count = 0;
     char line[256];
     while (fgets(line, sizeof(line), fp)) {
+        /* Skip empty lines and comments */
         if (strlen(line) > 0 && line[0] != '#') {
             count++;
         }
@@ -125,37 +131,42 @@ void analyze_metrics(SystemMetrics *metrics) {
     
     int alerts = 0;
     
-    // Check CPU
+    /* Threshold checks - generate alerts for each exceeded metric */
+    
+    /* Check CPU utilization */
     if (metrics->cpu > CPU_THRESHOLD) {
         fprintf(report, "WARNING: CPU usage is HIGH (%.2f%%)\n", metrics->cpu);
         log_alert("HIGH CPU USAGE");
         alerts++;
     }
     
-    // Check RAM
+    /* Check RAM utilization */
     if (metrics->ram > RAM_THRESHOLD) {
         fprintf(report, "WARNING: RAM usage is HIGH (%.2f%%)\n", metrics->ram);
         log_alert("HIGH RAM USAGE");
         alerts++;
     }
     
-    // Check Disk
+    /* Check Disk utilization */
     if (metrics->disk > DISK_THRESHOLD) {
         fprintf(report, "WARNING: Disk usage is HIGH (%.2f%%)\n", metrics->disk);
         log_alert("HIGH DISK USAGE");
         alerts++;
     }
     
-    // Check Network
+    /* Check Network activity */
     if (metrics->packet_count > PACKET_THRESHOLD) {
         fprintf(report, "WARNING: High network activity (%d packets)\n", metrics->packet_count);
         log_alert("HIGH NETWORK ACTIVITY");
         alerts++;
     }
     
+    /* Summary status */
     if (alerts == 0) {
         fprintf(report, "STATUS: All systems nominal\n");
         printf("[OK] System metrics are within normal range\n");
+    } else {
+        printf("[ALERT] %d threshold(s) exceeded - check logs\n", alerts);
     }
     
     fprintf(report, "========================================\n");
@@ -190,20 +201,21 @@ int main(int argc, char *argv[]) {
     /* Count packets in network log */
     metrics.packet_count = count_packets(argv[4]);
     
-    // Get timestamp
+    /* Get timestamp for the analysis report */
     time_t now = time(NULL);
     struct tm *t = localtime(&now);
     strftime(metrics.timestamp, sizeof(metrics.timestamp), "%Y-%m-%d %H:%M:%S", t);
     
+    /* Display summary to console */
     printf("\n=== SYSTEM ANALYSIS ===\n");
     printf("CPU: %.2f%% | RAM: %.2f%% | Disk: %.2f%% | Packets: %d\n",
            metrics.cpu, metrics.ram, metrics.disk, metrics.packet_count);
     printf("Time: %s\n", metrics.timestamp);
     
-    // Analyze and generate report
+    /* Perform analysis and generate report */
     analyze_metrics(&metrics);
     
-    printf("Analysis complete. Check ../logs/analysis_report.log for details.\n\n");
+    printf("Analysis complete. Check %s/logs/analysis_report.log for details.\n\n", g_project_root);
     
     return 0;
 }
