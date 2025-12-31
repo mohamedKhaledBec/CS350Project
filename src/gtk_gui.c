@@ -41,13 +41,14 @@
 
 #define REFRESH_INTERVAL_MS     1000    /* GUI refresh interval (milliseconds)  */
 #define STARVATION_THRESHOLD    30      /* Seconds before starvation warning    */
-#define NUM_TASKS               4       /* Number of scheduler tasks            */
+#define NUM_TASKS               6       /* Number of scheduler tasks            */
 
 /* Configuration file paths */
 #define PRIORITY_CONFIG_FILE    "config/priority_override.conf"
 #define INTERVAL_CONFIG_FILE    "config/interval_override.conf"
 
 /* Log file paths */
+#define LOG_DIR "logs"
 #define SCHEDULER_LOG_FILE      "logs/scheduler.log"
 #define GUI_LOG_FILE            "logs/gui.log"
 
@@ -58,6 +59,8 @@
 #define RAM_CRITICAL_THRESHOLD  90.0
 #define DISK_WARNING_THRESHOLD  80.0
 #define DISK_CRITICAL_THRESHOLD 95.0
+
+#define MAX_HISTORY 60
 
 /* ============================================================================
  *                              DATA TYPES
@@ -79,13 +82,14 @@ typedef struct {
     GtkWidget*      window;
     
     /* Metric display widgets */
-    GtkWidget*      cpu_progress;
-    GtkWidget*      cpu_status;
-    GtkWidget*      ram_progress;
-    GtkWidget*      ram_status;
-    GtkWidget*      disk_progress;
-    GtkWidget*      disk_status;
-    GtkWidget*      network_label;
+    GtkWidget *cpu_label;
+    GtkWidget *ram_label;
+    GtkWidget *disk_label;
+    GtkWidget *disk_status;
+    GtkWidget *network_label;
+    GtkWidget *cpu_drawing_area;
+    GtkWidget *ram_drawing_area;
+    GtkWidget *disk_drawing_area;
     
     /* Status and info widgets */
     GtkWidget*      status_label;
@@ -101,19 +105,23 @@ typedef struct {
     int             update_count;
     int             alert_count;
 } AppWidgets;
-
+typedef struct {
+    float values[MAX_HISTORY];
+    int count;
+} HistoryData;
 /* ============================================================================
  *                           TASK DEFINITIONS
  * ============================================================================ */
 
 static const char* TASK_NAMES[NUM_TASKS] = {
-    "System Monitor",
-    "Ethernet Fetch",
+    "Collect CPU",
+    "Collect RAM",
+    "Collect DISK",
+    "Collect Network",
     "Analyzer",
     "Report Generator"
 };
 
-/* Default intervals and priorities - MUST match scheduler.c */
 /* P3 = highest priority, P0 = lowest priority */
 static const int DEFAULT_INTERVALS[NUM_TASKS] = {5, 10, 15, 25};
 static const int DEFAULT_PRIORITIES[NUM_TASKS] = {3, 2, 1, 2};
@@ -123,10 +131,119 @@ static const int DEFAULT_PRIORITIES[NUM_TASKS] = {3, 2, 1, 2};
  * ============================================================================ */
 
 /* Cached metrics from log files */
-static double g_cached_cpu = 0.0;
-static double g_cached_ram = 0.0;
-static double g_cached_disk = 0.0;
-static int g_cached_packets = 0;
+float cpu_usage;
+float ram_usage;
+float disk_usage;
+char ram_details[256];
+char disk_details[256];
+char network_details[512];
+
+//total system specs
+char total_ram[32];
+char total_disk[32];
+int cpu_cores;
+
+// History Data
+HistoryData cpu_history;
+HistoryData ram_history;
+HistoryData disk_history;
+
+void detect_system_info() {
+    FILE *fp;
+    char buffer[256];
+
+    // Detect total RAM
+    fp = popen("free -h | grep Mem | awk '{print $2}'", "r");
+    if (fp) {
+        if (fgets(buffer, sizeof(buffer), fp)) {
+            buffer[strcspn(buffer, "\n")] = 0;
+            strncpy(total_ram, buffer, sizeof(total_ram) - 1);
+        }
+        pclose(fp);
+    }
+
+    // Detect total disk
+    fp = popen("df -h / | tail -1 | awk '{print $2}'", "r");
+    if (fp) {
+        if (fgets(buffer, sizeof(buffer), fp)) {
+            buffer[strcspn(buffer, "\n")] = 0;
+            strncpy(total_disk, buffer, sizeof(total_disk) - 1);
+        }
+        pclose(fp);
+    }
+
+    // Detect CPU cores
+    fp = popen("nproc", "r");
+    if (fp) {
+        if (fgets(buffer, sizeof(buffer), fp)) {
+            cpu_cores = atoi(buffer);
+        }
+        pclose(fp);
+    }
+}
+
+void add_to_history(HistoryData *history, float value) {
+    if (history->count < MAX_HISTORY) {
+        history->values[history->count++] = value;
+    } else {
+        // Shift array left
+        for (int i = 0; i < MAX_HISTORY - 1; i++) {
+            history->values[i] = history->values[i + 1];
+        }
+        history->values[MAX_HISTORY - 1] = value;
+    }
+}
+
+gboolean draw_graph(GtkWidget *widget, cairo_t *cr, gpointer data) {
+    HistoryData *history = (HistoryData *)data;
+
+    int width = gtk_widget_get_allocated_width(widget);
+    int height = gtk_widget_get_allocated_height(widget);
+
+    // Background
+    cairo_set_source_rgb(cr, 0.1, 0.1, 0.15);
+    cairo_rectangle(cr, 0, 0, width, height);
+    cairo_fill(cr);
+
+    // Grid lines
+    cairo_set_source_rgba(cr, 0.3, 0.3, 0.35, 0.5);
+    cairo_set_line_width(cr, 1.0);
+
+    // Horizontal grid lines
+    for (int i = 0; i <= 4; i++) {
+        double y = (height / 4.0) * i;
+        cairo_move_to(cr, 0, y);
+        cairo_line_to(cr, width, y);
+    }
+    cairo_stroke(cr);
+
+    // Draw graph line
+    if (history->count > 1) {
+        cairo_set_source_rgb(cr, 0.2, 0.8, 0.2);
+        cairo_set_line_width(cr, 2.0);
+
+        double x_step = (double)width / (MAX_HISTORY - 1);
+
+        cairo_move_to(cr, 0, height - (history->values[0] / 100.0) * height);
+
+        for (int i = 1; i < history->count; i++) {
+            double x = i * x_step;
+            double y = height - (history->values[i] / 100.0) * height;
+            cairo_line_to(cr, x, y);
+        }
+
+        cairo_stroke_preserve(cr);
+
+        // Fill under the line
+        cairo_line_to(cr, (history->count - 1) * x_step, height);
+        cairo_line_to(cr, 0, height);
+        cairo_close_path(cr);
+        cairo_set_source_rgba(cr, 0.2, 0.8, 0.2, 0.2);
+        cairo_fill(cr);
+    }
+
+    return FALSE;
+}
 
 /* Scheduler log file handle */
 static FILE* g_scheduler_log = NULL;
@@ -164,95 +281,138 @@ static void scheduler_log(const char* format, ...) {
     }
 }
 
-/*
- * read_metrics_from_log()
- * Reads system metrics from logs/system_metrics.log (written by monitor_scheduler.sh)
- */
-static void read_metrics_from_log(void) {
-    FILE* fp = fopen("logs/system_metrics.log", "r");
-    if (!fp) return;
-    
-    char line[256];
+void read_last_line(const char *filename, char *buffer, int bufsize) {
+    char path[512];
+    snprintf(path, sizeof(path), "%s/%s", LOG_DIR, filename);
+
+    FILE *fp = fopen(path, "r");
+    if (!fp) {
+        buffer[0] = '\0';
+        return;
+    }
+
+    char line[512];
+    char last_line[512] = "";
+
     while (fgets(line, sizeof(line), fp)) {
-        double value;
-        if (sscanf(line, "CPU=%lf", &value) == 1) {
-            g_cached_cpu = value;
-        } else if (sscanf(line, "RAM=%lf", &value) == 1) {
-            g_cached_ram = value;
-        } else if (sscanf(line, "DISK=%lf", &value) == 1) {
-            g_cached_disk = value;
+        if (strlen(line) > 10) {
+            strncpy(last_line, line, sizeof(last_line) - 1);
+            last_line[sizeof(last_line) - 1] = '\0';
         }
     }
+
     fclose(fp);
+    strncpy(buffer, last_line, bufsize - 1);
+    buffer[bufsize - 1] = '\0';
+}
+char* extract_value(const char *line, const char *prefix, const char *suffix) {
+    static char result[256];
+    const char *start = strstr(line, prefix);
+    if (!start) {
+        strcpy(result, "N/A");
+        return result;
+    }
+
+    start += strlen(prefix);
+    const char *end = strstr(start, suffix);
+    if (!end) end = start + strlen(start);
+
+    int len = end - start;
+    if (len > 255) len = 255;
+    strncpy(result, start, len);
+    result[len] = '\0';
+
+    // Trim whitespace
+    while (len > 0 && (result[len-1] == ' ' || result[len-1] == '\n')) {
+        result[--len] = '\0';
+    }
+
+    return result;
+}
+
+char line[512];
+char temp1[256], temp2[256], temp3[256], temp4[256], temp5[256];
+
+/*
+ * Reads system metrics from logs/directory (written by monitor_scheduler.sh)
+ */
+static void read_cpu_from_log(void) {
+    read_last_line("cpu_log.txt", line, sizeof(line));
+    if (line[0] == '\0') return;
+
+    cpu_usage = atof(extract_value(line, "CPU Usage: ", "%"));
+    add_to_history(&cpu_history, cpu_usage);
+}
+
+static void read_ram_from_log(void){
+    read_last_line("ram_log.txt", line, sizeof(line));
+    ram_usage = atof(extract_value(line, "RAM Usage: ", "%"));
+    strncpy(temp1, extract_value(line, "Used: ", "i /"), sizeof(temp1) - 1);
+    strncpy(temp2, extract_value(line, "Total: ", "i)"), sizeof(temp2) - 1);
+    snprintf(ram_details, sizeof(ram_details), "Used: %sB / %sB", temp1, temp2);
+    add_to_history(&ram_history, ram_usage);
+}
+static void read_disk_from_log(void){
+    read_last_line("disk_log.txt", line, sizeof(line));
+    disk_usage = atof(extract_value(line, "Disk Usage: ", "%"));
+    strncpy(temp1, extract_value(line, "Used: ", " /"), sizeof(temp1) - 1);
+    strncpy(temp2, extract_value(line, "Total: ", " /"), sizeof(temp2) - 1);
+    strncpy(temp3, extract_value(line, "Available: ", ")"), sizeof(temp3) - 1);
+    snprintf(disk_details, sizeof(disk_details),
+             "Used: %sB / %sB | Available: %sB", temp1, temp2, temp3);
+    add_to_history(&disk_history, disk_usage);
 }
 
 /*
  * read_network_from_log()
- * Reads packet count from logs/network_metrics.log (written by ethernet_fetch.sh)
+ * Reads packet count from logs/network_metrics.log (written by collect_network.sh)
  */
-static long g_prev_total_packets = 0;
+static float g_prev_total_MB_transmitted = 0;
+static float g_prev_total_MB_received = 0;
 static time_t g_prev_network_time = 0;
 
 static void read_network_from_log(void) {
-    FILE* fp = fopen("logs/network_metrics.log", "r");
-    if (!fp) return;
-    
-    char line[256];
-    long total_packets = 0;
-    
-    while (fgets(line, sizeof(line), fp)) {
-        if (sscanf(line, "TOTAL_PACKETS=%ld", &total_packets) == 1) {
-            break;
-        }
-    }
-    fclose(fp);
-    
-    /* Calculate packets per second since last reading */
+    float upstream = 0.0f;
+    float downstream = 0.0f;
+    read_last_line("net_log.txt", line, sizeof(line));
+    strncpy(temp1, extract_value(line, "Interface: ", " |"), sizeof(temp1) - 1);
+    strncpy(temp2, extract_value(line, "RX Packets: ", " |"), sizeof(temp2) - 1);
+    strncpy(temp3, extract_value(line, "TX Packets: ", " |"), sizeof(temp3) - 1);
+    strncpy(temp4, extract_value(line, "RX: ", "MB"), sizeof(temp4) - 1);
+    strncpy(temp5, extract_value(line, "TX: ", "MB"), sizeof(temp5) - 1);
     time_t now = time(NULL);
-    if (g_prev_network_time > 0 && g_prev_total_packets > 0) {
-        long time_delta = (long)(now - g_prev_network_time);
-        if (time_delta > 0) {
-            long packet_delta = total_packets - g_prev_total_packets;
-            if (packet_delta >= 0) {
-                g_cached_packets = (int)(packet_delta / time_delta);
+    if (g_prev_network_time > 0){
+        if (g_prev_total_MB_transmitted > 0){
+            float time_delta = now - g_prev_network_time;
+            if (time_delta > 0) {
+                float packet_delta = atof(temp5) - g_prev_total_MB_transmitted;
+                if (packet_delta >= 0) {
+                    upstream = packet_delta / time_delta;
+                }
+            }
+        }
+        if (g_prev_total_MB_received > 0){
+            float time_delta = now - g_prev_network_time;
+            if (time_delta > 0) {
+                float packet_delta = atof(temp4) - g_prev_total_MB_received;
+                if (packet_delta >= 0) {
+                    downstream = packet_delta / time_delta;
+                }
             }
         }
     }
-    
-    g_prev_total_packets = total_packets;
+    snprintf(network_details, sizeof(network_details),
+         "Interface: <b>%s</b>\n"
+         "Received: <b>%s MB</b> (Packets: <b>%s</b>)\n"
+         "Transmitted: <b>%s MB</b> (Packets: <b>%s</b>)\n"
+         "UPstream: <b>%.2f MB/s</b>\nDOWNstream: <b>%.2f MB/s</b>",
+         temp1, temp4, temp2, temp5, temp3, upstream, downstream);
+
+    /* Calculate packets per second since last reading */
+
+    g_prev_total_MB_transmitted = atof(temp5);
+    g_prev_total_MB_received = atof(temp4);
     g_prev_network_time = now;
-}
-
-/*
- * get_cpu_usage()
- * Returns CPU usage from cached metrics (read from bash script output)
- */
-static double get_cpu_usage(void) {
-    return g_cached_cpu;
-}
-
-/*
- * get_ram_usage()
- * Returns RAM usage from cached metrics (read from bash script output)
- */
-static double get_ram_usage(void) {
-    return g_cached_ram;
-}
-
-/*
- * get_disk_usage()
- * Returns disk usage from cached metrics (read from bash script output)
- */
-static double get_disk_usage(void) {
-    return g_cached_disk;
-}
-
-/*
- * get_network_packets()
- * Returns packet count from cached metrics (read from bash script output)
- */
-static int get_network_packets(void) {
-    return g_cached_packets;
 }
 
 /* ============================================================================
@@ -271,7 +431,7 @@ static int g_scheduler_initialized = 0;
  */
 static void init_scheduler(void) {
     if (g_scheduler_initialized) return;
-    
+
     time_t now = time(NULL);
     for (int i = 0; i < NUM_TASKS; i++) {
         /* Stagger initial ready times so tasks don't all fire at once */
@@ -282,84 +442,143 @@ static void init_scheduler(void) {
 }
 
 /*
- * execute_task_system_monitor()
- * Same as scheduler: runs monitor_scheduler.sh
- * Script writes to: logs/system_metrics.log, logs/system_report.log
+ * execute_task_collect_cpu()
+ * Collects CPU usage metrics
+ * Script writes to: logs/cpu_metrics.log
  */
-static void execute_task_system_monitor(void) {
+static void execute_task_collect_cpu(void) {
     g_task_last_run[0] = time(NULL);
-    scheduler_log("[TASK] System Monitor starting\n");
-    
-    int ret = system("bash scripts/monitor_scheduler.sh > /dev/null 2>&1");
-    
+    scheduler_log("[TASK] CPU Monitor starting\n");
+
+    int ret = system("bash scripts/collect_cpu.sh > /dev/null 2>&1");
+
     g_task_last_completed[0] = time(NULL);
     g_task_exec_count[0]++;
-    
+
     if (ret == 0) {
-        scheduler_log("[TASK] System Monitor completed (exec #%d)\n", g_task_exec_count[0]);
+        scheduler_log("[TASK] CPU Monitor completed (exec #%d)\n",
+                      g_task_exec_count[0]);
     } else {
-        scheduler_log("[ERROR] System Monitor failed with code %d\n", ret);
+        scheduler_log("[ERROR] CPU Monitor failed with code %d\n", ret);
     }
 }
 
+
 /*
- * execute_task_network_fetch()
- * Same as scheduler: runs ethernet_fetch.sh
- * Script writes to: logs/network_metrics.log, logs/netdump.log
+ * execute_task_collect_ram()
+ * Collects RAM usage metrics
+ * Script writes to: logs/ram_metrics.log
  */
-static void execute_task_network_fetch(void) {
+static void execute_task_collect_ram(void) {
     g_task_last_run[1] = time(NULL);
-    scheduler_log("[TASK] Network Fetch starting\n");
-    
-    int ret = system("bash scripts/ethernet_fetch.sh > /dev/null 2>&1");
-    
+    scheduler_log("[TASK] RAM Monitor starting\n");
+
+    int ret = system("bash scripts/collect_ram.sh > /dev/null 2>&1");
+
     g_task_last_completed[1] = time(NULL);
     g_task_exec_count[1]++;
-    
+
     if (ret == 0) {
-        scheduler_log("[TASK] Network Fetch completed (exec #%d)\n", g_task_exec_count[1]);
+        scheduler_log("[TASK] RAM Monitor completed (exec #%d)\n",
+                      g_task_exec_count[1]);
+    } else {
+        scheduler_log("[ERROR] RAM Monitor failed with code %d\n", ret);
+    }
+}
+
+
+/*
+ * execute_task_collect_disk()
+ * Collects Disk usage metrics
+ * Script writes to: logs/disk_metrics.log
+ */
+static void execute_task_collect_disk(void) {
+    g_task_last_run[2] = time(NULL);
+    scheduler_log("[TASK] Disk Monitor starting\n");
+
+    int ret = system("bash scripts/collect_disk.sh > /dev/null 2>&1");
+
+    g_task_last_completed[2] = time(NULL);
+    g_task_exec_count[2]++;
+
+    if (ret == 0) {
+        scheduler_log("[TASK] Disk Monitor completed (exec #%d)\n",
+                      g_task_exec_count[2]);
+    } else {
+        scheduler_log("[ERROR] Disk Monitor failed with code %d\n", ret);
+    }
+}
+
+
+/*
+ * execute_task_collect_network()
+ * Collects network metrics
+ * Script writes to: logs/network_metrics.log, logs/netdump.log
+ */
+static void execute_task_collect_network(void) {
+    g_task_last_run[3] = time(NULL);
+    scheduler_log("[TASK] Network Fetch starting\n");
+
+    int ret = system("bash scripts/collect_network.sh > /dev/null 2>&1");
+
+    g_task_last_completed[3] = time(NULL);
+    g_task_exec_count[3]++;
+
+    if (ret == 0) {
+        scheduler_log("[TASK] Network Fetch completed (exec #%d)\n",
+                      g_task_exec_count[3]);
     } else {
         scheduler_log("[ERROR] Network Fetch failed with code %d\n", ret);
     }
 }
 
+
 /*
  * execute_task_analyzer()
- * Same as scheduler: runs analyze executable
+ * Runs analysis on collected metrics
  * Program writes to: logs/analysis_report.log, logs/alerts.log
  */
 static void execute_task_analyzer(void) {
-    g_task_last_run[2] = time(NULL);
+    g_task_last_run[4] = time(NULL);
     scheduler_log("[TASK] Analyzer starting\n");
-    
-    int ret = system("./build/analyze 50.0 60.0 75.0 logs/netdump.log > /dev/null 2>&1");
-    
-    g_task_last_completed[2] = time(NULL);
-    g_task_exec_count[2]++;
-    
+
+    int ret = system(
+        "./build/analyze 50.0 60.0 75.0 logs/net_log.txt > /dev/null 2>&1"
+    );
+
+    g_task_last_completed[4] = time(NULL);
+    g_task_exec_count[4]++;
+
     if (ret == 0) {
-        scheduler_log("[TASK] Analyzer completed (exec #%d)\n", g_task_exec_count[2]);
+        scheduler_log("[TASK] Analyzer completed (exec #%d)\n",
+                      g_task_exec_count[4]);
     } else {
-        scheduler_log("[ERROR] Analyzer failed with code %d (may need 'make all' first)\n", ret);
+        scheduler_log(
+            "[ERROR] Analyzer failed with code %d (may need 'make all' first)\n",
+            ret
+        );
     }
 }
 
+
 /*
  * execute_task_reporter()
- * Same as scheduler: runs report_generator executable
+ * Generates HTML system report
  * Program writes to: logs/system_report.html
  */
 static void execute_task_reporter(void) {
-    g_task_last_run[3] = time(NULL);
+    g_task_last_run[5] = time(NULL);
     scheduler_log("[TASK] Report Generator starting\n");
-    
+
     if (access("./build/report_generator", F_OK) == 0) {
         int ret = system("./build/report_generator > /dev/null 2>&1");
-        g_task_last_completed[3] = time(NULL);
-        g_task_exec_count[3]++;
-        
+
+        g_task_last_completed[5] = time(NULL);
+        g_task_exec_count[5]++;
+
         if (ret == 0) {
-            scheduler_log("[TASK] Report Generator completed (exec #%d)\n", g_task_exec_count[3]);
+            scheduler_log("[TASK] Report Generator completed (exec #%d)\n",
+                          g_task_exec_count[5]);
         } else {
             scheduler_log("[ERROR] Report Generator failed with code %d\n", ret);
         }
@@ -371,8 +590,10 @@ static void execute_task_reporter(void) {
 /* Function pointers array (same pattern as scheduler) */
 typedef void (*TaskFunc)(void);
 static TaskFunc g_task_functions[NUM_TASKS] = {
-    execute_task_system_monitor,
-    execute_task_network_fetch,
+    execute_task_collect_cpu,
+    execute_task_collect_ram,
+    execute_task_collect_disk,
+    execute_task_collect_network,
     execute_task_analyzer,
     execute_task_reporter
 };
@@ -710,10 +931,20 @@ static void on_interval_changed(GtkSpinButton* spin, gpointer user_data) {
  * get_status_color()
  * Returns CSS color string based on value and thresholds.
  */
-static const char* get_status_color(double value, double warn, double crit) {
-    if (value >= crit) return "#ef4444";  /* Red */
-    if (value >= warn) return "#f59e0b";  /* Yellow */
+static int get_status(double value, double warn, double crit) {
+    if (value >= crit) return 0;  /* Red */
+    if (value >= warn) return 1;  /* Yellow */
+    return 2;                      /* Green */
+}
+static const char* get_status_color(int status) {
+    if (status == 0) return "#ef4444";  /* Red */
+    if (status == 1) return "#f59e0b";  /* Yellow */
     return "#22c55e";                      /* Green */
+}
+static const char* get_status_text(int status) {
+    if (status == 0) return "⚠ Critical";
+    if (status == 1) return "⚠ Warning";
+    return "✓ Normal";
 }
 
 /*
@@ -722,6 +953,7 @@ static const char* get_status_color(double value, double warn, double crit) {
  * Also runs scheduler tick to execute tasks.
  */
 static gboolean update_display(gpointer data) {
+    char label_text[512];
     AppWidgets* widgets = (AppWidgets*)data;
     widgets->update_count++;
     
@@ -729,83 +961,101 @@ static gboolean update_display(gpointer data) {
     scheduler_tick(widgets->tasks, NUM_TASKS);
     
     /* Read metrics from log files (populated by bash scripts) */
-    read_metrics_from_log();
+    read_cpu_from_log();
+    read_ram_from_log();
+    read_disk_from_log();
     read_network_from_log();
     
-    /* Get current system metrics from cached values */
-    double cpu = get_cpu_usage();
-    double ram = get_ram_usage();
-    double disk = get_disk_usage();
-    int packets = get_network_packets();
-    
     /* Update CPU */
-    gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(widgets->cpu_progress), cpu / 100.0);
-    gchar* cpu_text = g_strdup_printf("%.1f%%", cpu);
-    gtk_progress_bar_set_text(GTK_PROGRESS_BAR(widgets->cpu_progress), cpu_text);
-    g_free(cpu_text);
-    
-    const char* cpu_color = get_status_color(cpu, CPU_WARNING_THRESHOLD, CPU_CRITICAL_THRESHOLD);
-    gchar* cpu_status = g_strdup_printf("<span foreground='%s'>●</span>", cpu_color);
-    gtk_label_set_markup(GTK_LABEL(widgets->cpu_status), cpu_status);
-    g_free(cpu_status);
+    int cpu_status = get_status(cpu_usage, CPU_WARNING_THRESHOLD, CPU_CRITICAL_THRESHOLD);
+    snprintf(label_text, sizeof(label_text),
+         "<span font='14' weight='bold'>CPU Usage (%d cores)</span>\n"
+         "<span font='32' weight='bold' foreground='%s'>%.1f%%</span>\n"
+         "<span font='10'>Status: %s</span>",
+         cpu_cores,
+         get_status_color(cpu_status),
+         cpu_usage,
+         get_status_text(cpu_status));
+    gtk_label_set_markup(GTK_LABEL(widgets->cpu_label), label_text);
     
     /* Update RAM */
-    gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(widgets->ram_progress), ram / 100.0);
-    gchar* ram_text = g_strdup_printf("%.1f%%", ram);
-    gtk_progress_bar_set_text(GTK_PROGRESS_BAR(widgets->ram_progress), ram_text);
-    g_free(ram_text);
-    
-    const char* ram_color = get_status_color(ram, RAM_WARNING_THRESHOLD, RAM_CRITICAL_THRESHOLD);
-    gchar* ram_status = g_strdup_printf("<span foreground='%s'>●</span>", ram_color);
-    gtk_label_set_markup(GTK_LABEL(widgets->ram_status), ram_status);
-    g_free(ram_status);
+    int ram_status = get_status(ram_usage, RAM_WARNING_THRESHOLD, RAM_CRITICAL_THRESHOLD);
+    snprintf(label_text, sizeof(label_text),
+             "<span font='14' weight='bold'>RAM Usage (Total: %s)</span>\n"
+             "<span font='32' weight='bold' foreground='%s'>%.1f%%</span>\n"
+             "<span font='10'>%s</span>\n"
+             "<span font='10'>Status: %s</span>",
+             total_ram,
+             get_status_color(ram_status),
+             ram_usage,
+             ram_details,
+             get_status_text(ram_status));
+    gtk_label_set_markup(GTK_LABEL(widgets->ram_label), label_text);
+
+    // Redraw graphs
+    gtk_widget_queue_draw(widgets->cpu_drawing_area);
+    gtk_widget_queue_draw(widgets->ram_drawing_area);
     
     /* Update Disk */
-    gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(widgets->disk_progress), disk / 100.0);
-    gchar* disk_text = g_strdup_printf("%.1f%%", disk);
-    gtk_progress_bar_set_text(GTK_PROGRESS_BAR(widgets->disk_progress), disk_text);
+    int disk_status = get_status(disk_usage,
+                                 DISK_WARNING_THRESHOLD,
+                                 DISK_CRITICAL_THRESHOLD);
+
+    /* Update progress bar value */
+    gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(widgets->disk_label),
+                                  disk_usage / 100.0);
+
+    /* Show used / total + percentage on the bar */
+    gchar *disk_text = g_strdup_printf("%s\n\n                              (%.1f%%)", disk_details, disk_usage);
+    gtk_progress_bar_set_text(GTK_PROGRESS_BAR(widgets->disk_label), disk_text);
     g_free(disk_text);
-    
-    const char* disk_color = get_status_color(disk, DISK_WARNING_THRESHOLD, DISK_CRITICAL_THRESHOLD);
-    gchar* disk_status = g_strdup_printf("<span foreground='%s'>●</span>", disk_color);
-    gtk_label_set_markup(GTK_LABEL(widgets->disk_status), disk_status);
-    g_free(disk_status);
+
+    /* Update disk status LABEL (not the progress bar) */
+    snprintf(label_text, sizeof(label_text),"<span font='10'>Status: %s</span>",get_status_text(disk_status));
+    gtk_label_set_markup(GTK_LABEL(widgets->disk_status),label_text);
+
     
     /* Update Network */
-    gchar* net_text = g_strdup_printf("📶 %d packets/sec", packets);
-    gtk_label_set_text(GTK_LABEL(widgets->network_label), net_text);
-    g_free(net_text);
+    snprintf(label_text, sizeof(label_text),
+             "<span font='14' weight='bold'>Network Statistics</span>\n"
+             "<span font='10'>%s</span>",
+             network_details);
+    gtk_label_set_markup(GTK_LABEL(widgets->network_label), label_text);
     
     /* Update starvation indicators */
     update_starvation_indicators(widgets);
     
     /* Update task info display with actual execution counts */
-    gchar* task_info = g_strdup_printf(
+    GString *task_info = g_string_new("");
+
+    g_string_append(task_info,
         "╔════════════════════════════════════════════════════════════════════╗\n"
-        "║  SCHEDULER TASK STATUS (Live Execution)                           ║\n"
+        "║  SCHEDULER TASK STATUS (Live Execution)                            ║\n"
         "╠════════════════════════════════════════════════════════════════════╣\n"
-        "║  ID │ Task Name          │ Pri │ Int  │ Runs │ Last Run │ Status  ║\n"
+        "║  ID │ Task Name          │ Pri │ Int  │ Runs │ Last Run │ Status   ║\n"
         "╠════════════════════════════════════════════════════════════════════╣\n"
-        "║  1  │ %-18s │ P%d  │ %3ds │ %4d │  %3ds    │   %s    ║\n"
-        "║  2  │ %-18s │ P%d  │ %3ds │ %4d │  %3ds    │   %s    ║\n"
-        "║  3  │ %-18s │ P%d  │ %3ds │ %4d │  %3ds    │   %s    ║\n"
-        "║  4  │ %-18s │ P%d  │ %3ds │ %4d │  %3ds    │   %s    ║\n"
-        "╚════════════════════════════════════════════════════════════════════╝",
-        widgets->tasks[0].name, widgets->tasks[0].priority, widgets->tasks[0].interval,
-        g_task_exec_count[0], widgets->tasks[0].last_run,
-        widgets->tasks[0].last_run < STARVATION_THRESHOLD/2 ? "OK" : "⚠",
-        widgets->tasks[1].name, widgets->tasks[1].priority, widgets->tasks[1].interval,
-        g_task_exec_count[1], widgets->tasks[1].last_run,
-        widgets->tasks[1].last_run < STARVATION_THRESHOLD/2 ? "OK" : "⚠",
-        widgets->tasks[2].name, widgets->tasks[2].priority, widgets->tasks[2].interval,
-        g_task_exec_count[2], widgets->tasks[2].last_run,
-        widgets->tasks[2].last_run < STARVATION_THRESHOLD/2 ? "OK" : "⚠",
-        widgets->tasks[3].name, widgets->tasks[3].priority, widgets->tasks[3].interval,
-        g_task_exec_count[3], widgets->tasks[3].last_run,
-        widgets->tasks[3].last_run < STARVATION_THRESHOLD/2 ? "OK" : "⚠"
     );
-    gtk_text_buffer_set_text(widgets->tasks_buffer, task_info, -1);
-    g_free(task_info);
+
+    for (int i = 0; i < NUM_TASKS; i++) {
+        g_string_append_printf(task_info,
+            "║  %d  │ %-18s │ P%d  │ %3ds │ %4d │  %3ds    │   %s     ║\n",
+            i + 1,
+            widgets->tasks[i].name,
+            widgets->tasks[i].priority,
+            widgets->tasks[i].interval,
+            g_task_exec_count[i],
+            widgets->tasks[i].last_run,
+            widgets->tasks[i].last_run < STARVATION_THRESHOLD / 2 ? "OK" : "⚠"
+        );
+    }
+
+    g_string_append(task_info,
+        "╚════════════════════════════════════════════════════════════════════╝"
+    );
+
+    gtk_text_buffer_set_text(widgets->tasks_buffer, task_info->str, -1);
+    g_string_free(task_info, TRUE);
+
     
     /* Update status bar */
     time_t now = time(NULL);
@@ -922,55 +1172,90 @@ static GtkWidget* create_metrics_section(AppWidgets* widgets) {
     gtk_container_add(GTK_CONTAINER(frame), grid);
     
     /* CPU Row */
-    GtkWidget* cpu_label = gtk_label_new("CPU Usage");
-    gtk_widget_set_halign(cpu_label, GTK_ALIGN_START);
-    gtk_grid_attach(GTK_GRID(grid), cpu_label, 0, 0, 1, 1);
-    
-    widgets->cpu_progress = gtk_progress_bar_new();
-    gtk_widget_set_name(widgets->cpu_progress, "cpu-bar");
-    gtk_progress_bar_set_show_text(GTK_PROGRESS_BAR(widgets->cpu_progress), TRUE);
-    gtk_widget_set_hexpand(widgets->cpu_progress, TRUE);
-    gtk_grid_attach(GTK_GRID(grid), widgets->cpu_progress, 1, 0, 1, 1);
-    
-    widgets->cpu_status = gtk_label_new("●");
-    gtk_grid_attach(GTK_GRID(grid), widgets->cpu_status, 2, 0, 1, 1);
-    
+    GtkWidget *cpu_frame = gtk_frame_new(NULL);
+    gtk_frame_set_shadow_type(GTK_FRAME(cpu_frame), GTK_SHADOW_ETCHED_IN);
+    GtkWidget *cpu_box = gtk_box_new(GTK_ORIENTATION_VERTICAL, 5);
+    gtk_container_add(GTK_CONTAINER(cpu_frame), cpu_box);
+
+    widgets->cpu_label = gtk_label_new("");
+    gtk_label_set_justify(GTK_LABEL(widgets->cpu_label), GTK_JUSTIFY_CENTER);
+    gtk_box_pack_start(GTK_BOX(cpu_box), widgets->cpu_label, FALSE, FALSE, 5);
+
+    widgets->cpu_drawing_area = gtk_drawing_area_new();
+    gtk_widget_set_size_request(widgets->cpu_drawing_area, 400, 200);
+    g_signal_connect(widgets->cpu_drawing_area, "draw", G_CALLBACK(draw_graph), &cpu_history);
+    gtk_box_pack_start(GTK_BOX(cpu_box), widgets->cpu_drawing_area, TRUE, TRUE, 5);
+
+    gtk_grid_attach(GTK_GRID(grid), cpu_frame, 0, 0, 1, 1);
+
     /* RAM Row */
-    GtkWidget* ram_label = gtk_label_new("RAM Usage");
-    gtk_widget_set_halign(ram_label, GTK_ALIGN_START);
-    gtk_grid_attach(GTK_GRID(grid), ram_label, 0, 1, 1, 1);
+    GtkWidget *ram_frame = gtk_frame_new(NULL);
+    gtk_frame_set_shadow_type(GTK_FRAME(ram_frame), GTK_SHADOW_ETCHED_IN);
+    GtkWidget *ram_box = gtk_box_new(GTK_ORIENTATION_VERTICAL, 5);
+    gtk_container_add(GTK_CONTAINER(ram_frame), ram_box);
+
+    widgets->ram_label = gtk_label_new("");
+    gtk_label_set_justify(GTK_LABEL(widgets->ram_label), GTK_JUSTIFY_CENTER);
+    gtk_box_pack_start(GTK_BOX(ram_box), widgets->ram_label, FALSE, FALSE, 5);
+
+    widgets->ram_drawing_area = gtk_drawing_area_new();
+    gtk_widget_set_size_request(widgets->ram_drawing_area, 400, 200);
+    g_signal_connect(widgets->ram_drawing_area, "draw", G_CALLBACK(draw_graph), &ram_history);
+    gtk_box_pack_start(GTK_BOX(ram_box), widgets->ram_drawing_area, TRUE, TRUE, 5);
+
+    gtk_grid_attach(GTK_GRID(grid), ram_frame, 1, 0, 1, 1);
     
-    widgets->ram_progress = gtk_progress_bar_new();
-    gtk_widget_set_name(widgets->ram_progress, "ram-bar");
-    gtk_progress_bar_set_show_text(GTK_PROGRESS_BAR(widgets->ram_progress), TRUE);
-    gtk_widget_set_hexpand(widgets->ram_progress, TRUE);
-    gtk_grid_attach(GTK_GRID(grid), widgets->ram_progress, 1, 1, 1, 1);
+    /* Disk Row (Card like CPU/RAM) */
+    GtkWidget *disk_frame = gtk_frame_new(NULL);
+    gtk_frame_set_shadow_type(GTK_FRAME(disk_frame), GTK_SHADOW_ETCHED_IN);
+
+    GtkWidget *disk_box = gtk_box_new(GTK_ORIENTATION_VERTICAL, 6);
+    gtk_container_set_border_width(GTK_CONTAINER(disk_box), 8);
+    gtk_container_add(GTK_CONTAINER(disk_frame), disk_box);
+
+    /* Disk title */
+    GtkWidget *disk_title = gtk_label_new("Disk Usage");
+    gtk_widget_set_halign(disk_title, GTK_ALIGN_CENTER);
+    gtk_box_pack_start(GTK_BOX(disk_box), disk_title, FALSE, FALSE, 0);
+
+    /* Disk progress bar */
+    widgets->disk_label = gtk_progress_bar_new();
+    gtk_widget_set_name(widgets->disk_label, "disk-bar");
+    gtk_progress_bar_set_show_text(GTK_PROGRESS_BAR(widgets->disk_label), TRUE);
+    gtk_box_pack_start(GTK_BOX(disk_box), widgets->disk_label, FALSE, FALSE, 0);
+
+    /* Disk status indicator */
+    widgets->disk_status = gtk_label_new("");
+    gtk_widget_set_halign(widgets->disk_status, GTK_ALIGN_CENTER);
+    gtk_box_pack_start(GTK_BOX(disk_box), widgets->disk_status, FALSE, FALSE, 0);
+
+    /* Attach disk card to grid */
+    gtk_grid_attach(GTK_GRID(grid), disk_frame, 0, 1, 1, 1);
+
     
-    widgets->ram_status = gtk_label_new("●");
-    gtk_grid_attach(GTK_GRID(grid), widgets->ram_status, 2, 1, 1, 1);
-    
-    /* Disk Row */
-    GtkWidget* disk_label = gtk_label_new("Disk Usage");
-    gtk_widget_set_halign(disk_label, GTK_ALIGN_START);
-    gtk_grid_attach(GTK_GRID(grid), disk_label, 0, 2, 1, 1);
-    
-    widgets->disk_progress = gtk_progress_bar_new();
-    gtk_widget_set_name(widgets->disk_progress, "disk-bar");
-    gtk_progress_bar_set_show_text(GTK_PROGRESS_BAR(widgets->disk_progress), TRUE);
-    gtk_widget_set_hexpand(widgets->disk_progress, TRUE);
-    gtk_grid_attach(GTK_GRID(grid), widgets->disk_progress, 1, 2, 1, 1);
-    
-    widgets->disk_status = gtk_label_new("●");
-    gtk_grid_attach(GTK_GRID(grid), widgets->disk_status, 2, 2, 1, 1);
-    
-    /* Network Row */
-    GtkWidget* net_label = gtk_label_new("Network");
-    gtk_widget_set_halign(net_label, GTK_ALIGN_START);
-    gtk_grid_attach(GTK_GRID(grid), net_label, 0, 3, 1, 1);
-    
-    widgets->network_label = gtk_label_new("📶 0 packets/sec");
-    gtk_widget_set_halign(widgets->network_label, GTK_ALIGN_START);
-    gtk_grid_attach(GTK_GRID(grid), widgets->network_label, 1, 3, 2, 1);
+    /* Network Card */
+    GtkWidget *net_frame = gtk_frame_new(NULL);
+    gtk_frame_set_shadow_type(GTK_FRAME(net_frame), GTK_SHADOW_ETCHED_IN);
+
+    GtkWidget *net_box = gtk_box_new(GTK_ORIENTATION_VERTICAL, 6);
+    gtk_container_set_border_width(GTK_CONTAINER(net_box), 8);
+    gtk_container_add(GTK_CONTAINER(net_frame), net_box);
+
+    /* Network title */
+    GtkWidget *net_title = gtk_label_new(NULL);
+    gtk_label_set_markup(GTK_LABEL(net_title),
+        "<span weight='bold'>Network Statistics</span>");
+    gtk_widget_set_halign(net_title, GTK_ALIGN_CENTER);
+    gtk_box_pack_start(GTK_BOX(net_box), net_title, FALSE, FALSE, 0);
+
+    /* Network content */
+    widgets->network_label = gtk_label_new("");
+    gtk_label_set_xalign(GTK_LABEL(widgets->network_label), 0.0); // left aligned text
+    gtk_box_pack_start(GTK_BOX(net_box), widgets->network_label, FALSE, FALSE, 0);
+
+    /* Attach to grid (below Disk card) */
+    gtk_grid_attach(GTK_GRID(grid), net_frame, 1, 1, 1, 1);
+
     
     return frame;
 }
@@ -1040,19 +1325,22 @@ static GtkWidget* create_scheduler_section(AppWidgets* widgets) {
  */
 static GtkWidget* create_task_info_section(AppWidgets* widgets) {
     GtkWidget* frame = gtk_frame_new("Task Details");
-    
-    GtkWidget* scroll = gtk_scrolled_window_new(NULL, NULL);
-    gtk_scrolled_window_set_min_content_height(GTK_SCROLLED_WINDOW(scroll), 180);
-    gtk_container_add(GTK_CONTAINER(frame), scroll);
-    
+
     widgets->tasks_textview = gtk_text_view_new();
     gtk_text_view_set_editable(GTK_TEXT_VIEW(widgets->tasks_textview), FALSE);
     gtk_text_view_set_monospace(GTK_TEXT_VIEW(widgets->tasks_textview), TRUE);
     gtk_text_view_set_left_margin(GTK_TEXT_VIEW(widgets->tasks_textview), 8);
     gtk_text_view_set_top_margin(GTK_TEXT_VIEW(widgets->tasks_textview), 8);
-    widgets->tasks_buffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(widgets->tasks_textview));
-    gtk_container_add(GTK_CONTAINER(scroll), widgets->tasks_textview);
-    
+
+    widgets->tasks_buffer =
+        gtk_text_view_get_buffer(GTK_TEXT_VIEW(widgets->tasks_textview));
+
+    /* IMPORTANT: let it expand fully */
+    gtk_widget_set_vexpand(widgets->tasks_textview, TRUE);
+    gtk_widget_set_hexpand(widgets->tasks_textview, TRUE);
+
+    gtk_container_add(GTK_CONTAINER(frame), widgets->tasks_textview);
+
     return frame;
 }
 
@@ -1070,6 +1358,9 @@ static void activate(GtkApplication* app, gpointer user_data) {
     
     /* Load task configuration */
     load_task_config(widgets->tasks, NUM_TASKS);
+
+    /* FIX: detect system info ONCE */
+    detect_system_info();
     
     /* Apply dark theme */
     apply_dark_theme();
@@ -1099,17 +1390,30 @@ static void activate(GtkApplication* app, gpointer user_data) {
     gtk_box_pack_start(GTK_BOX(header_box), subtitle, FALSE, FALSE, 0);
     gtk_box_pack_start(GTK_BOX(main_box), header_box, FALSE, FALSE, 0);
     
-    /* Metrics section */
+    /* =======================
+    * Landscape content area
+    * ======================= */
+    GtkWidget* content_box = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 12);
+    gtk_box_pack_start(GTK_BOX(main_box), content_box, TRUE, TRUE, 0);
+
+    /* LEFT: Metrics */
     GtkWidget* metrics = create_metrics_section(widgets);
-    gtk_box_pack_start(GTK_BOX(main_box), metrics, FALSE, FALSE, 0);
-    
-    /* Scheduler control section */
+    gtk_widget_set_hexpand(metrics, TRUE);
+    gtk_box_pack_start(GTK_BOX(content_box), metrics, TRUE, TRUE, 0);
+
+    /* RIGHT: Scheduler + Task info */
+    GtkWidget* right_box = gtk_box_new(GTK_ORIENTATION_VERTICAL, 12);
+    gtk_widget_set_hexpand(right_box, TRUE);
+    gtk_box_pack_start(GTK_BOX(content_box), right_box, TRUE, TRUE, 0);
+
+    /* Scheduler */
     GtkWidget* scheduler = create_scheduler_section(widgets);
-    gtk_box_pack_start(GTK_BOX(main_box), scheduler, FALSE, FALSE, 0);
-    
-    /* Task info section */
+    gtk_box_pack_start(GTK_BOX(right_box), scheduler, FALSE, FALSE, 0);
+
+    /* Task info */
     GtkWidget* task_info = create_task_info_section(widgets);
-    gtk_box_pack_start(GTK_BOX(main_box), task_info, TRUE, TRUE, 0);
+    gtk_box_pack_start(GTK_BOX(right_box), task_info, TRUE, TRUE, 0);
+
     
     /* Status bar */
     GtkWidget* status_bar = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);

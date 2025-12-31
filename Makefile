@@ -43,14 +43,12 @@ SRC_DIR         = src
 # ==============================================================================
 
 # Source files
-SRC_SCHEDULER   = $(SRC_DIR)/scheduler.c
 SRC_ANALYZE     = $(SRC_DIR)/analyze.c
 SRC_REPORT      = $(SRC_DIR)/report_generator.c
 SRC_METRICS     = $(SRC_DIR)/metrics_exporter.c
 SRC_GTK_GUI     = $(SRC_DIR)/gtk_gui.c
 
 # Output executables
-OUT_SCHEDULER   = $(BUILD_DIR)/scheduler
 OUT_ANALYZE     = $(BUILD_DIR)/analyze
 OUT_REPORT      = $(BUILD_DIR)/report_generator
 OUT_METRICS     = $(BUILD_DIR)/metrics_exporter
@@ -70,7 +68,7 @@ MKDIR           = mkdir -p
 .PHONY: all clean clean-logs reset help debug gui run setup check-gtk
 
 # Default target: build all core components (excluding GTK which needs libs)
-all: setup $(OUT_SCHEDULER) $(OUT_ANALYZE) $(OUT_REPORT) $(OUT_METRICS)
+all: setup $(OUT_ANALYZE) $(OUT_REPORT) $(OUT_METRICS)
 	@echo ""
 	@echo "╔═══════════════════════════════════════════════════════════════╗"
 	@echo "║  BUILD COMPLETE                                               ║"

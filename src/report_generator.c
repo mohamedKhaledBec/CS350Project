@@ -710,6 +710,20 @@ int main(int argc, char* argv[]) {
     printf("  %s→%s Generating HTML report...\n", CLR_GREEN, CLR_RESET);
     
     generate_report(output_path);
+
+    /* Optional: Generate PDF if wkhtmltopdf is available */
+    char pdf_cmd[PATH_MAX * 2];
+    snprintf(pdf_cmd, sizeof(pdf_cmd),
+             "wkhtmltopdf %s %s.pdf 2>/dev/null",
+             output_path, output_path);
+
+    int pdf_ret = system(pdf_cmd);
+    if (pdf_ret == 0) {
+        printf("  ✓ PDF generated: %s.pdf\n", output_path);
+    } else {
+        printf("  ℹ PDF not generated (wkhtmltopdf not installed)\n");
+    }
+
     
     printf("\n");
     printf("  %s✓ Report generated:%s %s%s\n", CLR_GREEN, CLR_WHITE, output_path, CLR_RESET);

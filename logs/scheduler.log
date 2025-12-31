@@ -1,0 +1,3423 @@
+
+=== CS350 GUI Scheduler Session Started ===
+Started: Wed Dec 31 11:49:26 2025
+
+[11:49:26] 
+=== TICK 1 ===
+[11:49:27] 
+=== TICK 2 ===
+[11:49:27] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:49:27] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:49:27] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:49:27] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:49:27] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:49:27] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:49:27] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:49:27] [TASK] CPU Monitor starting
+[11:49:28] [TASK] CPU Monitor completed (exec #1)
+[11:49:28] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:49:28] [TASK] RAM Monitor starting
+[11:49:28] [TASK] RAM Monitor completed (exec #1)
+[11:49:28] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:49:28] [TASK] Analyzer starting
+[11:49:28] [TASK] Analyzer completed (exec #1)
+[11:49:28] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:49:28] [TASK] Disk Monitor starting
+[11:49:28] [TASK] Disk Monitor completed (exec #1)
+[11:49:28] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:49:28] [TASK] Network Fetch starting
+[11:49:28] [TASK] Network Fetch completed (exec #1)
+[11:49:28] 
+=== TICK 3 ===
+[11:49:28] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:49:28] [DISPATCH] Executing 1 ready task(s) in priority order
+[11:49:28] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:49:28] [TASK] CPU Monitor starting
+[11:49:29] [TASK] CPU Monitor completed (exec #2)
+[11:49:29] 
+=== TICK 4 ===
+[11:49:29] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:49:29] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:49:29] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:49:29] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:49:29] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:49:29] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:49:29] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:49:29] [TASK] CPU Monitor starting
+[11:49:31] [TASK] CPU Monitor completed (exec #3)
+[11:49:31] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:49:31] [TASK] RAM Monitor starting
+[11:49:31] [TASK] RAM Monitor completed (exec #2)
+[11:49:31] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:49:31] [TASK] Analyzer starting
+[11:49:31] [TASK] Analyzer completed (exec #2)
+[11:49:31] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:49:31] [TASK] Disk Monitor starting
+[11:49:31] [TASK] Disk Monitor completed (exec #2)
+[11:49:31] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:49:31] [TASK] Network Fetch starting
+[11:49:31] [TASK] Network Fetch completed (exec #2)
+[11:49:31] 
+=== TICK 5 ===
+[11:49:31] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:49:31] [DISPATCH] Executing 1 ready task(s) in priority order
+[11:49:31] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:49:31] [TASK] CPU Monitor starting
+[11:49:32] [TASK] CPU Monitor completed (exec #4)
+[11:49:32] 
+=== TICK 6 ===
+[11:49:32] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:49:32] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:49:32] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:49:32] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:49:32] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:49:32] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:49:32] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:49:32] [TASK] CPU Monitor starting
+[11:49:33] [TASK] CPU Monitor completed (exec #5)
+[11:49:33] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:49:33] [TASK] RAM Monitor starting
+[11:49:33] [TASK] RAM Monitor completed (exec #3)
+[11:49:33] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:49:33] [TASK] Analyzer starting
+[11:49:33] [TASK] Analyzer completed (exec #3)
+[11:49:33] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:49:33] [TASK] Disk Monitor starting
+[11:49:33] [TASK] Disk Monitor completed (exec #3)
+[11:49:33] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:49:33] [TASK] Network Fetch starting
+[11:49:33] [TASK] Network Fetch completed (exec #3)
+[11:49:33] 
+=== TICK 7 ===
+[11:49:33] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:49:33] [DISPATCH] Executing 1 ready task(s) in priority order
+[11:49:33] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:49:33] [TASK] CPU Monitor starting
+[11:49:34] [TASK] CPU Monitor completed (exec #6)
+[11:49:34] 
+=== TICK 8 ===
+[11:49:34] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:49:34] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:49:34] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:49:34] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:49:34] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:49:34] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:49:34] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:49:34] [TASK] CPU Monitor starting
+[11:49:35] [TASK] CPU Monitor completed (exec #7)
+[11:49:35] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:49:35] [TASK] RAM Monitor starting
+[11:49:35] [TASK] RAM Monitor completed (exec #4)
+[11:49:35] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:49:35] [TASK] Analyzer starting
+[11:49:35] [TASK] Analyzer completed (exec #4)
+[11:49:35] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:49:35] [TASK] Disk Monitor starting
+[11:49:35] [TASK] Disk Monitor completed (exec #4)
+[11:49:35] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:49:35] [TASK] Network Fetch starting
+[11:49:35] [TASK] Network Fetch completed (exec #4)
+[11:49:35] 
+=== TICK 9 ===
+[11:49:35] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:49:35] [READY] Task 6 (Report Generator) ready - interval 9s elapsed
+[11:49:35] [DISPATCH] Executing 2 ready task(s) in priority order
+[11:49:35] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:49:35] [TASK] CPU Monitor starting
+[11:49:36] [TASK] CPU Monitor completed (exec #8)
+[11:49:36] [DISPATCH] Task 6 (Report Generator) P3 gets CPU
+[11:49:36] [TASK] Report Generator starting
+[11:49:37] [TASK] Report Generator completed (exec #1)
+[11:49:37] 
+=== TICK 10 ===
+[11:49:37] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:49:37] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:49:37] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:49:37] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:49:37] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:49:37] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:49:37] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:49:37] [TASK] CPU Monitor starting
+[11:49:37] [TASK] CPU Monitor completed (exec #9)
+[11:49:37] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:49:37] [TASK] RAM Monitor starting
+[11:49:37] [TASK] RAM Monitor completed (exec #5)
+[11:49:37] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:49:37] [TASK] Analyzer starting
+[11:49:37] [TASK] Analyzer completed (exec #5)
+[11:49:37] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:49:37] [TASK] Disk Monitor starting
+[11:49:37] [TASK] Disk Monitor completed (exec #5)
+[11:49:37] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:49:37] [TASK] Network Fetch starting
+[11:49:37] [TASK] Network Fetch completed (exec #5)
+[11:49:38] 
+=== TICK 11 ===
+[11:49:38] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:49:38] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:49:38] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:49:38] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:49:38] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:49:38] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:49:38] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:49:38] [TASK] CPU Monitor starting
+[11:49:38] [TASK] CPU Monitor completed (exec #10)
+[11:49:38] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:49:38] [TASK] RAM Monitor starting
+[11:49:38] [TASK] RAM Monitor completed (exec #6)
+[11:49:38] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:49:38] [TASK] Analyzer starting
+[11:49:38] [TASK] Analyzer completed (exec #6)
+[11:49:38] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:49:38] [TASK] Disk Monitor starting
+[11:49:38] [TASK] Disk Monitor completed (exec #6)
+[11:49:38] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:49:38] [TASK] Network Fetch starting
+[11:49:38] [TASK] Network Fetch completed (exec #6)
+[11:49:39] 
+=== TICK 12 ===
+[11:49:39] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:49:39] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:49:39] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:49:39] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:49:39] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:49:39] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:49:39] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:49:39] [TASK] CPU Monitor starting
+[11:49:39] [TASK] CPU Monitor completed (exec #11)
+[11:49:39] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:49:39] [TASK] RAM Monitor starting
+[11:49:39] [TASK] RAM Monitor completed (exec #7)
+[11:49:39] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:49:39] [TASK] Analyzer starting
+[11:49:39] [TASK] Analyzer completed (exec #7)
+[11:49:39] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:49:39] [TASK] Disk Monitor starting
+[11:49:39] [TASK] Disk Monitor completed (exec #7)
+[11:49:39] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:49:39] [TASK] Network Fetch starting
+[11:49:39] [TASK] Network Fetch completed (exec #7)
+[11:49:40] 
+=== TICK 13 ===
+[11:49:40] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:49:40] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:49:40] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:49:40] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:49:40] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:49:40] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:49:40] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:49:40] [TASK] CPU Monitor starting
+[11:49:40] [TASK] CPU Monitor completed (exec #12)
+[11:49:40] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:49:40] [TASK] RAM Monitor starting
+[11:49:40] [TASK] RAM Monitor completed (exec #8)
+[11:49:40] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:49:40] [TASK] Analyzer starting
+[11:49:40] [TASK] Analyzer completed (exec #8)
+[11:49:40] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:49:40] [TASK] Disk Monitor starting
+[11:49:40] [TASK] Disk Monitor completed (exec #8)
+[11:49:40] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:49:40] [TASK] Network Fetch starting
+[11:49:40] [TASK] Network Fetch completed (exec #8)
+[11:49:41] 
+=== TICK 14 ===
+[11:49:41] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:49:41] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:49:41] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:49:41] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:49:41] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:49:41] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:49:41] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:49:41] [TASK] CPU Monitor starting
+[11:49:41] [TASK] CPU Monitor completed (exec #13)
+[11:49:41] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:49:41] [TASK] RAM Monitor starting
+[11:49:41] [TASK] RAM Monitor completed (exec #9)
+[11:49:41] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:49:41] [TASK] Analyzer starting
+[11:49:41] [TASK] Analyzer completed (exec #9)
+[11:49:41] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:49:41] [TASK] Disk Monitor starting
+[11:49:41] [TASK] Disk Monitor completed (exec #9)
+[11:49:41] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:49:41] [TASK] Network Fetch starting
+[11:49:41] [TASK] Network Fetch completed (exec #9)
+[11:49:42] 
+=== TICK 15 ===
+[11:49:42] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:49:42] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:49:42] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:49:42] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:49:42] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:49:42] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:49:42] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:49:42] [TASK] CPU Monitor starting
+[11:49:42] [TASK] CPU Monitor completed (exec #14)
+[11:49:42] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:49:42] [TASK] RAM Monitor starting
+[11:49:42] [TASK] RAM Monitor completed (exec #10)
+[11:49:42] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:49:42] [TASK] Analyzer starting
+[11:49:42] [TASK] Analyzer completed (exec #10)
+[11:49:42] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:49:42] [TASK] Disk Monitor starting
+[11:49:42] [TASK] Disk Monitor completed (exec #10)
+[11:49:42] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:49:42] [TASK] Network Fetch starting
+[11:49:43] [TASK] Network Fetch completed (exec #10)
+[11:49:43] 
+=== TICK 16 ===
+[11:49:43] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:49:43] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:49:43] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:49:43] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:49:43] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:49:43] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:49:43] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:49:43] [TASK] CPU Monitor starting
+[11:49:43] [TASK] CPU Monitor completed (exec #15)
+[11:49:43] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:49:43] [TASK] RAM Monitor starting
+[11:49:43] [TASK] RAM Monitor completed (exec #11)
+[11:49:43] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:49:43] [TASK] Analyzer starting
+[11:49:43] [TASK] Analyzer completed (exec #11)
+[11:49:43] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:49:43] [TASK] Disk Monitor starting
+[11:49:43] [TASK] Disk Monitor completed (exec #11)
+[11:49:43] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:49:43] [TASK] Network Fetch starting
+[11:49:43] [TASK] Network Fetch completed (exec #11)
+[11:49:44] 
+=== TICK 17 ===
+[11:49:44] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:49:44] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:49:44] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:49:44] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:49:44] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:49:44] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:49:44] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:49:44] [TASK] CPU Monitor starting
+[11:49:44] [TASK] CPU Monitor completed (exec #16)
+[11:49:44] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:49:44] [TASK] RAM Monitor starting
+[11:49:44] [TASK] RAM Monitor completed (exec #12)
+[11:49:44] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:49:44] [TASK] Analyzer starting
+[11:49:44] [TASK] Analyzer completed (exec #12)
+[11:49:44] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:49:44] [TASK] Disk Monitor starting
+[11:49:44] [TASK] Disk Monitor completed (exec #12)
+[11:49:44] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:49:44] [TASK] Network Fetch starting
+[11:49:44] [TASK] Network Fetch completed (exec #12)
+[11:49:45] 
+=== TICK 18 ===
+[11:49:45] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:49:45] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:49:45] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:49:45] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:49:45] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:49:45] [READY] Task 6 (Report Generator) ready - interval 9s elapsed
+[11:49:45] [DISPATCH] Executing 6 ready task(s) in priority order
+[11:49:45] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:49:45] [TASK] CPU Monitor starting
+[11:49:45] [TASK] CPU Monitor completed (exec #17)
+[11:49:45] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:49:45] [TASK] RAM Monitor starting
+[11:49:45] [TASK] RAM Monitor completed (exec #13)
+[11:49:45] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:49:45] [TASK] Analyzer starting
+[11:49:45] [TASK] Analyzer completed (exec #13)
+[11:49:45] [DISPATCH] Task 6 (Report Generator) P3 gets CPU
+[11:49:45] [TASK] Report Generator starting
+[11:49:46] [TASK] Report Generator completed (exec #2)
+[11:49:46] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:49:46] [TASK] Disk Monitor starting
+[11:49:46] [TASK] Disk Monitor completed (exec #13)
+[11:49:46] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:49:46] [TASK] Network Fetch starting
+[11:49:46] [TASK] Network Fetch completed (exec #13)
+[11:49:46] 
+=== TICK 19 ===
+[11:49:46] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:49:46] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:49:46] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:49:46] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:49:46] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:49:46] [TASK] CPU Monitor starting
+[11:49:47] [TASK] CPU Monitor completed (exec #18)
+[11:49:47] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:49:47] [TASK] RAM Monitor starting
+[11:49:47] [TASK] RAM Monitor completed (exec #14)
+[11:49:47] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:49:47] [TASK] Analyzer starting
+[11:49:47] [TASK] Analyzer completed (exec #14)
+[11:49:47] 
+=== TICK 20 ===
+[11:49:47] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:49:47] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:49:47] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:49:47] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:49:47] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:49:47] [TASK] CPU Monitor starting
+[11:49:48] [TASK] CPU Monitor completed (exec #19)
+[11:49:48] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:49:48] [TASK] Disk Monitor starting
+[11:49:48] [TASK] Disk Monitor completed (exec #14)
+[11:49:48] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:49:48] [TASK] Network Fetch starting
+[11:49:48] [TASK] Network Fetch completed (exec #14)
+[11:49:48] 
+=== TICK 21 ===
+[11:49:48] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:49:48] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:49:48] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:49:48] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:49:48] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:49:48] [TASK] CPU Monitor starting
+[11:49:49] [TASK] CPU Monitor completed (exec #20)
+[11:49:49] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:49:49] [TASK] RAM Monitor starting
+[11:49:49] [TASK] RAM Monitor completed (exec #15)
+[11:49:49] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:49:49] [TASK] Analyzer starting
+[11:49:49] [TASK] Analyzer completed (exec #15)
+[11:49:49] 
+=== TICK 22 ===
+[11:49:49] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:49:49] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:49:49] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:49:49] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:49:49] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:49:49] [TASK] CPU Monitor starting
+[11:49:50] [TASK] CPU Monitor completed (exec #21)
+[11:49:50] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:49:50] [TASK] Disk Monitor starting
+[11:49:50] [TASK] Disk Monitor completed (exec #15)
+[11:49:50] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:49:50] [TASK] Network Fetch starting
+[11:49:50] [TASK] Network Fetch completed (exec #15)
+[11:49:50] 
+=== TICK 23 ===
+[11:49:50] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:49:50] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:49:50] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:49:50] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:49:50] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:49:50] [TASK] CPU Monitor starting
+[11:49:51] [TASK] CPU Monitor completed (exec #22)
+[11:49:51] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:49:51] [TASK] RAM Monitor starting
+[11:49:51] [TASK] RAM Monitor completed (exec #16)
+[11:49:51] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:49:51] [TASK] Analyzer starting
+[11:49:51] [TASK] Analyzer completed (exec #16)
+[11:49:51] 
+=== TICK 24 ===
+[11:49:51] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:49:51] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:49:51] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:49:51] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:49:51] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:49:51] [TASK] CPU Monitor starting
+[11:49:52] [TASK] CPU Monitor completed (exec #23)
+[11:49:52] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:49:52] [TASK] Disk Monitor starting
+[11:49:52] [TASK] Disk Monitor completed (exec #16)
+[11:49:52] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:49:52] [TASK] Network Fetch starting
+[11:49:52] [TASK] Network Fetch completed (exec #16)
+[11:49:52] 
+=== TICK 25 ===
+[11:49:52] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:49:52] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:49:52] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:49:52] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:49:52] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:49:52] [TASK] CPU Monitor starting
+[11:49:53] [TASK] CPU Monitor completed (exec #24)
+[11:49:53] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:49:53] [TASK] RAM Monitor starting
+[11:49:53] [TASK] RAM Monitor completed (exec #17)
+[11:49:53] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:49:53] [TASK] Analyzer starting
+[11:49:53] [TASK] Analyzer completed (exec #17)
+[11:49:53] 
+=== TICK 26 ===
+[11:49:53] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:49:53] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:49:53] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:49:53] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:49:53] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:49:53] [TASK] CPU Monitor starting
+[11:49:54] [TASK] CPU Monitor completed (exec #25)
+[11:49:54] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:49:54] [TASK] Disk Monitor starting
+[11:49:54] [TASK] Disk Monitor completed (exec #17)
+[11:49:54] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:49:54] [TASK] Network Fetch starting
+[11:49:54] [TASK] Network Fetch completed (exec #17)
+[11:49:54] 
+=== TICK 27 ===
+[11:49:54] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:49:54] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:49:54] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:49:54] [READY] Task 6 (Report Generator) ready - interval 9s elapsed
+[11:49:54] [DISPATCH] Executing 4 ready task(s) in priority order
+[11:49:54] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:49:54] [TASK] CPU Monitor starting
+[11:49:55] [TASK] CPU Monitor completed (exec #26)
+[11:49:55] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:49:55] [TASK] RAM Monitor starting
+[11:49:55] [TASK] RAM Monitor completed (exec #18)
+[11:49:55] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:49:55] [TASK] Analyzer starting
+[11:49:55] [TASK] Analyzer completed (exec #18)
+[11:49:55] [DISPATCH] Task 6 (Report Generator) P3 gets CPU
+[11:49:55] [TASK] Report Generator starting
+[11:49:56] [TASK] Report Generator completed (exec #3)
+[11:49:56] 
+=== TICK 28 ===
+[11:49:56] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:49:56] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:49:56] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:49:56] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:49:56] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:49:56] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:49:56] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:49:56] [TASK] CPU Monitor starting
+[11:49:57] [TASK] CPU Monitor completed (exec #27)
+[11:49:57] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:49:57] [TASK] RAM Monitor starting
+[11:49:57] [TASK] RAM Monitor completed (exec #19)
+[11:49:57] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:49:57] [TASK] Analyzer starting
+[11:49:57] [TASK] Analyzer completed (exec #19)
+[11:49:57] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:49:57] [TASK] Disk Monitor starting
+[11:49:57] [TASK] Disk Monitor completed (exec #18)
+[11:49:57] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:49:57] [TASK] Network Fetch starting
+[11:49:57] [TASK] Network Fetch completed (exec #18)
+[11:49:57] 
+=== TICK 29 ===
+[11:49:57] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:49:57] [DISPATCH] Executing 1 ready task(s) in priority order
+[11:49:57] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:49:57] [TASK] CPU Monitor starting
+[11:49:58] [TASK] CPU Monitor completed (exec #28)
+[11:49:58] 
+=== TICK 30 ===
+[11:49:58] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:49:58] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:49:58] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:49:58] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:49:58] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:49:58] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:49:58] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:49:58] [TASK] CPU Monitor starting
+[11:49:59] [TASK] CPU Monitor completed (exec #29)
+[11:49:59] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:49:59] [TASK] RAM Monitor starting
+[11:49:59] [TASK] RAM Monitor completed (exec #20)
+[11:49:59] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:49:59] [TASK] Analyzer starting
+[11:49:59] [TASK] Analyzer completed (exec #20)
+[11:49:59] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:49:59] [TASK] Disk Monitor starting
+[11:49:59] [TASK] Disk Monitor completed (exec #19)
+[11:49:59] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:49:59] [TASK] Network Fetch starting
+[11:49:59] [TASK] Network Fetch completed (exec #19)
+[11:49:59] 
+=== TICK 31 ===
+[11:49:59] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:49:59] [DISPATCH] Executing 1 ready task(s) in priority order
+[11:49:59] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:49:59] [TASK] CPU Monitor starting
+[11:50:00] [TASK] CPU Monitor completed (exec #30)
+[11:50:00] 
+=== TICK 32 ===
+[11:50:00] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:00] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:50:00] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:50:00] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:50:00] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:50:00] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:50:00] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:00] [TASK] CPU Monitor starting
+[11:50:01] [TASK] CPU Monitor completed (exec #31)
+[11:50:01] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:50:01] [TASK] RAM Monitor starting
+[11:50:01] [TASK] RAM Monitor completed (exec #21)
+[11:50:01] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:50:01] [TASK] Analyzer starting
+[11:50:01] [TASK] Analyzer completed (exec #21)
+[11:50:01] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:50:01] [TASK] Disk Monitor starting
+[11:50:01] [TASK] Disk Monitor completed (exec #20)
+[11:50:01] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:50:01] [TASK] Network Fetch starting
+[11:50:01] [TASK] Network Fetch completed (exec #20)
+[11:50:01] 
+=== TICK 33 ===
+[11:50:01] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:01] [DISPATCH] Executing 1 ready task(s) in priority order
+[11:50:01] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:01] [TASK] CPU Monitor starting
+[11:50:02] [TASK] CPU Monitor completed (exec #32)
+[11:50:02] 
+=== TICK 34 ===
+[11:50:02] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:02] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:50:02] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:50:02] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:50:02] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:50:02] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:50:02] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:02] [TASK] CPU Monitor starting
+[11:50:03] [TASK] CPU Monitor completed (exec #33)
+[11:50:03] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:50:03] [TASK] RAM Monitor starting
+[11:50:03] [TASK] RAM Monitor completed (exec #22)
+[11:50:03] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:50:03] [TASK] Analyzer starting
+[11:50:03] [TASK] Analyzer completed (exec #22)
+[11:50:03] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:50:03] [TASK] Disk Monitor starting
+[11:50:03] [TASK] Disk Monitor completed (exec #21)
+[11:50:03] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:50:03] [TASK] Network Fetch starting
+[11:50:03] [TASK] Network Fetch completed (exec #21)
+[11:50:04] 
+=== TICK 35 ===
+[11:50:04] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:04] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:50:04] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:50:04] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:50:04] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:50:04] [READY] Task 6 (Report Generator) ready - interval 9s elapsed
+[11:50:04] [DISPATCH] Executing 6 ready task(s) in priority order
+[11:50:04] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:04] [TASK] CPU Monitor starting
+[11:50:05] [TASK] CPU Monitor completed (exec #34)
+[11:50:05] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:50:05] [TASK] RAM Monitor starting
+[11:50:05] [TASK] RAM Monitor completed (exec #23)
+[11:50:05] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:50:05] [TASK] Analyzer starting
+[11:50:05] [TASK] Analyzer completed (exec #23)
+[11:50:05] [DISPATCH] Task 6 (Report Generator) P3 gets CPU
+[11:50:05] [TASK] Report Generator starting
+[11:50:06] [TASK] Report Generator completed (exec #4)
+[11:50:06] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:50:06] [TASK] Disk Monitor starting
+[11:50:06] [TASK] Disk Monitor completed (exec #22)
+[11:50:06] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:50:06] [TASK] Network Fetch starting
+[11:50:06] [TASK] Network Fetch completed (exec #22)
+[11:50:06] 
+=== TICK 36 ===
+[11:50:06] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:06] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:50:06] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:50:06] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:50:06] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:06] [TASK] CPU Monitor starting
+[11:50:07] [TASK] CPU Monitor completed (exec #35)
+[11:50:07] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:50:07] [TASK] RAM Monitor starting
+[11:50:07] [TASK] RAM Monitor completed (exec #24)
+[11:50:07] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:50:07] [TASK] Analyzer starting
+[11:50:07] [TASK] Analyzer completed (exec #24)
+[11:50:07] 
+=== TICK 37 ===
+[11:50:07] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:07] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:50:07] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:50:07] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:50:07] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:07] [TASK] CPU Monitor starting
+[11:50:08] [TASK] CPU Monitor completed (exec #36)
+[11:50:08] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:50:08] [TASK] Disk Monitor starting
+[11:50:08] [TASK] Disk Monitor completed (exec #23)
+[11:50:08] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:50:08] [TASK] Network Fetch starting
+[11:50:08] [TASK] Network Fetch completed (exec #23)
+[11:50:08] 
+=== TICK 38 ===
+[11:50:08] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:08] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:50:08] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:50:08] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:50:08] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:08] [TASK] CPU Monitor starting
+[11:50:09] [TASK] CPU Monitor completed (exec #37)
+[11:50:09] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:50:09] [TASK] RAM Monitor starting
+[11:50:09] [TASK] RAM Monitor completed (exec #25)
+[11:50:09] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:50:09] [TASK] Analyzer starting
+[11:50:09] [TASK] Analyzer completed (exec #25)
+[11:50:09] 
+=== TICK 39 ===
+[11:50:09] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:09] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:50:09] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:50:09] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:50:09] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:09] [TASK] CPU Monitor starting
+[11:50:10] [TASK] CPU Monitor completed (exec #38)
+[11:50:10] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:50:10] [TASK] Disk Monitor starting
+[11:50:10] [TASK] Disk Monitor completed (exec #24)
+[11:50:10] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:50:10] [TASK] Network Fetch starting
+[11:50:10] [TASK] Network Fetch completed (exec #24)
+[11:50:10] 
+=== TICK 40 ===
+[11:50:10] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:10] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:50:10] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:50:10] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:50:10] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:10] [TASK] CPU Monitor starting
+[11:50:11] [TASK] CPU Monitor completed (exec #39)
+[11:50:11] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:50:11] [TASK] RAM Monitor starting
+[11:50:11] [TASK] RAM Monitor completed (exec #26)
+[11:50:11] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:50:11] [TASK] Analyzer starting
+[11:50:11] [TASK] Analyzer completed (exec #26)
+[11:50:11] 
+=== TICK 41 ===
+[11:50:11] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:11] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:50:11] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:50:11] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:50:11] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:11] [TASK] CPU Monitor starting
+[11:50:12] [TASK] CPU Monitor completed (exec #40)
+[11:50:12] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:50:12] [TASK] Disk Monitor starting
+[11:50:12] [TASK] Disk Monitor completed (exec #25)
+[11:50:12] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:50:12] [TASK] Network Fetch starting
+[11:50:12] [TASK] Network Fetch completed (exec #25)
+[11:50:12] 
+=== TICK 42 ===
+[11:50:12] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:12] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:50:12] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:50:12] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:50:12] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:12] [TASK] CPU Monitor starting
+[11:50:13] [TASK] CPU Monitor completed (exec #41)
+[11:50:13] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:50:13] [TASK] RAM Monitor starting
+[11:50:13] [TASK] RAM Monitor completed (exec #27)
+[11:50:13] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:50:13] [TASK] Analyzer starting
+[11:50:13] [TASK] Analyzer completed (exec #27)
+[11:50:13] 
+=== TICK 43 ===
+[11:50:13] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:13] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:50:13] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:50:13] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:50:13] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:13] [TASK] CPU Monitor starting
+[11:50:14] [TASK] CPU Monitor completed (exec #42)
+[11:50:14] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:50:14] [TASK] Disk Monitor starting
+[11:50:14] [TASK] Disk Monitor completed (exec #26)
+[11:50:14] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:50:14] [TASK] Network Fetch starting
+[11:50:14] [TASK] Network Fetch completed (exec #26)
+[11:50:14] 
+=== TICK 44 ===
+[11:50:14] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:14] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:50:14] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:50:14] [READY] Task 6 (Report Generator) ready - interval 9s elapsed
+[11:50:14] [DISPATCH] Executing 4 ready task(s) in priority order
+[11:50:14] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:14] [TASK] CPU Monitor starting
+[11:50:15] [TASK] CPU Monitor completed (exec #43)
+[11:50:15] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:50:15] [TASK] RAM Monitor starting
+[11:50:15] [TASK] RAM Monitor completed (exec #28)
+[11:50:15] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:50:15] [TASK] Analyzer starting
+[11:50:15] [TASK] Analyzer completed (exec #28)
+[11:50:15] [DISPATCH] Task 6 (Report Generator) P3 gets CPU
+[11:50:15] [TASK] Report Generator starting
+[11:50:15] [TASK] Report Generator completed (exec #5)
+[11:50:15] 
+=== TICK 45 ===
+[11:50:15] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:15] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:50:15] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:50:15] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:50:15] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:15] [TASK] CPU Monitor starting
+[11:50:16] [TASK] CPU Monitor completed (exec #44)
+[11:50:16] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:50:16] [TASK] Disk Monitor starting
+[11:50:16] [TASK] Disk Monitor completed (exec #27)
+[11:50:16] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:50:16] [TASK] Network Fetch starting
+[11:50:16] [TASK] Network Fetch completed (exec #27)
+[11:50:16] 
+=== TICK 46 ===
+[11:50:16] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:16] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:50:16] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:50:16] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:50:16] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:16] [TASK] CPU Monitor starting
+[11:50:17] [TASK] CPU Monitor completed (exec #45)
+[11:50:17] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:50:17] [TASK] RAM Monitor starting
+[11:50:17] [TASK] RAM Monitor completed (exec #29)
+[11:50:17] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:50:17] [TASK] Analyzer starting
+[11:50:17] [TASK] Analyzer completed (exec #29)
+[11:50:17] 
+=== TICK 47 ===
+[11:50:17] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:17] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:50:17] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:50:17] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:50:17] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:17] [TASK] CPU Monitor starting
+[11:50:18] [TASK] CPU Monitor completed (exec #46)
+[11:50:18] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:50:18] [TASK] Disk Monitor starting
+[11:50:18] [TASK] Disk Monitor completed (exec #28)
+[11:50:18] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:50:18] [TASK] Network Fetch starting
+[11:50:18] [TASK] Network Fetch completed (exec #28)
+[11:50:18] 
+=== TICK 48 ===
+[11:50:18] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:18] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:50:18] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:50:18] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:50:18] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:18] [TASK] CPU Monitor starting
+[11:50:19] [TASK] CPU Monitor completed (exec #47)
+[11:50:19] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:50:19] [TASK] RAM Monitor starting
+[11:50:19] [TASK] RAM Monitor completed (exec #30)
+[11:50:19] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:50:19] [TASK] Analyzer starting
+[11:50:19] [TASK] Analyzer completed (exec #30)
+[11:50:19] 
+=== TICK 49 ===
+[11:50:19] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:19] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:50:19] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:50:19] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:50:19] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:19] [TASK] CPU Monitor starting
+[11:50:20] [TASK] CPU Monitor completed (exec #48)
+[11:50:20] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:50:20] [TASK] Disk Monitor starting
+[11:50:20] [TASK] Disk Monitor completed (exec #29)
+[11:50:20] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:50:20] [TASK] Network Fetch starting
+[11:50:20] [TASK] Network Fetch completed (exec #29)
+[11:50:20] 
+=== TICK 50 ===
+[11:50:20] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:20] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:50:20] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:50:20] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:50:20] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:20] [TASK] CPU Monitor starting
+[11:50:21] [TASK] CPU Monitor completed (exec #49)
+[11:50:21] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:50:21] [TASK] RAM Monitor starting
+[11:50:21] [TASK] RAM Monitor completed (exec #31)
+[11:50:21] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:50:21] [TASK] Analyzer starting
+[11:50:21] [TASK] Analyzer completed (exec #31)
+[11:50:21] 
+=== TICK 51 ===
+[11:50:21] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:21] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:50:21] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:50:21] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:50:21] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:21] [TASK] CPU Monitor starting
+[11:50:22] [TASK] CPU Monitor completed (exec #50)
+[11:50:22] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:50:22] [TASK] Disk Monitor starting
+[11:50:22] [TASK] Disk Monitor completed (exec #30)
+[11:50:22] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:50:22] [TASK] Network Fetch starting
+[11:50:22] [TASK] Network Fetch completed (exec #30)
+[11:50:22] 
+=== TICK 52 ===
+[11:50:22] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:22] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:50:22] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:50:22] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:50:22] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:22] [TASK] CPU Monitor starting
+[11:50:23] [TASK] CPU Monitor completed (exec #51)
+[11:50:23] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:50:23] [TASK] RAM Monitor starting
+[11:50:23] [TASK] RAM Monitor completed (exec #32)
+[11:50:23] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:50:23] [TASK] Analyzer starting
+[11:50:23] [TASK] Analyzer completed (exec #32)
+[11:50:23] 
+=== TICK 53 ===
+[11:50:23] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:23] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:50:23] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:50:23] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:50:23] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:23] [TASK] CPU Monitor starting
+[11:50:24] [TASK] CPU Monitor completed (exec #52)
+[11:50:24] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:50:24] [TASK] Disk Monitor starting
+[11:50:24] [TASK] Disk Monitor completed (exec #31)
+[11:50:24] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:50:24] [TASK] Network Fetch starting
+[11:50:24] [TASK] Network Fetch completed (exec #31)
+[11:50:24] 
+=== TICK 54 ===
+[11:50:24] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:24] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:50:24] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:50:24] [READY] Task 6 (Report Generator) ready - interval 9s elapsed
+[11:50:24] [DISPATCH] Executing 4 ready task(s) in priority order
+[11:50:24] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:24] [TASK] CPU Monitor starting
+[11:50:25] [TASK] CPU Monitor completed (exec #53)
+[11:50:25] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:50:25] [TASK] RAM Monitor starting
+[11:50:25] [TASK] RAM Monitor completed (exec #33)
+[11:50:25] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:50:25] [TASK] Analyzer starting
+[11:50:25] [TASK] Analyzer completed (exec #33)
+[11:50:25] [DISPATCH] Task 6 (Report Generator) P3 gets CPU
+[11:50:25] [TASK] Report Generator starting
+[11:50:26] [TASK] Report Generator completed (exec #6)
+[11:50:26] 
+=== TICK 55 ===
+[11:50:26] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:26] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:50:26] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:50:26] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:50:26] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:50:26] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:50:26] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:26] [TASK] CPU Monitor starting
+[11:50:27] [TASK] CPU Monitor completed (exec #54)
+[11:50:27] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:50:27] [TASK] RAM Monitor starting
+[11:50:27] [TASK] RAM Monitor completed (exec #34)
+[11:50:27] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:50:27] [TASK] Analyzer starting
+[11:50:27] [TASK] Analyzer completed (exec #34)
+[11:50:27] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:50:27] [TASK] Disk Monitor starting
+[11:50:27] [TASK] Disk Monitor completed (exec #32)
+[11:50:27] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:50:27] [TASK] Network Fetch starting
+[11:50:27] [TASK] Network Fetch completed (exec #32)
+[11:50:27] 
+=== TICK 56 ===
+[11:50:27] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:27] [DISPATCH] Executing 1 ready task(s) in priority order
+[11:50:27] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:27] [TASK] CPU Monitor starting
+[11:50:28] [TASK] CPU Monitor completed (exec #55)
+[11:50:28] 
+=== TICK 57 ===
+[11:50:28] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:28] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:50:28] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:50:28] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:50:28] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:50:28] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:50:28] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:28] [TASK] CPU Monitor starting
+[11:50:29] [TASK] CPU Monitor completed (exec #56)
+[11:50:29] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:50:29] [TASK] RAM Monitor starting
+[11:50:29] [TASK] RAM Monitor completed (exec #35)
+[11:50:29] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:50:29] [TASK] Analyzer starting
+[11:50:29] [TASK] Analyzer completed (exec #35)
+[11:50:29] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:50:29] [TASK] Disk Monitor starting
+[11:50:29] [TASK] Disk Monitor completed (exec #33)
+[11:50:29] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:50:29] [TASK] Network Fetch starting
+[11:50:29] [TASK] Network Fetch completed (exec #33)
+[11:50:29] 
+=== TICK 58 ===
+[11:50:29] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:29] [DISPATCH] Executing 1 ready task(s) in priority order
+[11:50:29] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:29] [TASK] CPU Monitor starting
+[11:50:30] [TASK] CPU Monitor completed (exec #57)
+[11:50:30] 
+=== TICK 59 ===
+[11:50:30] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:30] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:50:30] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:50:30] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:50:30] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:50:30] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:50:30] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:30] [TASK] CPU Monitor starting
+[11:50:31] [TASK] CPU Monitor completed (exec #58)
+[11:50:31] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:50:31] [TASK] RAM Monitor starting
+[11:50:31] [TASK] RAM Monitor completed (exec #36)
+[11:50:31] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:50:31] [TASK] Analyzer starting
+[11:50:31] [TASK] Analyzer completed (exec #36)
+[11:50:31] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:50:31] [TASK] Disk Monitor starting
+[11:50:31] [TASK] Disk Monitor completed (exec #34)
+[11:50:31] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:50:31] [TASK] Network Fetch starting
+[11:50:31] [TASK] Network Fetch completed (exec #34)
+[11:50:31] 
+=== TICK 60 ===
+[11:50:31] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:31] [DISPATCH] Executing 1 ready task(s) in priority order
+[11:50:31] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:31] [TASK] CPU Monitor starting
+[11:50:32] [TASK] CPU Monitor completed (exec #59)
+[11:50:32] 
+=== TICK 61 ===
+[11:50:32] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:32] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:50:32] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:50:32] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:50:32] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:50:32] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:50:32] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:32] [TASK] CPU Monitor starting
+[11:50:33] [TASK] CPU Monitor completed (exec #60)
+[11:50:33] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:50:33] [TASK] RAM Monitor starting
+[11:50:33] [TASK] RAM Monitor completed (exec #37)
+[11:50:33] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:50:33] [TASK] Analyzer starting
+[11:50:33] [TASK] Analyzer completed (exec #37)
+[11:50:33] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:50:33] [TASK] Disk Monitor starting
+[11:50:33] [TASK] Disk Monitor completed (exec #35)
+[11:50:33] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:50:33] [TASK] Network Fetch starting
+[11:50:33] [TASK] Network Fetch completed (exec #35)
+[11:50:33] 
+=== TICK 62 ===
+[11:50:33] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:33] [DISPATCH] Executing 1 ready task(s) in priority order
+[11:50:33] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:33] [TASK] CPU Monitor starting
+[11:50:34] [TASK] CPU Monitor completed (exec #61)
+[11:50:34] 
+=== TICK 63 ===
+[11:50:34] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:34] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:50:34] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:50:34] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:50:34] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:50:34] [READY] Task 6 (Report Generator) ready - interval 9s elapsed
+[11:50:34] [DISPATCH] Executing 6 ready task(s) in priority order
+[11:50:34] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:34] [TASK] CPU Monitor starting
+[11:50:35] [TASK] CPU Monitor completed (exec #62)
+[11:50:35] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:50:35] [TASK] RAM Monitor starting
+[11:50:35] [TASK] RAM Monitor completed (exec #38)
+[11:50:35] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:50:35] [TASK] Analyzer starting
+[11:50:35] [TASK] Analyzer completed (exec #38)
+[11:50:35] [DISPATCH] Task 6 (Report Generator) P3 gets CPU
+[11:50:35] [TASK] Report Generator starting
+[11:50:35] [TASK] Report Generator completed (exec #7)
+[11:50:35] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:50:35] [TASK] Disk Monitor starting
+[11:50:35] [TASK] Disk Monitor completed (exec #36)
+[11:50:35] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:50:35] [TASK] Network Fetch starting
+[11:50:35] [TASK] Network Fetch completed (exec #36)
+[11:50:35] 
+=== TICK 64 ===
+[11:50:35] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:35] [DISPATCH] Executing 1 ready task(s) in priority order
+[11:50:35] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:35] [TASK] CPU Monitor starting
+[11:50:36] [TASK] CPU Monitor completed (exec #63)
+[11:50:37] 
+=== TICK 65 ===
+[11:50:37] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:37] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:50:37] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:50:37] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:50:37] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:50:37] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:50:37] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:37] [TASK] CPU Monitor starting
+[11:50:38] [TASK] CPU Monitor completed (exec #64)
+[11:50:38] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:50:38] [TASK] RAM Monitor starting
+[11:50:38] [TASK] RAM Monitor completed (exec #39)
+[11:50:38] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:50:38] [TASK] Analyzer starting
+[11:50:38] [TASK] Analyzer completed (exec #39)
+[11:50:38] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:50:38] [TASK] Disk Monitor starting
+[11:50:38] [TASK] Disk Monitor completed (exec #37)
+[11:50:38] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:50:38] [TASK] Network Fetch starting
+[11:50:38] [TASK] Network Fetch completed (exec #37)
+[11:50:38] 
+=== TICK 66 ===
+[11:50:38] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:38] [DISPATCH] Executing 1 ready task(s) in priority order
+[11:50:38] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:38] [TASK] CPU Monitor starting
+[11:50:39] [TASK] CPU Monitor completed (exec #65)
+[11:50:39] 
+=== TICK 67 ===
+[11:50:39] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:39] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:50:39] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:50:39] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:50:39] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:50:39] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:50:39] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:39] [TASK] CPU Monitor starting
+[11:50:40] [TASK] CPU Monitor completed (exec #66)
+[11:50:40] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:50:40] [TASK] RAM Monitor starting
+[11:50:40] [TASK] RAM Monitor completed (exec #40)
+[11:50:40] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:50:40] [TASK] Analyzer starting
+[11:50:40] [TASK] Analyzer completed (exec #40)
+[11:50:40] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:50:40] [TASK] Disk Monitor starting
+[11:50:40] [TASK] Disk Monitor completed (exec #38)
+[11:50:40] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:50:40] [TASK] Network Fetch starting
+[11:50:41] [TASK] Network Fetch completed (exec #38)
+[11:50:41] 
+=== TICK 68 ===
+[11:50:41] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:41] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:50:41] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:50:41] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:50:41] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:50:41] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:50:41] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:41] [TASK] CPU Monitor starting
+[11:50:42] [TASK] CPU Monitor completed (exec #67)
+[11:50:42] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:50:42] [TASK] RAM Monitor starting
+[11:50:42] [TASK] RAM Monitor completed (exec #41)
+[11:50:42] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:50:42] [TASK] Analyzer starting
+[11:50:42] [TASK] Analyzer completed (exec #41)
+[11:50:42] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:50:42] [TASK] Disk Monitor starting
+[11:50:42] [TASK] Disk Monitor completed (exec #39)
+[11:50:42] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:50:42] [TASK] Network Fetch starting
+[11:50:42] [TASK] Network Fetch completed (exec #39)
+[11:50:42] 
+=== TICK 69 ===
+[11:50:42] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:42] [DISPATCH] Executing 1 ready task(s) in priority order
+[11:50:42] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:42] [TASK] CPU Monitor starting
+[11:50:43] [TASK] CPU Monitor completed (exec #68)
+[11:50:43] 
+=== TICK 70 ===
+[11:50:43] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:43] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:50:43] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:50:43] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:50:43] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:50:43] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:50:43] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:43] [TASK] CPU Monitor starting
+[11:50:44] [TASK] CPU Monitor completed (exec #69)
+[11:50:44] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:50:44] [TASK] RAM Monitor starting
+[11:50:44] [TASK] RAM Monitor completed (exec #42)
+[11:50:44] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:50:44] [TASK] Analyzer starting
+[11:50:44] [TASK] Analyzer completed (exec #42)
+[11:50:44] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:50:44] [TASK] Disk Monitor starting
+[11:50:44] [TASK] Disk Monitor completed (exec #40)
+[11:50:44] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:50:44] [TASK] Network Fetch starting
+[11:50:44] [TASK] Network Fetch completed (exec #40)
+[11:50:44] 
+=== TICK 71 ===
+[11:50:44] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:44] [READY] Task 6 (Report Generator) ready - interval 9s elapsed
+[11:50:44] [DISPATCH] Executing 2 ready task(s) in priority order
+[11:50:44] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:44] [TASK] CPU Monitor starting
+[11:50:45] [TASK] CPU Monitor completed (exec #70)
+[11:50:45] [DISPATCH] Task 6 (Report Generator) P3 gets CPU
+[11:50:45] [TASK] Report Generator starting
+[11:50:47] [TASK] Report Generator completed (exec #8)
+[11:50:47] 
+=== TICK 72 ===
+[11:50:47] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:47] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:50:47] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:50:47] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:50:47] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:50:47] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:50:47] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:47] [TASK] CPU Monitor starting
+[11:50:48] [TASK] CPU Monitor completed (exec #71)
+[11:50:48] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:50:48] [TASK] RAM Monitor starting
+[11:50:48] [TASK] RAM Monitor completed (exec #43)
+[11:50:48] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:50:48] [TASK] Analyzer starting
+[11:50:48] [TASK] Analyzer completed (exec #43)
+[11:50:48] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:50:48] [TASK] Disk Monitor starting
+[11:50:48] [TASK] Disk Monitor completed (exec #41)
+[11:50:48] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:50:48] [TASK] Network Fetch starting
+[11:50:48] [TASK] Network Fetch completed (exec #41)
+[11:50:48] 
+=== TICK 73 ===
+[11:50:48] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:48] [DISPATCH] Executing 1 ready task(s) in priority order
+[11:50:48] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:48] [TASK] CPU Monitor starting
+[11:50:49] [TASK] CPU Monitor completed (exec #72)
+[11:50:49] 
+=== TICK 74 ===
+[11:50:49] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:49] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:50:49] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:50:49] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:50:49] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:50:49] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:50:49] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:49] [TASK] CPU Monitor starting
+[11:50:50] [TASK] CPU Monitor completed (exec #73)
+[11:50:50] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:50:50] [TASK] RAM Monitor starting
+[11:50:50] [TASK] RAM Monitor completed (exec #44)
+[11:50:50] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:50:50] [TASK] Analyzer starting
+[11:50:50] [TASK] Analyzer completed (exec #44)
+[11:50:50] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:50:50] [TASK] Disk Monitor starting
+[11:50:50] [TASK] Disk Monitor completed (exec #42)
+[11:50:50] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:50:50] [TASK] Network Fetch starting
+[11:50:51] [TASK] Network Fetch completed (exec #42)
+[11:50:51] 
+=== TICK 75 ===
+[11:50:51] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:51] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:50:51] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:50:51] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:50:51] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:50:51] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:50:51] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:51] [TASK] CPU Monitor starting
+[11:50:52] [TASK] CPU Monitor completed (exec #74)
+[11:50:52] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:50:52] [TASK] RAM Monitor starting
+[11:50:52] [TASK] RAM Monitor completed (exec #45)
+[11:50:52] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:50:52] [TASK] Analyzer starting
+[11:50:52] [TASK] Analyzer completed (exec #45)
+[11:50:52] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:50:52] [TASK] Disk Monitor starting
+[11:50:52] [TASK] Disk Monitor completed (exec #43)
+[11:50:52] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:50:52] [TASK] Network Fetch starting
+[11:50:52] [TASK] Network Fetch completed (exec #43)
+[11:50:52] 
+=== TICK 76 ===
+[11:50:52] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:52] [DISPATCH] Executing 1 ready task(s) in priority order
+[11:50:52] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:52] [TASK] CPU Monitor starting
+[11:50:53] [TASK] CPU Monitor completed (exec #75)
+[11:50:53] 
+=== TICK 77 ===
+[11:50:53] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:53] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:50:53] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:50:53] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:50:53] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:50:53] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:50:53] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:53] [TASK] CPU Monitor starting
+[11:50:54] [TASK] CPU Monitor completed (exec #76)
+[11:50:54] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:50:54] [TASK] RAM Monitor starting
+[11:50:54] [TASK] RAM Monitor completed (exec #46)
+[11:50:54] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:50:54] [TASK] Analyzer starting
+[11:50:54] [TASK] Analyzer completed (exec #46)
+[11:50:54] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:50:54] [TASK] Disk Monitor starting
+[11:50:54] [TASK] Disk Monitor completed (exec #44)
+[11:50:54] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:50:54] [TASK] Network Fetch starting
+[11:50:54] [TASK] Network Fetch completed (exec #44)
+[11:50:54] 
+=== TICK 78 ===
+[11:50:54] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:54] [READY] Task 6 (Report Generator) ready - interval 9s elapsed
+[11:50:54] [DISPATCH] Executing 2 ready task(s) in priority order
+[11:50:54] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:54] [TASK] CPU Monitor starting
+[11:50:55] [TASK] CPU Monitor completed (exec #77)
+[11:50:55] [DISPATCH] Task 6 (Report Generator) P3 gets CPU
+[11:50:55] [TASK] Report Generator starting
+[11:50:56] [TASK] Report Generator completed (exec #9)
+[11:50:56] 
+=== TICK 79 ===
+[11:50:56] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:56] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:50:56] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:50:56] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:50:56] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:50:56] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:50:56] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:56] [TASK] CPU Monitor starting
+[11:50:57] [TASK] CPU Monitor completed (exec #78)
+[11:50:57] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:50:57] [TASK] RAM Monitor starting
+[11:50:57] [TASK] RAM Monitor completed (exec #47)
+[11:50:57] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:50:57] [TASK] Analyzer starting
+[11:50:57] [TASK] Analyzer completed (exec #47)
+[11:50:57] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:50:57] [TASK] Disk Monitor starting
+[11:50:57] [TASK] Disk Monitor completed (exec #45)
+[11:50:57] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:50:57] [TASK] Network Fetch starting
+[11:50:58] [TASK] Network Fetch completed (exec #45)
+[11:50:58] 
+=== TICK 80 ===
+[11:50:58] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:58] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:50:58] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:50:58] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:50:58] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:50:58] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:50:58] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:58] [TASK] CPU Monitor starting
+[11:50:58] [TASK] CPU Monitor completed (exec #79)
+[11:50:58] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:50:58] [TASK] RAM Monitor starting
+[11:50:59] [TASK] RAM Monitor completed (exec #48)
+[11:50:59] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:50:59] [TASK] Analyzer starting
+[11:50:59] [TASK] Analyzer completed (exec #48)
+[11:50:59] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:50:59] [TASK] Disk Monitor starting
+[11:50:59] [TASK] Disk Monitor completed (exec #46)
+[11:50:59] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:50:59] [TASK] Network Fetch starting
+[11:50:59] [TASK] Network Fetch completed (exec #46)
+[11:50:59] 
+=== TICK 81 ===
+[11:50:59] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:50:59] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:50:59] [DISPATCH] Executing 2 ready task(s) in priority order
+[11:50:59] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:50:59] [TASK] CPU Monitor starting
+[11:51:00] [TASK] CPU Monitor completed (exec #80)
+[11:51:00] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:00] [TASK] RAM Monitor starting
+[11:51:00] [TASK] RAM Monitor completed (exec #49)
+[11:51:00] 
+=== TICK 82 ===
+[11:51:00] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:00] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:00] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:51:00] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:00] [DISPATCH] Executing 4 ready task(s) in priority order
+[11:51:00] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:00] [TASK] CPU Monitor starting
+[11:51:01] [TASK] CPU Monitor completed (exec #81)
+[11:51:01] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:01] [TASK] Analyzer starting
+[11:51:01] [TASK] Analyzer completed (exec #49)
+[11:51:01] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:01] [TASK] Disk Monitor starting
+[11:51:01] [TASK] Disk Monitor completed (exec #47)
+[11:51:01] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:51:01] [TASK] Network Fetch starting
+[11:51:01] [TASK] Network Fetch completed (exec #47)
+[11:51:01] 
+=== TICK 83 ===
+[11:51:01] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:01] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:01] [DISPATCH] Executing 2 ready task(s) in priority order
+[11:51:01] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:01] [TASK] CPU Monitor starting
+[11:51:02] [TASK] CPU Monitor completed (exec #82)
+[11:51:02] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:02] [TASK] RAM Monitor starting
+[11:51:02] [TASK] RAM Monitor completed (exec #50)
+[11:51:02] 
+=== TICK 84 ===
+[11:51:02] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:02] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:02] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:51:02] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:02] [DISPATCH] Executing 4 ready task(s) in priority order
+[11:51:02] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:02] [TASK] CPU Monitor starting
+[11:51:03] [TASK] CPU Monitor completed (exec #83)
+[11:51:03] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:03] [TASK] Analyzer starting
+[11:51:03] [TASK] Analyzer completed (exec #50)
+[11:51:03] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:03] [TASK] Disk Monitor starting
+[11:51:03] [TASK] Disk Monitor completed (exec #48)
+[11:51:03] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:51:03] [TASK] Network Fetch starting
+[11:51:04] [TASK] Network Fetch completed (exec #48)
+[11:51:04] 
+=== TICK 85 ===
+[11:51:04] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:04] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:04] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:04] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:51:04] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:04] [READY] Task 6 (Report Generator) ready - interval 9s elapsed
+[11:51:04] [DISPATCH] Executing 6 ready task(s) in priority order
+[11:51:04] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:04] [TASK] CPU Monitor starting
+[11:51:05] [TASK] CPU Monitor completed (exec #84)
+[11:51:05] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:05] [TASK] RAM Monitor starting
+[11:51:05] [TASK] RAM Monitor completed (exec #51)
+[11:51:05] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:05] [TASK] Analyzer starting
+[11:51:05] [TASK] Analyzer completed (exec #51)
+[11:51:05] [DISPATCH] Task 6 (Report Generator) P3 gets CPU
+[11:51:05] [TASK] Report Generator starting
+[11:51:06] [TASK] Report Generator completed (exec #10)
+[11:51:06] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:06] [TASK] Disk Monitor starting
+[11:51:06] [TASK] Disk Monitor completed (exec #49)
+[11:51:06] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:51:06] [TASK] Network Fetch starting
+[11:51:06] [TASK] Network Fetch completed (exec #49)
+[11:51:06] 
+=== TICK 86 ===
+[11:51:06] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:06] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:06] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:06] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:51:06] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:06] [TASK] CPU Monitor starting
+[11:51:07] [TASK] CPU Monitor completed (exec #85)
+[11:51:07] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:07] [TASK] RAM Monitor starting
+[11:51:07] [TASK] RAM Monitor completed (exec #52)
+[11:51:07] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:07] [TASK] Analyzer starting
+[11:51:07] [TASK] Analyzer completed (exec #52)
+[11:51:07] 
+=== TICK 87 ===
+[11:51:07] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:07] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:07] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:51:07] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:51:07] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:07] [TASK] CPU Monitor starting
+[11:51:08] [TASK] CPU Monitor completed (exec #86)
+[11:51:08] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:08] [TASK] Disk Monitor starting
+[11:51:08] [TASK] Disk Monitor completed (exec #50)
+[11:51:08] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:51:08] [TASK] Network Fetch starting
+[11:51:08] [TASK] Network Fetch completed (exec #50)
+[11:51:08] 
+=== TICK 88 ===
+[11:51:08] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:08] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:08] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:08] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:51:08] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:08] [TASK] CPU Monitor starting
+[11:51:09] [TASK] CPU Monitor completed (exec #87)
+[11:51:09] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:09] [TASK] RAM Monitor starting
+[11:51:09] [TASK] RAM Monitor completed (exec #53)
+[11:51:09] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:09] [TASK] Analyzer starting
+[11:51:09] [TASK] Analyzer completed (exec #53)
+[11:51:09] 
+=== TICK 89 ===
+[11:51:09] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:09] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:09] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:51:09] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:51:09] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:09] [TASK] CPU Monitor starting
+[11:51:11] [TASK] CPU Monitor completed (exec #88)
+[11:51:11] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:11] [TASK] Disk Monitor starting
+[11:51:11] [TASK] Disk Monitor completed (exec #51)
+[11:51:11] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:51:11] [TASK] Network Fetch starting
+[11:51:11] [TASK] Network Fetch completed (exec #51)
+[11:51:11] 
+=== TICK 90 ===
+[11:51:11] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:11] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:11] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:11] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:51:11] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:11] [TASK] CPU Monitor starting
+[11:51:12] [TASK] CPU Monitor completed (exec #89)
+[11:51:12] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:12] [TASK] RAM Monitor starting
+[11:51:12] [TASK] RAM Monitor completed (exec #54)
+[11:51:12] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:12] [TASK] Analyzer starting
+[11:51:12] [TASK] Analyzer completed (exec #54)
+[11:51:12] 
+=== TICK 91 ===
+[11:51:12] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:12] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:12] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:51:12] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:51:12] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:12] [TASK] CPU Monitor starting
+[11:51:13] [TASK] CPU Monitor completed (exec #90)
+[11:51:13] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:13] [TASK] Disk Monitor starting
+[11:51:13] [TASK] Disk Monitor completed (exec #52)
+[11:51:13] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:51:13] [TASK] Network Fetch starting
+[11:51:13] [TASK] Network Fetch completed (exec #52)
+[11:51:13] 
+=== TICK 92 ===
+[11:51:13] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:13] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:13] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:13] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:51:13] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:13] [TASK] CPU Monitor starting
+[11:51:14] [TASK] CPU Monitor completed (exec #91)
+[11:51:14] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:14] [TASK] RAM Monitor starting
+[11:51:14] [TASK] RAM Monitor completed (exec #55)
+[11:51:14] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:14] [TASK] Analyzer starting
+[11:51:14] [TASK] Analyzer completed (exec #55)
+[11:51:14] 
+=== TICK 93 ===
+[11:51:14] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:14] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:14] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:51:14] [READY] Task 6 (Report Generator) ready - interval 9s elapsed
+[11:51:14] [DISPATCH] Executing 4 ready task(s) in priority order
+[11:51:14] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:14] [TASK] CPU Monitor starting
+[11:51:15] [TASK] CPU Monitor completed (exec #92)
+[11:51:15] [DISPATCH] Task 6 (Report Generator) P3 gets CPU
+[11:51:15] [TASK] Report Generator starting
+[11:51:16] [TASK] Report Generator completed (exec #11)
+[11:51:16] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:16] [TASK] Disk Monitor starting
+[11:51:16] [TASK] Disk Monitor completed (exec #53)
+[11:51:16] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:51:16] [TASK] Network Fetch starting
+[11:51:16] [TASK] Network Fetch completed (exec #53)
+[11:51:16] 
+=== TICK 94 ===
+[11:51:16] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:16] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:16] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:16] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:51:16] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:16] [TASK] CPU Monitor starting
+[11:51:17] [TASK] CPU Monitor completed (exec #93)
+[11:51:17] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:17] [TASK] RAM Monitor starting
+[11:51:17] [TASK] RAM Monitor completed (exec #56)
+[11:51:17] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:17] [TASK] Analyzer starting
+[11:51:17] [TASK] Analyzer completed (exec #56)
+[11:51:17] 
+=== TICK 95 ===
+[11:51:17] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:17] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:17] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:51:17] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:51:17] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:17] [TASK] CPU Monitor starting
+[11:51:18] [TASK] CPU Monitor completed (exec #94)
+[11:51:18] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:18] [TASK] Disk Monitor starting
+[11:51:18] [TASK] Disk Monitor completed (exec #54)
+[11:51:18] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:51:18] [TASK] Network Fetch starting
+[11:51:18] [TASK] Network Fetch completed (exec #54)
+[11:51:18] 
+=== TICK 96 ===
+[11:51:18] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:18] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:18] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:18] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:51:18] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:18] [TASK] CPU Monitor starting
+[11:51:19] [TASK] CPU Monitor completed (exec #95)
+[11:51:19] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:19] [TASK] RAM Monitor starting
+[11:51:19] [TASK] RAM Monitor completed (exec #57)
+[11:51:19] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:19] [TASK] Analyzer starting
+[11:51:19] [TASK] Analyzer completed (exec #57)
+[11:51:19] 
+=== TICK 97 ===
+[11:51:19] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:19] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:19] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:51:19] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:51:19] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:19] [TASK] CPU Monitor starting
+[11:51:20] [TASK] CPU Monitor completed (exec #96)
+[11:51:20] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:20] [TASK] Disk Monitor starting
+[11:51:20] [TASK] Disk Monitor completed (exec #55)
+[11:51:20] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:51:20] [TASK] Network Fetch starting
+[11:51:20] [TASK] Network Fetch completed (exec #55)
+[11:51:20] 
+=== TICK 98 ===
+[11:51:20] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:20] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:20] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:20] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:51:20] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:20] [TASK] CPU Monitor starting
+[11:51:21] [TASK] CPU Monitor completed (exec #97)
+[11:51:21] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:21] [TASK] RAM Monitor starting
+[11:51:21] [TASK] RAM Monitor completed (exec #58)
+[11:51:21] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:21] [TASK] Analyzer starting
+[11:51:21] [TASK] Analyzer completed (exec #58)
+[11:51:21] 
+=== TICK 99 ===
+[11:51:21] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:21] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:21] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:51:21] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:51:21] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:21] [TASK] CPU Monitor starting
+[11:51:22] [TASK] CPU Monitor completed (exec #98)
+[11:51:22] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:22] [TASK] Disk Monitor starting
+[11:51:22] [TASK] Disk Monitor completed (exec #56)
+[11:51:22] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:51:22] [TASK] Network Fetch starting
+[11:51:22] [TASK] Network Fetch completed (exec #56)
+[11:51:22] 
+=== TICK 100 ===
+[11:51:22] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:22] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:22] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:22] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:51:22] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:22] [TASK] CPU Monitor starting
+[11:51:23] [TASK] CPU Monitor completed (exec #99)
+[11:51:23] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:23] [TASK] RAM Monitor starting
+[11:51:23] [TASK] RAM Monitor completed (exec #59)
+[11:51:23] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:23] [TASK] Analyzer starting
+[11:51:23] [TASK] Analyzer completed (exec #59)
+[11:51:23] 
+=== TICK 101 ===
+[11:51:23] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:23] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:23] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:51:23] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:51:23] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:23] [TASK] CPU Monitor starting
+[11:51:24] [TASK] CPU Monitor completed (exec #100)
+[11:51:24] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:24] [TASK] Disk Monitor starting
+[11:51:24] [TASK] Disk Monitor completed (exec #57)
+[11:51:24] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:51:24] [TASK] Network Fetch starting
+[11:51:24] [TASK] Network Fetch completed (exec #57)
+[11:51:24] 
+=== TICK 102 ===
+[11:51:24] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:24] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:24] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:24] [READY] Task 6 (Report Generator) ready - interval 9s elapsed
+[11:51:24] [DISPATCH] Executing 4 ready task(s) in priority order
+[11:51:24] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:24] [TASK] CPU Monitor starting
+[11:51:25] [TASK] CPU Monitor completed (exec #101)
+[11:51:25] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:25] [TASK] RAM Monitor starting
+[11:51:25] [TASK] RAM Monitor completed (exec #60)
+[11:51:25] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:25] [TASK] Analyzer starting
+[11:51:25] [TASK] Analyzer completed (exec #60)
+[11:51:25] [DISPATCH] Task 6 (Report Generator) P3 gets CPU
+[11:51:25] [TASK] Report Generator starting
+[11:51:26] [TASK] Report Generator completed (exec #12)
+[11:51:26] 
+=== TICK 103 ===
+[11:51:26] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:26] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:26] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:26] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:51:26] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:26] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:51:26] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:26] [TASK] CPU Monitor starting
+[11:51:26] [TASK] CPU Monitor completed (exec #102)
+[11:51:26] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:26] [TASK] RAM Monitor starting
+[11:51:26] [TASK] RAM Monitor completed (exec #61)
+[11:51:26] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:26] [TASK] Analyzer starting
+[11:51:26] [TASK] Analyzer completed (exec #61)
+[11:51:26] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:26] [TASK] Disk Monitor starting
+[11:51:27] [TASK] Disk Monitor completed (exec #58)
+[11:51:27] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:51:27] [TASK] Network Fetch starting
+[11:51:27] [TASK] Network Fetch completed (exec #58)
+[11:51:27] 
+=== TICK 104 ===
+[11:51:27] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:27] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:27] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:27] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:27] [DISPATCH] Executing 4 ready task(s) in priority order
+[11:51:27] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:27] [TASK] CPU Monitor starting
+[11:51:27] [TASK] CPU Monitor completed (exec #103)
+[11:51:27] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:27] [TASK] RAM Monitor starting
+[11:51:27] [TASK] RAM Monitor completed (exec #62)
+[11:51:27] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:27] [TASK] Analyzer starting
+[11:51:27] [TASK] Analyzer completed (exec #62)
+[11:51:27] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:27] [TASK] Disk Monitor starting
+[11:51:27] [TASK] Disk Monitor completed (exec #59)
+[11:51:28] 
+=== TICK 105 ===
+[11:51:28] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:28] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:28] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:28] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:51:28] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:28] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:51:28] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:28] [TASK] CPU Monitor starting
+[11:51:28] [TASK] CPU Monitor completed (exec #104)
+[11:51:28] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:28] [TASK] RAM Monitor starting
+[11:51:28] [TASK] RAM Monitor completed (exec #63)
+[11:51:28] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:28] [TASK] Analyzer starting
+[11:51:28] [TASK] Analyzer completed (exec #63)
+[11:51:28] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:28] [TASK] Disk Monitor starting
+[11:51:28] [TASK] Disk Monitor completed (exec #60)
+[11:51:28] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:51:28] [TASK] Network Fetch starting
+[11:51:29] [TASK] Network Fetch completed (exec #59)
+[11:51:29] 
+=== TICK 106 ===
+[11:51:29] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:29] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:29] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:29] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:51:29] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:29] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:51:29] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:29] [TASK] CPU Monitor starting
+[11:51:29] [TASK] CPU Monitor completed (exec #105)
+[11:51:29] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:29] [TASK] RAM Monitor starting
+[11:51:29] [TASK] RAM Monitor completed (exec #64)
+[11:51:29] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:29] [TASK] Analyzer starting
+[11:51:29] [TASK] Analyzer completed (exec #64)
+[11:51:29] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:29] [TASK] Disk Monitor starting
+[11:51:29] [TASK] Disk Monitor completed (exec #61)
+[11:51:29] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:51:29] [TASK] Network Fetch starting
+[11:51:30] [TASK] Network Fetch completed (exec #60)
+[11:51:30] 
+=== TICK 107 ===
+[11:51:30] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:30] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:30] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:30] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:51:30] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:30] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:51:30] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:30] [TASK] CPU Monitor starting
+[11:51:30] [TASK] CPU Monitor completed (exec #106)
+[11:51:30] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:30] [TASK] RAM Monitor starting
+[11:51:30] [TASK] RAM Monitor completed (exec #65)
+[11:51:30] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:30] [TASK] Analyzer starting
+[11:51:30] [TASK] Analyzer completed (exec #65)
+[11:51:30] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:30] [TASK] Disk Monitor starting
+[11:51:30] [TASK] Disk Monitor completed (exec #62)
+[11:51:30] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:51:30] [TASK] Network Fetch starting
+[11:51:31] [TASK] Network Fetch completed (exec #61)
+[11:51:31] 
+=== TICK 108 ===
+[11:51:31] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:31] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:31] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:31] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:51:31] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:31] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:51:31] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:31] [TASK] CPU Monitor starting
+[11:51:31] [TASK] CPU Monitor completed (exec #107)
+[11:51:31] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:31] [TASK] RAM Monitor starting
+[11:51:31] [TASK] RAM Monitor completed (exec #66)
+[11:51:31] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:31] [TASK] Analyzer starting
+[11:51:31] [TASK] Analyzer completed (exec #66)
+[11:51:31] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:31] [TASK] Disk Monitor starting
+[11:51:31] [TASK] Disk Monitor completed (exec #63)
+[11:51:31] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:51:31] [TASK] Network Fetch starting
+[11:51:32] [TASK] Network Fetch completed (exec #62)
+[11:51:32] 
+=== TICK 109 ===
+[11:51:32] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:32] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:32] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:32] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:51:32] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:32] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:51:32] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:32] [TASK] CPU Monitor starting
+[11:51:32] [TASK] CPU Monitor completed (exec #108)
+[11:51:32] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:32] [TASK] RAM Monitor starting
+[11:51:32] [TASK] RAM Monitor completed (exec #67)
+[11:51:32] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:32] [TASK] Analyzer starting
+[11:51:32] [TASK] Analyzer completed (exec #67)
+[11:51:32] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:32] [TASK] Disk Monitor starting
+[11:51:32] [TASK] Disk Monitor completed (exec #64)
+[11:51:32] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:51:32] [TASK] Network Fetch starting
+[11:51:32] [TASK] Network Fetch completed (exec #63)
+[11:51:33] 
+=== TICK 110 ===
+[11:51:33] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:33] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:33] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:33] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:51:33] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:33] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:51:33] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:33] [TASK] CPU Monitor starting
+[11:51:33] [TASK] CPU Monitor completed (exec #109)
+[11:51:33] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:33] [TASK] RAM Monitor starting
+[11:51:33] [TASK] RAM Monitor completed (exec #68)
+[11:51:33] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:33] [TASK] Analyzer starting
+[11:51:33] [TASK] Analyzer completed (exec #68)
+[11:51:33] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:33] [TASK] Disk Monitor starting
+[11:51:33] [TASK] Disk Monitor completed (exec #65)
+[11:51:33] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:51:33] [TASK] Network Fetch starting
+[11:51:34] [TASK] Network Fetch completed (exec #64)
+[11:51:34] 
+=== TICK 111 ===
+[11:51:34] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:34] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:34] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:34] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:51:34] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:34] [READY] Task 6 (Report Generator) ready - interval 9s elapsed
+[11:51:34] [DISPATCH] Executing 6 ready task(s) in priority order
+[11:51:34] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:34] [TASK] CPU Monitor starting
+[11:51:34] [TASK] CPU Monitor completed (exec #110)
+[11:51:34] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:34] [TASK] RAM Monitor starting
+[11:51:34] [TASK] RAM Monitor completed (exec #69)
+[11:51:34] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:34] [TASK] Analyzer starting
+[11:51:34] [TASK] Analyzer completed (exec #69)
+[11:51:34] [DISPATCH] Task 6 (Report Generator) P3 gets CPU
+[11:51:34] [TASK] Report Generator starting
+[11:51:35] [TASK] Report Generator completed (exec #13)
+[11:51:35] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:35] [TASK] Disk Monitor starting
+[11:51:36] [TASK] Disk Monitor completed (exec #66)
+[11:51:36] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:51:36] [TASK] Network Fetch starting
+[11:51:36] [TASK] Network Fetch completed (exec #65)
+[11:51:36] 
+=== TICK 112 ===
+[11:51:36] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:36] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:36] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:36] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:36] [DISPATCH] Executing 4 ready task(s) in priority order
+[11:51:36] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:36] [TASK] CPU Monitor starting
+[11:51:36] [TASK] CPU Monitor completed (exec #111)
+[11:51:36] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:36] [TASK] RAM Monitor starting
+[11:51:36] [TASK] RAM Monitor completed (exec #70)
+[11:51:36] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:36] [TASK] Analyzer starting
+[11:51:36] [TASK] Analyzer completed (exec #70)
+[11:51:36] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:36] [TASK] Disk Monitor starting
+[11:51:36] [TASK] Disk Monitor completed (exec #67)
+[11:51:37] 
+=== TICK 113 ===
+[11:51:37] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:37] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:37] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:37] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:51:37] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:37] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:51:37] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:37] [TASK] CPU Monitor starting
+[11:51:37] [TASK] CPU Monitor completed (exec #112)
+[11:51:37] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:37] [TASK] RAM Monitor starting
+[11:51:37] [TASK] RAM Monitor completed (exec #71)
+[11:51:37] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:37] [TASK] Analyzer starting
+[11:51:37] [TASK] Analyzer completed (exec #71)
+[11:51:37] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:37] [TASK] Disk Monitor starting
+[11:51:37] [TASK] Disk Monitor completed (exec #68)
+[11:51:37] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:51:37] [TASK] Network Fetch starting
+[11:51:37] [TASK] Network Fetch completed (exec #66)
+[11:51:38] 
+=== TICK 114 ===
+[11:51:38] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:38] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:38] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:38] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:51:38] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:38] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:51:38] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:38] [TASK] CPU Monitor starting
+[11:51:38] [TASK] CPU Monitor completed (exec #113)
+[11:51:38] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:38] [TASK] RAM Monitor starting
+[11:51:38] [TASK] RAM Monitor completed (exec #72)
+[11:51:38] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:38] [TASK] Analyzer starting
+[11:51:38] [TASK] Analyzer completed (exec #72)
+[11:51:38] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:38] [TASK] Disk Monitor starting
+[11:51:38] [TASK] Disk Monitor completed (exec #69)
+[11:51:38] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:51:38] [TASK] Network Fetch starting
+[11:51:38] [TASK] Network Fetch completed (exec #67)
+[11:51:39] 
+=== TICK 115 ===
+[11:51:39] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:39] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:39] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:39] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:51:39] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:39] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:51:39] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:39] [TASK] CPU Monitor starting
+[11:51:39] [TASK] CPU Monitor completed (exec #114)
+[11:51:39] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:39] [TASK] RAM Monitor starting
+[11:51:39] [TASK] RAM Monitor completed (exec #73)
+[11:51:39] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:39] [TASK] Analyzer starting
+[11:51:39] [TASK] Analyzer completed (exec #73)
+[11:51:39] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:39] [TASK] Disk Monitor starting
+[11:51:39] [TASK] Disk Monitor completed (exec #70)
+[11:51:39] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:51:39] [TASK] Network Fetch starting
+[11:51:39] [TASK] Network Fetch completed (exec #68)
+[11:51:40] 
+=== TICK 116 ===
+[11:51:40] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:40] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:40] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:40] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:51:40] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:40] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:51:40] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:40] [TASK] CPU Monitor starting
+[11:51:40] [TASK] CPU Monitor completed (exec #115)
+[11:51:40] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:40] [TASK] RAM Monitor starting
+[11:51:40] [TASK] RAM Monitor completed (exec #74)
+[11:51:40] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:40] [TASK] Analyzer starting
+[11:51:40] [TASK] Analyzer completed (exec #74)
+[11:51:40] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:40] [TASK] Disk Monitor starting
+[11:51:40] [TASK] Disk Monitor completed (exec #71)
+[11:51:40] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:51:40] [TASK] Network Fetch starting
+[11:51:40] [TASK] Network Fetch completed (exec #69)
+[11:51:41] 
+=== TICK 117 ===
+[11:51:41] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:41] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:41] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:41] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:51:41] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:41] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:51:41] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:41] [TASK] CPU Monitor starting
+[11:51:41] [TASK] CPU Monitor completed (exec #116)
+[11:51:41] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:41] [TASK] RAM Monitor starting
+[11:51:41] [TASK] RAM Monitor completed (exec #75)
+[11:51:41] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:41] [TASK] Analyzer starting
+[11:51:41] [TASK] Analyzer completed (exec #75)
+[11:51:41] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:41] [TASK] Disk Monitor starting
+[11:51:41] [TASK] Disk Monitor completed (exec #72)
+[11:51:41] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:51:41] [TASK] Network Fetch starting
+[11:51:41] [TASK] Network Fetch completed (exec #70)
+[11:51:42] 
+=== TICK 118 ===
+[11:51:42] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:42] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:42] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:42] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:51:42] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:42] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:51:42] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:42] [TASK] CPU Monitor starting
+[11:51:42] [TASK] CPU Monitor completed (exec #117)
+[11:51:42] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:42] [TASK] RAM Monitor starting
+[11:51:42] [TASK] RAM Monitor completed (exec #76)
+[11:51:42] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:42] [TASK] Analyzer starting
+[11:51:42] [TASK] Analyzer completed (exec #76)
+[11:51:42] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:42] [TASK] Disk Monitor starting
+[11:51:43] [TASK] Disk Monitor completed (exec #73)
+[11:51:43] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:51:43] [TASK] Network Fetch starting
+[11:51:43] [TASK] Network Fetch completed (exec #71)
+[11:51:43] 
+=== TICK 119 ===
+[11:51:43] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:43] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:43] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:43] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:43] [READY] Task 6 (Report Generator) ready - interval 9s elapsed
+[11:51:43] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:51:43] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:43] [TASK] CPU Monitor starting
+[11:51:44] [TASK] CPU Monitor completed (exec #118)
+[11:51:44] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:44] [TASK] RAM Monitor starting
+[11:51:44] [TASK] RAM Monitor completed (exec #77)
+[11:51:44] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:44] [TASK] Analyzer starting
+[11:51:44] [TASK] Analyzer completed (exec #77)
+[11:51:44] [DISPATCH] Task 6 (Report Generator) P3 gets CPU
+[11:51:44] [TASK] Report Generator starting
+[11:51:45] [TASK] Report Generator completed (exec #14)
+[11:51:45] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:45] [TASK] Disk Monitor starting
+[11:51:45] [TASK] Disk Monitor completed (exec #74)
+[11:51:45] 
+=== TICK 120 ===
+[11:51:45] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:45] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:45] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:51:45] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:45] [DISPATCH] Executing 4 ready task(s) in priority order
+[11:51:45] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:45] [TASK] CPU Monitor starting
+[11:51:46] [TASK] CPU Monitor completed (exec #119)
+[11:51:46] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:46] [TASK] RAM Monitor starting
+[11:51:46] [TASK] RAM Monitor completed (exec #78)
+[11:51:46] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:46] [TASK] Analyzer starting
+[11:51:46] [TASK] Analyzer completed (exec #78)
+[11:51:46] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:51:46] [TASK] Network Fetch starting
+[11:51:46] [TASK] Network Fetch completed (exec #72)
+[11:51:46] 
+=== TICK 121 ===
+[11:51:46] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:46] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:46] [DISPATCH] Executing 2 ready task(s) in priority order
+[11:51:46] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:46] [TASK] CPU Monitor starting
+[11:51:47] [TASK] CPU Monitor completed (exec #120)
+[11:51:47] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:47] [TASK] Disk Monitor starting
+[11:51:47] [TASK] Disk Monitor completed (exec #75)
+[11:51:47] 
+=== TICK 122 ===
+[11:51:47] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:47] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:47] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:51:47] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:47] [DISPATCH] Executing 4 ready task(s) in priority order
+[11:51:47] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:47] [TASK] CPU Monitor starting
+[11:51:48] [TASK] CPU Monitor completed (exec #121)
+[11:51:48] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:48] [TASK] RAM Monitor starting
+[11:51:48] [TASK] RAM Monitor completed (exec #79)
+[11:51:48] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:48] [TASK] Analyzer starting
+[11:51:48] [TASK] Analyzer completed (exec #79)
+[11:51:48] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:51:48] [TASK] Network Fetch starting
+[11:51:48] [TASK] Network Fetch completed (exec #73)
+[11:51:48] 
+=== TICK 123 ===
+[11:51:48] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:48] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:48] [DISPATCH] Executing 2 ready task(s) in priority order
+[11:51:48] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:48] [TASK] CPU Monitor starting
+[11:51:49] [TASK] CPU Monitor completed (exec #122)
+[11:51:49] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:49] [TASK] Disk Monitor starting
+[11:51:49] [TASK] Disk Monitor completed (exec #76)
+[11:51:49] 
+=== TICK 124 ===
+[11:51:49] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:49] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:49] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:51:49] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:49] [DISPATCH] Executing 4 ready task(s) in priority order
+[11:51:49] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:49] [TASK] CPU Monitor starting
+[11:51:50] [TASK] CPU Monitor completed (exec #123)
+[11:51:50] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:50] [TASK] RAM Monitor starting
+[11:51:50] [TASK] RAM Monitor completed (exec #80)
+[11:51:50] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:50] [TASK] Analyzer starting
+[11:51:50] [TASK] Analyzer completed (exec #80)
+[11:51:50] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:51:50] [TASK] Network Fetch starting
+[11:51:50] [TASK] Network Fetch completed (exec #74)
+[11:51:50] 
+=== TICK 125 ===
+[11:51:50] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:50] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:50] [DISPATCH] Executing 2 ready task(s) in priority order
+[11:51:50] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:50] [TASK] CPU Monitor starting
+[11:51:51] [TASK] CPU Monitor completed (exec #124)
+[11:51:51] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:51] [TASK] Disk Monitor starting
+[11:51:51] [TASK] Disk Monitor completed (exec #77)
+[11:51:51] 
+=== TICK 126 ===
+[11:51:51] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:51] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:51] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:51:51] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:51] [DISPATCH] Executing 4 ready task(s) in priority order
+[11:51:51] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:51] [TASK] CPU Monitor starting
+[11:51:52] [TASK] CPU Monitor completed (exec #125)
+[11:51:52] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:52] [TASK] RAM Monitor starting
+[11:51:52] [TASK] RAM Monitor completed (exec #81)
+[11:51:52] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:52] [TASK] Analyzer starting
+[11:51:52] [TASK] Analyzer completed (exec #81)
+[11:51:52] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:51:52] [TASK] Network Fetch starting
+[11:51:52] [TASK] Network Fetch completed (exec #75)
+[11:51:52] 
+=== TICK 127 ===
+[11:51:52] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:52] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:52] [DISPATCH] Executing 2 ready task(s) in priority order
+[11:51:52] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:52] [TASK] CPU Monitor starting
+[11:51:53] [TASK] CPU Monitor completed (exec #126)
+[11:51:53] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:53] [TASK] Disk Monitor starting
+[11:51:53] [TASK] Disk Monitor completed (exec #78)
+[11:51:53] 
+=== TICK 128 ===
+[11:51:53] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:53] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:53] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:51:53] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:53] [READY] Task 6 (Report Generator) ready - interval 9s elapsed
+[11:51:53] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:51:53] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:53] [TASK] CPU Monitor starting
+[11:51:54] [TASK] CPU Monitor completed (exec #127)
+[11:51:54] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:54] [TASK] RAM Monitor starting
+[11:51:54] [TASK] RAM Monitor completed (exec #82)
+[11:51:54] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:54] [TASK] Analyzer starting
+[11:51:54] [TASK] Analyzer completed (exec #82)
+[11:51:54] [DISPATCH] Task 6 (Report Generator) P3 gets CPU
+[11:51:54] [TASK] Report Generator starting
+[11:51:55] [TASK] Report Generator completed (exec #15)
+[11:51:55] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:51:55] [TASK] Network Fetch starting
+[11:51:55] [TASK] Network Fetch completed (exec #76)
+[11:51:55] 
+=== TICK 129 ===
+[11:51:55] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:55] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:55] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:55] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:55] [DISPATCH] Executing 4 ready task(s) in priority order
+[11:51:55] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:55] [TASK] CPU Monitor starting
+[11:51:56] [TASK] CPU Monitor completed (exec #128)
+[11:51:56] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:56] [TASK] RAM Monitor starting
+[11:51:56] [TASK] RAM Monitor completed (exec #83)
+[11:51:56] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:56] [TASK] Analyzer starting
+[11:51:56] [TASK] Analyzer completed (exec #83)
+[11:51:56] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:56] [TASK] Disk Monitor starting
+[11:51:56] [TASK] Disk Monitor completed (exec #79)
+[11:51:56] 
+=== TICK 130 ===
+[11:51:56] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:56] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:51:56] [DISPATCH] Executing 2 ready task(s) in priority order
+[11:51:56] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:56] [TASK] CPU Monitor starting
+[11:51:57] [TASK] CPU Monitor completed (exec #129)
+[11:51:57] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:51:57] [TASK] Network Fetch starting
+[11:51:57] [TASK] Network Fetch completed (exec #77)
+[11:51:57] 
+=== TICK 131 ===
+[11:51:57] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:57] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:57] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:57] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:57] [DISPATCH] Executing 4 ready task(s) in priority order
+[11:51:57] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:57] [TASK] CPU Monitor starting
+[11:51:58] [TASK] CPU Monitor completed (exec #130)
+[11:51:58] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:51:58] [TASK] RAM Monitor starting
+[11:51:58] [TASK] RAM Monitor completed (exec #84)
+[11:51:58] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:51:58] [TASK] Analyzer starting
+[11:51:58] [TASK] Analyzer completed (exec #84)
+[11:51:58] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:51:58] [TASK] Disk Monitor starting
+[11:51:58] [TASK] Disk Monitor completed (exec #80)
+[11:51:58] 
+=== TICK 132 ===
+[11:51:58] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:58] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:51:58] [DISPATCH] Executing 2 ready task(s) in priority order
+[11:51:58] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:58] [TASK] CPU Monitor starting
+[11:51:59] [TASK] CPU Monitor completed (exec #131)
+[11:51:59] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:51:59] [TASK] Network Fetch starting
+[11:51:59] [TASK] Network Fetch completed (exec #78)
+[11:51:59] 
+=== TICK 133 ===
+[11:51:59] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:51:59] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:51:59] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:51:59] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:51:59] [DISPATCH] Executing 4 ready task(s) in priority order
+[11:51:59] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:51:59] [TASK] CPU Monitor starting
+[11:52:00] [TASK] CPU Monitor completed (exec #132)
+[11:52:00] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:52:00] [TASK] RAM Monitor starting
+[11:52:00] [TASK] RAM Monitor completed (exec #85)
+[11:52:00] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:52:00] [TASK] Analyzer starting
+[11:52:00] [TASK] Analyzer completed (exec #85)
+[11:52:00] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:52:00] [TASK] Disk Monitor starting
+[11:52:00] [TASK] Disk Monitor completed (exec #81)
+[11:52:00] 
+=== TICK 134 ===
+[11:52:00] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:52:00] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:52:00] [DISPATCH] Executing 2 ready task(s) in priority order
+[11:52:00] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:52:00] [TASK] CPU Monitor starting
+[11:52:01] [TASK] CPU Monitor completed (exec #133)
+[11:52:01] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:52:01] [TASK] Network Fetch starting
+[11:52:01] [TASK] Network Fetch completed (exec #79)
+[11:52:01] 
+=== TICK 135 ===
+[11:52:01] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:52:01] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:52:01] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:52:01] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:52:01] [DISPATCH] Executing 4 ready task(s) in priority order
+[11:52:01] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:52:01] [TASK] CPU Monitor starting
+[11:52:02] [TASK] CPU Monitor completed (exec #134)
+[11:52:02] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:52:02] [TASK] RAM Monitor starting
+[11:52:02] [TASK] RAM Monitor completed (exec #86)
+[11:52:02] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:52:02] [TASK] Analyzer starting
+[11:52:02] [TASK] Analyzer completed (exec #86)
+[11:52:02] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:52:02] [TASK] Disk Monitor starting
+[11:52:02] [TASK] Disk Monitor completed (exec #82)
+[11:52:02] 
+=== TICK 136 ===
+[11:52:02] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:52:02] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:52:02] [DISPATCH] Executing 2 ready task(s) in priority order
+[11:52:02] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:52:02] [TASK] CPU Monitor starting
+[11:52:03] [TASK] CPU Monitor completed (exec #135)
+[11:52:03] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:52:03] [TASK] Network Fetch starting
+[11:52:03] [TASK] Network Fetch completed (exec #80)
+[11:52:03] 
+=== TICK 137 ===
+[11:52:03] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:52:03] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:52:03] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:52:03] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:52:03] [READY] Task 6 (Report Generator) ready - interval 9s elapsed
+[11:52:03] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:52:03] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:52:03] [TASK] CPU Monitor starting
+[11:52:04] [TASK] CPU Monitor completed (exec #136)
+[11:52:04] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:52:04] [TASK] RAM Monitor starting
+[11:52:04] [TASK] RAM Monitor completed (exec #87)
+[11:52:04] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:52:04] [TASK] Analyzer starting
+[11:52:04] [TASK] Analyzer completed (exec #87)
+[11:52:04] [DISPATCH] Task 6 (Report Generator) P3 gets CPU
+[11:52:04] [TASK] Report Generator starting
+[11:52:05] [TASK] Report Generator completed (exec #16)
+[11:52:05] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:52:05] [TASK] Disk Monitor starting
+[11:52:05] [TASK] Disk Monitor completed (exec #83)
+[11:52:05] 
+=== TICK 138 ===
+[11:52:05] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:52:05] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:52:05] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:52:05] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:52:05] [DISPATCH] Executing 4 ready task(s) in priority order
+[11:52:05] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:52:05] [TASK] CPU Monitor starting
+[11:52:05] [TASK] CPU Monitor completed (exec #137)
+[11:52:05] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:52:05] [TASK] RAM Monitor starting
+[11:52:05] [TASK] RAM Monitor completed (exec #88)
+[11:52:05] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:52:05] [TASK] Analyzer starting
+[11:52:05] [TASK] Analyzer completed (exec #88)
+[11:52:05] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:52:05] [TASK] Network Fetch starting
+[11:52:05] [TASK] Network Fetch completed (exec #81)
+[11:52:06] 
+=== TICK 139 ===
+[11:52:06] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:52:06] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:52:06] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:52:06] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:52:06] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:52:06] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:52:06] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:52:06] [TASK] CPU Monitor starting
+[11:52:06] [TASK] CPU Monitor completed (exec #138)
+[11:52:06] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:52:06] [TASK] RAM Monitor starting
+[11:52:06] [TASK] RAM Monitor completed (exec #89)
+[11:52:06] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:52:06] [TASK] Analyzer starting
+[11:52:06] [TASK] Analyzer completed (exec #89)
+[11:52:06] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:52:06] [TASK] Disk Monitor starting
+[11:52:06] [TASK] Disk Monitor completed (exec #84)
+[11:52:06] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:52:06] [TASK] Network Fetch starting
+[11:52:06] [TASK] Network Fetch completed (exec #82)
+[11:52:07] 
+=== TICK 140 ===
+[11:52:07] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:52:07] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:52:07] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:52:07] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:52:07] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:52:07] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:52:07] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:52:07] [TASK] CPU Monitor starting
+[11:52:07] [TASK] CPU Monitor completed (exec #139)
+[11:52:07] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:52:07] [TASK] RAM Monitor starting
+[11:52:07] [TASK] RAM Monitor completed (exec #90)
+[11:52:07] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:52:07] [TASK] Analyzer starting
+[11:52:07] [TASK] Analyzer completed (exec #90)
+[11:52:07] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:52:07] [TASK] Disk Monitor starting
+[11:52:07] [TASK] Disk Monitor completed (exec #85)
+[11:52:07] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:52:07] [TASK] Network Fetch starting
+[11:52:07] [TASK] Network Fetch completed (exec #83)
+[11:52:08] 
+=== TICK 141 ===
+[11:52:08] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:52:08] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:52:08] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:52:08] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:52:08] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:52:08] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:52:08] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:52:08] [TASK] CPU Monitor starting
+[11:52:08] [TASK] CPU Monitor completed (exec #140)
+[11:52:08] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:52:08] [TASK] RAM Monitor starting
+[11:52:08] [TASK] RAM Monitor completed (exec #91)
+[11:52:08] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:52:08] [TASK] Analyzer starting
+[11:52:08] [TASK] Analyzer completed (exec #91)
+[11:52:08] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:52:08] [TASK] Disk Monitor starting
+[11:52:08] [TASK] Disk Monitor completed (exec #86)
+[11:52:08] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:52:08] [TASK] Network Fetch starting
+[11:52:08] [TASK] Network Fetch completed (exec #84)
+[11:52:09] 
+=== TICK 142 ===
+[11:52:09] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:52:09] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:52:09] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:52:09] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:52:09] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:52:09] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:52:09] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:52:09] [TASK] CPU Monitor starting
+[11:52:09] [TASK] CPU Monitor completed (exec #141)
+[11:52:09] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:52:09] [TASK] RAM Monitor starting
+[11:52:09] [TASK] RAM Monitor completed (exec #92)
+[11:52:09] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:52:09] [TASK] Analyzer starting
+[11:52:09] [TASK] Analyzer completed (exec #92)
+[11:52:09] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:52:09] [TASK] Disk Monitor starting
+[11:52:10] [TASK] Disk Monitor completed (exec #87)
+[11:52:10] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:52:10] [TASK] Network Fetch starting
+[11:52:10] [TASK] Network Fetch completed (exec #85)
+[11:52:10] 
+=== TICK 143 ===
+[11:52:10] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:52:10] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:52:10] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:52:10] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:52:10] [DISPATCH] Executing 4 ready task(s) in priority order
+[11:52:10] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:52:10] [TASK] CPU Monitor starting
+[11:52:10] [TASK] CPU Monitor completed (exec #142)
+[11:52:10] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:52:10] [TASK] RAM Monitor starting
+[11:52:11] [TASK] RAM Monitor completed (exec #93)
+[11:52:11] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:52:11] [TASK] Analyzer starting
+[11:52:11] [TASK] Analyzer completed (exec #93)
+[11:52:11] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:52:11] [TASK] Disk Monitor starting
+[11:52:11] [TASK] Disk Monitor completed (exec #88)
+[11:52:11] 
+=== TICK 144 ===
+[11:52:11] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:52:11] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:52:11] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:52:11] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:52:11] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:52:11] [TASK] CPU Monitor starting
+[11:52:11] [TASK] CPU Monitor completed (exec #143)
+[11:52:11] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:52:11] [TASK] RAM Monitor starting
+[11:52:12] [TASK] RAM Monitor completed (exec #94)
+[11:52:12] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:52:12] [TASK] Network Fetch starting
+[11:52:12] [TASK] Network Fetch completed (exec #86)
+[11:52:12] 
+=== TICK 145 ===
+[11:52:12] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:52:12] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:52:12] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:52:12] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:52:12] [DISPATCH] Executing 4 ready task(s) in priority order
+[11:52:12] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:52:12] [TASK] CPU Monitor starting
+[11:52:13] [TASK] CPU Monitor completed (exec #144)
+[11:52:13] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:52:13] [TASK] RAM Monitor starting
+[11:52:13] [TASK] RAM Monitor completed (exec #95)
+[11:52:13] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:52:13] [TASK] Analyzer starting
+[11:52:13] [TASK] Analyzer completed (exec #94)
+[11:52:13] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:52:13] [TASK] Disk Monitor starting
+[11:52:13] [TASK] Disk Monitor completed (exec #89)
+[11:52:13] 
+=== TICK 146 ===
+[11:52:13] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:52:13] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:52:13] [READY] Task 6 (Report Generator) ready - interval 9s elapsed
+[11:52:13] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:52:13] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:52:13] [TASK] CPU Monitor starting
+[11:52:14] [TASK] CPU Monitor completed (exec #145)
+[11:52:14] [DISPATCH] Task 6 (Report Generator) P3 gets CPU
+[11:52:14] [TASK] Report Generator starting
+[11:52:17] [TASK] Report Generator completed (exec #17)
+[11:52:17] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:52:17] [TASK] Network Fetch starting
+[11:52:17] [TASK] Network Fetch completed (exec #87)
+[11:52:17] 
+=== TICK 147 ===
+[11:52:17] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:52:17] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:52:17] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:52:17] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:52:17] [DISPATCH] Executing 4 ready task(s) in priority order
+[11:52:17] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:52:17] [TASK] CPU Monitor starting
+[11:52:17] [TASK] CPU Monitor completed (exec #146)
+[11:52:17] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:52:17] [TASK] RAM Monitor starting
+[11:52:18] [TASK] RAM Monitor completed (exec #96)
+[11:52:18] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:52:18] [TASK] Analyzer starting
+[11:52:18] [TASK] Analyzer completed (exec #95)
+[11:52:18] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:52:18] [TASK] Disk Monitor starting
+[11:52:18] [TASK] Disk Monitor completed (exec #90)
+[11:52:18] 
+=== TICK 148 ===
+[11:52:18] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:52:18] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:52:18] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:52:18] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:52:18] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:52:18] [TASK] CPU Monitor starting
+[11:52:19] [TASK] CPU Monitor completed (exec #147)
+[11:52:19] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:52:19] [TASK] RAM Monitor starting
+[11:52:19] [TASK] RAM Monitor completed (exec #97)
+[11:52:19] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:52:19] [TASK] Network Fetch starting
+[11:52:19] [TASK] Network Fetch completed (exec #88)
+[11:52:19] 
+=== TICK 149 ===
+[11:52:19] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:52:19] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:52:19] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:52:19] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:52:19] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:52:19] [TASK] CPU Monitor starting
+[11:52:20] [TASK] CPU Monitor completed (exec #148)
+[11:52:20] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:52:20] [TASK] Analyzer starting
+[11:52:20] [TASK] Analyzer completed (exec #96)
+[11:52:20] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:52:20] [TASK] Disk Monitor starting
+[11:52:20] [TASK] Disk Monitor completed (exec #91)
+[11:52:20] 
+=== TICK 150 ===
+[11:52:20] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:52:20] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:52:20] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:52:20] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:52:20] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:52:20] [TASK] CPU Monitor starting
+[11:52:22] [TASK] CPU Monitor completed (exec #149)
+[11:52:22] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:52:22] [TASK] RAM Monitor starting
+[11:52:22] [TASK] RAM Monitor completed (exec #98)
+[11:52:22] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:52:22] [TASK] Network Fetch starting
+[11:52:23] [TASK] Network Fetch completed (exec #89)
+[11:52:23] 
+=== TICK 151 ===
+[11:52:23] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:52:23] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:52:23] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:52:23] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:52:23] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:52:23] [READY] Task 6 (Report Generator) ready - interval 9s elapsed
+[11:52:23] [DISPATCH] Executing 6 ready task(s) in priority order
+[11:52:23] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:52:23] [TASK] CPU Monitor starting
+[11:52:24] [TASK] CPU Monitor completed (exec #150)
+[11:52:24] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:52:24] [TASK] RAM Monitor starting
+[11:52:25] [TASK] RAM Monitor completed (exec #99)
+[11:52:25] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:52:25] [TASK] Analyzer starting
+[11:52:25] [TASK] Analyzer completed (exec #97)
+[11:52:25] [DISPATCH] Task 6 (Report Generator) P3 gets CPU
+[11:52:25] [TASK] Report Generator starting
+
+=== CS350 GUI Scheduler Session Started ===
+Started: Wed Dec 31 11:52:43 2025
+
+[11:52:43] 
+=== TICK 1 ===
+[11:52:44] 
+=== TICK 2 ===
+[11:52:44] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:52:44] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:52:44] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:52:44] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:52:44] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:52:44] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:52:44] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:52:44] [TASK] CPU Monitor starting
+[11:52:45] [TASK] CPU Monitor completed (exec #1)
+[11:52:45] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:52:45] [TASK] RAM Monitor starting
+[11:52:45] [TASK] RAM Monitor completed (exec #1)
+[11:52:45] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:52:45] [TASK] Analyzer starting
+[11:52:45] [TASK] Analyzer completed (exec #1)
+[11:52:45] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:52:45] [TASK] Disk Monitor starting
+[11:52:45] [TASK] Disk Monitor completed (exec #1)
+[11:52:45] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:52:45] [TASK] Network Fetch starting
+[11:52:45] [TASK] Network Fetch completed (exec #1)
+[11:52:45] 
+=== TICK 3 ===
+[11:52:45] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:52:45] [DISPATCH] Executing 1 ready task(s) in priority order
+[11:52:45] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:52:45] [TASK] CPU Monitor starting
+[11:52:46] [TASK] CPU Monitor completed (exec #2)
+[11:52:46] 
+=== TICK 4 ===
+[11:52:46] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:52:46] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:52:46] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:52:46] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:52:46] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:52:46] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:52:46] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:52:46] [TASK] CPU Monitor starting
+[11:52:47] [TASK] CPU Monitor completed (exec #3)
+[11:52:47] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:52:47] [TASK] RAM Monitor starting
+[11:52:47] [TASK] RAM Monitor completed (exec #2)
+[11:52:47] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:52:47] [TASK] Analyzer starting
+[11:52:47] [TASK] Analyzer completed (exec #2)
+[11:52:47] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:52:47] [TASK] Disk Monitor starting
+[11:52:47] [TASK] Disk Monitor completed (exec #2)
+[11:52:47] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:52:47] [TASK] Network Fetch starting
+[11:52:47] [TASK] Network Fetch completed (exec #2)
+[11:52:47] 
+=== TICK 5 ===
+[11:52:47] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:52:47] [DISPATCH] Executing 1 ready task(s) in priority order
+[11:52:47] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:52:47] [TASK] CPU Monitor starting
+[11:52:48] [TASK] CPU Monitor completed (exec #4)
+[11:52:48] 
+=== TICK 6 ===
+[11:52:48] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:52:48] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:52:48] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:52:48] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:52:48] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:52:48] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:52:48] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:52:48] [TASK] CPU Monitor starting
+[11:52:50] [TASK] CPU Monitor completed (exec #5)
+[11:52:50] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:52:50] [TASK] RAM Monitor starting
+[11:52:50] [TASK] RAM Monitor completed (exec #3)
+[11:52:50] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:52:50] [TASK] Analyzer starting
+[11:52:50] [TASK] Analyzer completed (exec #3)
+[11:52:50] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:52:50] [TASK] Disk Monitor starting
+[11:52:50] [TASK] Disk Monitor completed (exec #3)
+[11:52:50] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:52:50] [TASK] Network Fetch starting
+[11:52:50] [TASK] Network Fetch completed (exec #3)
+[11:52:50] 
+=== TICK 7 ===
+[11:52:50] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:52:50] [DISPATCH] Executing 1 ready task(s) in priority order
+[11:52:50] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:52:50] [TASK] CPU Monitor starting
+[11:52:51] [TASK] CPU Monitor completed (exec #6)
+[11:52:51] 
+=== TICK 8 ===
+[11:52:51] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:52:51] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:52:51] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:52:51] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:52:51] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:52:51] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:52:51] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:52:51] [TASK] CPU Monitor starting
+[11:52:52] [TASK] CPU Monitor completed (exec #7)
+[11:52:52] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:52:52] [TASK] RAM Monitor starting
+[11:52:52] [TASK] RAM Monitor completed (exec #4)
+[11:52:52] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:52:52] [TASK] Analyzer starting
+[11:52:52] [TASK] Analyzer completed (exec #4)
+[11:52:52] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:52:52] [TASK] Disk Monitor starting
+[11:52:52] [TASK] Disk Monitor completed (exec #4)
+[11:52:52] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:52:52] [TASK] Network Fetch starting
+[11:52:52] [TASK] Network Fetch completed (exec #4)
+[11:52:52] 
+=== TICK 9 ===
+[11:52:52] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:52:52] [READY] Task 6 (Report Generator) ready - interval 9s elapsed
+[11:52:52] [DISPATCH] Executing 2 ready task(s) in priority order
+[11:52:52] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:52:52] [TASK] CPU Monitor starting
+[11:52:53] [TASK] CPU Monitor completed (exec #8)
+[11:52:53] [DISPATCH] Task 6 (Report Generator) P3 gets CPU
+[11:52:53] [TASK] Report Generator starting
+[11:52:53] [TASK] Report Generator completed (exec #1)
+[11:52:53] 
+=== TICK 10 ===
+[11:52:53] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:52:53] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:52:53] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:52:53] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:52:53] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:52:53] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:52:53] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:52:53] [TASK] CPU Monitor starting
+[11:52:54] [TASK] CPU Monitor completed (exec #9)
+[11:52:54] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:52:54] [TASK] RAM Monitor starting
+[11:52:54] [TASK] RAM Monitor completed (exec #5)
+[11:52:54] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:52:54] [TASK] Analyzer starting
+[11:52:54] [TASK] Analyzer completed (exec #5)
+[11:52:54] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:52:54] [TASK] Disk Monitor starting
+[11:52:54] [TASK] Disk Monitor completed (exec #5)
+[11:52:54] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:52:54] [TASK] Network Fetch starting
+[11:52:54] [TASK] Network Fetch completed (exec #5)
+[11:52:54] 
+=== TICK 11 ===
+[11:52:54] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:52:54] [DISPATCH] Executing 1 ready task(s) in priority order
+[11:52:54] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:52:54] [TASK] CPU Monitor starting
+[11:52:55] [TASK] CPU Monitor completed (exec #10)
+[11:52:55] 
+=== TICK 12 ===
+[11:52:55] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:52:55] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:52:55] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:52:55] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:52:55] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:52:55] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:52:55] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:52:55] [TASK] CPU Monitor starting
+[11:52:56] [TASK] CPU Monitor completed (exec #11)
+[11:52:56] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:52:56] [TASK] RAM Monitor starting
+[11:52:56] [TASK] RAM Monitor completed (exec #6)
+[11:52:56] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:52:56] [TASK] Analyzer starting
+[11:52:56] [TASK] Analyzer completed (exec #6)
+[11:52:56] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:52:56] [TASK] Disk Monitor starting
+[11:52:56] [TASK] Disk Monitor completed (exec #6)
+[11:52:56] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:52:56] [TASK] Network Fetch starting
+[11:52:56] [TASK] Network Fetch completed (exec #6)
+[11:52:56] 
+=== TICK 13 ===
+[11:52:56] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:52:56] [DISPATCH] Executing 1 ready task(s) in priority order
+[11:52:56] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:52:56] [TASK] CPU Monitor starting
+[11:52:57] [TASK] CPU Monitor completed (exec #12)
+[11:52:57] 
+=== TICK 14 ===
+[11:52:57] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:52:57] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:52:57] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:52:57] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:52:57] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:52:57] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:52:57] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:52:57] [TASK] CPU Monitor starting
+[11:52:58] [TASK] CPU Monitor completed (exec #13)
+[11:52:58] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:52:58] [TASK] RAM Monitor starting
+[11:52:58] [TASK] RAM Monitor completed (exec #7)
+[11:52:58] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:52:58] [TASK] Analyzer starting
+[11:52:58] [TASK] Analyzer completed (exec #7)
+[11:52:58] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:52:58] [TASK] Disk Monitor starting
+[11:52:58] [TASK] Disk Monitor completed (exec #7)
+[11:52:58] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:52:58] [TASK] Network Fetch starting
+[11:52:58] [TASK] Network Fetch completed (exec #7)
+[11:52:58] 
+=== TICK 15 ===
+[11:52:58] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:52:58] [DISPATCH] Executing 1 ready task(s) in priority order
+[11:52:58] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:52:58] [TASK] CPU Monitor starting
+[11:52:59] [TASK] CPU Monitor completed (exec #14)
+[11:52:59] 
+=== TICK 16 ===
+[11:52:59] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:52:59] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:52:59] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:52:59] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:52:59] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:52:59] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:52:59] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:52:59] [TASK] CPU Monitor starting
+[11:53:00] [TASK] CPU Monitor completed (exec #15)
+[11:53:00] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:53:00] [TASK] RAM Monitor starting
+[11:53:00] [TASK] RAM Monitor completed (exec #8)
+[11:53:00] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:53:00] [TASK] Analyzer starting
+[11:53:00] [TASK] Analyzer completed (exec #8)
+[11:53:00] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:53:00] [TASK] Disk Monitor starting
+[11:53:01] [TASK] Disk Monitor completed (exec #8)
+[11:53:01] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:53:01] [TASK] Network Fetch starting
+[11:53:01] [TASK] Network Fetch completed (exec #8)
+[11:53:01] 
+=== TICK 17 ===
+[11:53:01] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:53:01] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:53:01] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:53:01] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:53:01] [DISPATCH] Executing 4 ready task(s) in priority order
+[11:53:01] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:53:01] [TASK] CPU Monitor starting
+[11:53:02] [TASK] CPU Monitor completed (exec #16)
+[11:53:02] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:53:02] [TASK] RAM Monitor starting
+[11:53:02] [TASK] RAM Monitor completed (exec #9)
+[11:53:02] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:53:02] [TASK] Analyzer starting
+[11:53:02] [TASK] Analyzer completed (exec #9)
+[11:53:02] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:53:02] [TASK] Disk Monitor starting
+[11:53:02] [TASK] Disk Monitor completed (exec #9)
+[11:53:02] 
+=== TICK 18 ===
+[11:53:02] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:53:02] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:53:02] [READY] Task 6 (Report Generator) ready - interval 9s elapsed
+[11:53:02] [DISPATCH] Executing 3 ready task(s) in priority order
+[11:53:02] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:53:02] [TASK] CPU Monitor starting
+[11:53:03] [TASK] CPU Monitor completed (exec #17)
+[11:53:03] [DISPATCH] Task 6 (Report Generator) P3 gets CPU
+[11:53:03] [TASK] Report Generator starting
+[11:53:04] [TASK] Report Generator completed (exec #2)
+[11:53:04] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:53:04] [TASK] Network Fetch starting
+[11:53:04] [TASK] Network Fetch completed (exec #9)
+[11:53:04] 
+=== TICK 19 ===
+[11:53:04] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:53:04] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:53:04] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:53:04] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:53:04] [DISPATCH] Executing 4 ready task(s) in priority order
+[11:53:04] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:53:04] [TASK] CPU Monitor starting
+[11:53:05] [TASK] CPU Monitor completed (exec #18)
+[11:53:05] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:53:05] [TASK] RAM Monitor starting
+[11:53:05] [TASK] RAM Monitor completed (exec #10)
+[11:53:05] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:53:05] [TASK] Analyzer starting
+[11:53:05] [TASK] Analyzer completed (exec #10)
+[11:53:05] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:53:05] [TASK] Disk Monitor starting
+[11:53:05] [TASK] Disk Monitor completed (exec #10)
+[11:53:05] 
+=== TICK 20 ===
+[11:53:05] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:53:05] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:53:05] [DISPATCH] Executing 2 ready task(s) in priority order
+[11:53:05] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:53:05] [TASK] CPU Monitor starting
+[11:53:07] [TASK] CPU Monitor completed (exec #19)
+[11:53:07] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:53:07] [TASK] Network Fetch starting
+[11:53:07] [TASK] Network Fetch completed (exec #10)
+[11:53:07] 
+=== TICK 21 ===
+[11:53:07] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:53:07] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:53:07] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:53:07] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:53:07] [DISPATCH] Executing 4 ready task(s) in priority order
+[11:53:07] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:53:07] [TASK] CPU Monitor starting
+[11:53:09] [TASK] CPU Monitor completed (exec #20)
+[11:53:09] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:53:09] [TASK] RAM Monitor starting
+[11:53:09] [TASK] RAM Monitor completed (exec #11)
+[11:53:09] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:53:09] [TASK] Analyzer starting
+[11:53:09] [TASK] Analyzer completed (exec #11)
+[11:53:09] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:53:09] [TASK] Disk Monitor starting
+[11:53:10] [TASK] Disk Monitor completed (exec #11)
+[11:53:10] 
+=== TICK 22 ===
+[11:53:10] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:53:10] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:53:10] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:53:10] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:53:10] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:53:10] [DISPATCH] Executing 5 ready task(s) in priority order
+[11:53:10] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:53:10] [TASK] CPU Monitor starting
+[11:53:11] [TASK] CPU Monitor completed (exec #21)
+[11:53:11] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:53:11] [TASK] RAM Monitor starting
+[11:53:12] [TASK] RAM Monitor completed (exec #12)
+[11:53:12] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:53:12] [TASK] Analyzer starting
+[11:53:12] [TASK] Analyzer completed (exec #12)
+[11:53:12] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[11:53:12] [TASK] Disk Monitor starting
+[11:53:12] [TASK] Disk Monitor completed (exec #12)
+[11:53:12] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[11:53:12] [TASK] Network Fetch starting
+[11:53:13] [TASK] Network Fetch completed (exec #11)
+[11:53:13] 
+=== TICK 23 ===
+[11:53:13] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[11:53:13] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[11:53:13] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[11:53:13] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[11:53:13] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[11:53:13] [READY] Task 6 (Report Generator) ready - interval 9s elapsed
+[11:53:13] [DISPATCH] Executing 6 ready task(s) in priority order
+[11:53:13] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[11:53:13] [TASK] CPU Monitor starting
+[11:53:14] [TASK] CPU Monitor completed (exec #22)
+[11:53:14] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[11:53:14] [TASK] RAM Monitor starting
+[11:53:15] [TASK] RAM Monitor completed (exec #13)
+[11:53:15] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[11:53:15] [TASK] Analyzer starting
+[11:53:15] [TASK] Analyzer completed (exec #13)
+[11:53:15] [DISPATCH] Task 6 (Report Generator) P3 gets CPU
+[11:53:15] [TASK] Report Generator starting
+
+=== CS350 GUI Scheduler Session Started ===
+Started: Wed Dec 31 12:03:08 2025
+
+[12:03:08] 
+=== TICK 1 ===
+[12:03:09] 
+=== TICK 2 ===
+[12:03:09] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[12:03:09] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[12:03:09] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[12:03:09] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[12:03:09] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[12:03:09] [DISPATCH] Executing 5 ready task(s) in priority order
+[12:03:09] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[12:03:09] [TASK] CPU Monitor starting
+[12:03:10] [TASK] CPU Monitor completed (exec #1)
+[12:03:10] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[12:03:10] [TASK] RAM Monitor starting
+[12:03:10] [TASK] RAM Monitor completed (exec #1)
+[12:03:10] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[12:03:10] [TASK] Analyzer starting
+[12:03:10] [TASK] Analyzer completed (exec #1)
+[12:03:10] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[12:03:10] [TASK] Disk Monitor starting
+[12:03:10] [TASK] Disk Monitor completed (exec #1)
+[12:03:10] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[12:03:10] [TASK] Network Fetch starting
+[12:03:10] [TASK] Network Fetch completed (exec #1)
+[12:03:10] 
+=== TICK 3 ===
+[12:03:10] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[12:03:10] [DISPATCH] Executing 1 ready task(s) in priority order
+[12:03:10] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[12:03:10] [TASK] CPU Monitor starting
+[12:03:11] [TASK] CPU Monitor completed (exec #2)
+[12:03:11] 
+=== TICK 4 ===
+[12:03:11] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[12:03:11] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[12:03:11] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[12:03:11] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[12:03:11] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[12:03:11] [DISPATCH] Executing 5 ready task(s) in priority order
+[12:03:11] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[12:03:11] [TASK] CPU Monitor starting
+[12:03:12] [TASK] CPU Monitor completed (exec #3)
+[12:03:12] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[12:03:12] [TASK] RAM Monitor starting
+[12:03:12] [TASK] RAM Monitor completed (exec #2)
+[12:03:12] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[12:03:12] [TASK] Analyzer starting
+[12:03:12] [TASK] Analyzer completed (exec #2)
+[12:03:12] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[12:03:12] [TASK] Disk Monitor starting
+[12:03:12] [TASK] Disk Monitor completed (exec #2)
+[12:03:12] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[12:03:12] [TASK] Network Fetch starting
+[12:03:12] [TASK] Network Fetch completed (exec #2)
+[12:03:12] 
+=== TICK 5 ===
+[12:03:12] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[12:03:12] [DISPATCH] Executing 1 ready task(s) in priority order
+[12:03:12] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[12:03:12] [TASK] CPU Monitor starting
+[12:03:13] [TASK] CPU Monitor completed (exec #4)
+[12:03:13] 
+=== TICK 6 ===
+[12:03:13] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[12:03:13] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[12:03:13] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[12:03:13] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[12:03:13] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[12:03:13] [DISPATCH] Executing 5 ready task(s) in priority order
+[12:03:13] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[12:03:13] [TASK] CPU Monitor starting
+[12:03:14] [TASK] CPU Monitor completed (exec #5)
+[12:03:14] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[12:03:14] [TASK] RAM Monitor starting
+[12:03:14] [TASK] RAM Monitor completed (exec #3)
+[12:03:14] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[12:03:14] [TASK] Analyzer starting
+[12:03:14] [TASK] Analyzer completed (exec #3)
+[12:03:14] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[12:03:14] [TASK] Disk Monitor starting
+[12:03:14] [TASK] Disk Monitor completed (exec #3)
+[12:03:14] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[12:03:14] [TASK] Network Fetch starting
+[12:03:14] [TASK] Network Fetch completed (exec #3)
+[12:03:14] 
+=== TICK 7 ===
+[12:03:14] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[12:03:14] [DISPATCH] Executing 1 ready task(s) in priority order
+[12:03:14] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[12:03:14] [TASK] CPU Monitor starting
+[12:03:15] [TASK] CPU Monitor completed (exec #6)
+[12:03:15] 
+=== TICK 8 ===
+[12:03:15] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[12:03:15] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[12:03:15] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[12:03:15] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[12:03:15] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[12:03:15] [DISPATCH] Executing 5 ready task(s) in priority order
+[12:03:15] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[12:03:15] [TASK] CPU Monitor starting
+[12:03:16] [TASK] CPU Monitor completed (exec #7)
+[12:03:16] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[12:03:16] [TASK] RAM Monitor starting
+[12:03:16] [TASK] RAM Monitor completed (exec #4)
+[12:03:16] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[12:03:16] [TASK] Analyzer starting
+[12:03:16] [TASK] Analyzer completed (exec #4)
+[12:03:16] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[12:03:16] [TASK] Disk Monitor starting
+[12:03:16] [TASK] Disk Monitor completed (exec #4)
+[12:03:16] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[12:03:16] [TASK] Network Fetch starting
+[12:03:16] [TASK] Network Fetch completed (exec #4)
+[12:03:16] 
+=== TICK 9 ===
+[12:03:16] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[12:03:16] [DISPATCH] Executing 1 ready task(s) in priority order
+[12:03:16] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[12:03:16] [TASK] CPU Monitor starting
+[12:03:18] [TASK] CPU Monitor completed (exec #8)
+[12:03:18] 
+=== TICK 10 ===
+[12:03:18] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[12:03:18] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[12:03:18] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[12:03:18] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[12:03:18] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[12:03:18] [READY] Task 6 (Report Generator) ready - interval 9s elapsed
+[12:03:18] [DISPATCH] Executing 6 ready task(s) in priority order
+[12:03:18] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[12:03:18] [TASK] CPU Monitor starting
+[12:03:19] [TASK] CPU Monitor completed (exec #9)
+[12:03:19] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[12:03:19] [TASK] RAM Monitor starting
+[12:03:19] [TASK] RAM Monitor completed (exec #5)
+[12:03:19] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[12:03:19] [TASK] Analyzer starting
+[12:03:19] [TASK] Analyzer completed (exec #5)
+[12:03:19] [DISPATCH] Task 6 (Report Generator) P3 gets CPU
+[12:03:19] [TASK] Report Generator starting
+[12:03:20] [TASK] Report Generator completed (exec #1)
+[12:03:20] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[12:03:20] [TASK] Disk Monitor starting
+[12:03:20] [TASK] Disk Monitor completed (exec #5)
+[12:03:20] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[12:03:20] [TASK] Network Fetch starting
+[12:03:20] [TASK] Network Fetch completed (exec #5)
+[12:03:20] 
+=== TICK 11 ===
+[12:03:20] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[12:03:20] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[12:03:20] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[12:03:20] [DISPATCH] Executing 3 ready task(s) in priority order
+[12:03:20] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[12:03:20] [TASK] CPU Monitor starting
+[12:03:20] [TASK] CPU Monitor completed (exec #10)
+[12:03:20] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[12:03:20] [TASK] RAM Monitor starting
+[12:03:21] [TASK] RAM Monitor completed (exec #6)
+[12:03:21] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[12:03:21] [TASK] Analyzer starting
+[12:03:21] [TASK] Analyzer completed (exec #6)
+[12:03:21] 
+=== TICK 12 ===
+[12:03:21] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[12:03:21] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[12:03:21] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[12:03:21] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[12:03:21] [DISPATCH] Executing 4 ready task(s) in priority order
+[12:03:21] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[12:03:21] [TASK] CPU Monitor starting
+[12:03:21] [TASK] CPU Monitor completed (exec #11)
+[12:03:21] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[12:03:21] [TASK] RAM Monitor starting
+[12:03:22] [TASK] RAM Monitor completed (exec #7)
+[12:03:22] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[12:03:22] [TASK] Disk Monitor starting
+[12:03:22] [TASK] Disk Monitor completed (exec #6)
+[12:03:22] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[12:03:22] [TASK] Network Fetch starting
+[12:03:22] [TASK] Network Fetch completed (exec #6)
+[12:03:22] 
+=== TICK 13 ===
+[12:03:22] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[12:03:22] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[12:03:22] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[12:03:22] [DISPATCH] Executing 3 ready task(s) in priority order
+[12:03:22] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[12:03:22] [TASK] CPU Monitor starting
+[12:03:22] [TASK] CPU Monitor completed (exec #12)
+[12:03:22] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[12:03:22] [TASK] RAM Monitor starting
+[12:03:23] [TASK] RAM Monitor completed (exec #8)
+[12:03:23] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[12:03:23] [TASK] Analyzer starting
+[12:03:23] [TASK] Analyzer completed (exec #7)
+[12:03:23] 
+=== TICK 14 ===
+[12:03:23] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[12:03:23] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[12:03:23] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[12:03:23] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[12:03:23] [DISPATCH] Executing 4 ready task(s) in priority order
+[12:03:23] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[12:03:23] [TASK] CPU Monitor starting
+[12:03:23] [TASK] CPU Monitor completed (exec #13)
+[12:03:23] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[12:03:23] [TASK] RAM Monitor starting
+[12:03:24] [TASK] RAM Monitor completed (exec #9)
+[12:03:24] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[12:03:24] [TASK] Disk Monitor starting
+[12:03:24] [TASK] Disk Monitor completed (exec #7)
+[12:03:24] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[12:03:24] [TASK] Network Fetch starting
+[12:03:24] [TASK] Network Fetch completed (exec #7)
+[12:03:24] 
+=== TICK 15 ===
+[12:03:24] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[12:03:24] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[12:03:24] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[12:03:24] [DISPATCH] Executing 3 ready task(s) in priority order
+[12:03:24] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[12:03:24] [TASK] CPU Monitor starting
+[12:03:24] [TASK] CPU Monitor completed (exec #14)
+[12:03:24] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[12:03:24] [TASK] RAM Monitor starting
+[12:03:25] [TASK] RAM Monitor completed (exec #10)
+[12:03:25] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[12:03:25] [TASK] Analyzer starting
+[12:03:25] [TASK] Analyzer completed (exec #8)
+[12:03:25] 
+=== TICK 16 ===
+[12:03:25] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[12:03:25] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[12:03:25] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[12:03:25] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[12:03:25] [DISPATCH] Executing 4 ready task(s) in priority order
+[12:03:25] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[12:03:25] [TASK] CPU Monitor starting
+[12:03:25] [TASK] CPU Monitor completed (exec #15)
+[12:03:25] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[12:03:25] [TASK] RAM Monitor starting
+[12:03:26] [TASK] RAM Monitor completed (exec #11)
+[12:03:26] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[12:03:26] [TASK] Disk Monitor starting
+[12:03:26] [TASK] Disk Monitor completed (exec #8)
+[12:03:26] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[12:03:26] [TASK] Network Fetch starting
+[12:03:26] [TASK] Network Fetch completed (exec #8)
+[12:03:26] 
+=== TICK 17 ===
+[12:03:26] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[12:03:26] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[12:03:26] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[12:03:26] [DISPATCH] Executing 3 ready task(s) in priority order
+[12:03:26] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[12:03:26] [TASK] CPU Monitor starting
+[12:03:26] [TASK] CPU Monitor completed (exec #16)
+[12:03:26] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[12:03:26] [TASK] RAM Monitor starting
+[12:03:27] [TASK] RAM Monitor completed (exec #12)
+[12:03:27] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[12:03:27] [TASK] Analyzer starting
+[12:03:27] [TASK] Analyzer completed (exec #9)
+[12:03:27] 
+=== TICK 18 ===
+[12:03:27] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[12:03:27] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[12:03:27] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[12:03:27] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[12:03:27] [DISPATCH] Executing 4 ready task(s) in priority order
+[12:03:27] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[12:03:27] [TASK] CPU Monitor starting
+[12:03:27] [TASK] CPU Monitor completed (exec #17)
+[12:03:27] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[12:03:27] [TASK] RAM Monitor starting
+[12:03:28] [TASK] RAM Monitor completed (exec #13)
+[12:03:28] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[12:03:28] [TASK] Disk Monitor starting
+[12:03:28] [TASK] Disk Monitor completed (exec #9)
+[12:03:28] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[12:03:28] [TASK] Network Fetch starting
+[12:03:28] [TASK] Network Fetch completed (exec #9)
+[12:03:28] 
+=== TICK 19 ===
+[12:03:28] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[12:03:28] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[12:03:28] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[12:03:28] [READY] Task 6 (Report Generator) ready - interval 9s elapsed
+[12:03:28] [DISPATCH] Executing 4 ready task(s) in priority order
+[12:03:28] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[12:03:28] [TASK] CPU Monitor starting
+[12:03:28] [TASK] CPU Monitor completed (exec #18)
+[12:03:28] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[12:03:28] [TASK] RAM Monitor starting
+[12:03:29] [TASK] RAM Monitor completed (exec #14)
+[12:03:29] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[12:03:29] [TASK] Analyzer starting
+[12:03:29] [TASK] Analyzer completed (exec #10)
+[12:03:29] [DISPATCH] Task 6 (Report Generator) P3 gets CPU
+[12:03:29] [TASK] Report Generator starting
+[12:03:29] [TASK] Report Generator completed (exec #2)
+[12:03:29] 
+=== TICK 20 ===
+[12:03:29] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[12:03:29] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[12:03:29] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[12:03:29] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[12:03:29] [DISPATCH] Executing 4 ready task(s) in priority order
+[12:03:29] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[12:03:29] [TASK] CPU Monitor starting
+[12:03:30] [TASK] CPU Monitor completed (exec #19)
+[12:03:30] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[12:03:30] [TASK] RAM Monitor starting
+[12:03:30] [TASK] RAM Monitor completed (exec #15)
+[12:03:30] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[12:03:30] [TASK] Disk Monitor starting
+[12:03:30] [TASK] Disk Monitor completed (exec #10)
+[12:03:30] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[12:03:30] [TASK] Network Fetch starting
+[12:03:30] [TASK] Network Fetch completed (exec #10)
+[12:03:30] 
+=== TICK 21 ===
+[12:03:30] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[12:03:30] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[12:03:30] [DISPATCH] Executing 2 ready task(s) in priority order
+[12:03:30] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[12:03:30] [TASK] CPU Monitor starting
+[12:03:31] [TASK] CPU Monitor completed (exec #20)
+[12:03:31] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[12:03:31] [TASK] Analyzer starting
+[12:03:31] [TASK] Analyzer completed (exec #11)
+[12:03:31] 
+=== TICK 22 ===
+[12:03:31] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[12:03:31] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[12:03:31] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[12:03:31] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[12:03:31] [DISPATCH] Executing 4 ready task(s) in priority order
+[12:03:31] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[12:03:31] [TASK] CPU Monitor starting
+[12:03:32] [TASK] CPU Monitor completed (exec #21)
+[12:03:32] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[12:03:32] [TASK] RAM Monitor starting
+[12:03:32] [TASK] RAM Monitor completed (exec #16)
+[12:03:32] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[12:03:32] [TASK] Disk Monitor starting
+[12:03:32] [TASK] Disk Monitor completed (exec #11)
+[12:03:32] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[12:03:32] [TASK] Network Fetch starting
+[12:03:32] [TASK] Network Fetch completed (exec #11)
+[12:03:32] 
+=== TICK 23 ===
+[12:03:32] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[12:03:32] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[12:03:32] [DISPATCH] Executing 2 ready task(s) in priority order
+[12:03:32] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[12:03:32] [TASK] CPU Monitor starting
+[12:03:33] [TASK] CPU Monitor completed (exec #22)
+[12:03:33] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[12:03:33] [TASK] Analyzer starting
+[12:03:33] [TASK] Analyzer completed (exec #12)
+[12:03:33] 
+=== TICK 24 ===
+[12:03:33] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[12:03:33] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[12:03:33] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[12:03:33] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[12:03:33] [DISPATCH] Executing 4 ready task(s) in priority order
+[12:03:33] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[12:03:33] [TASK] CPU Monitor starting
+[12:03:34] [TASK] CPU Monitor completed (exec #23)
+[12:03:34] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[12:03:34] [TASK] RAM Monitor starting
+[12:03:34] [TASK] RAM Monitor completed (exec #17)
+[12:03:34] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[12:03:34] [TASK] Disk Monitor starting
+[12:03:34] [TASK] Disk Monitor completed (exec #12)
+[12:03:34] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[12:03:34] [TASK] Network Fetch starting
+[12:03:34] [TASK] Network Fetch completed (exec #12)
+[12:03:34] 
+=== TICK 25 ===
+[12:03:34] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[12:03:34] [READY] Task 5 (Analyzer) ready - interval 1s elapsed
+[12:03:34] [DISPATCH] Executing 2 ready task(s) in priority order
+[12:03:34] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[12:03:34] [TASK] CPU Monitor starting
+[12:03:35] [TASK] CPU Monitor completed (exec #24)
+[12:03:35] [DISPATCH] Task 5 (Analyzer) P3 gets CPU
+[12:03:35] [TASK] Analyzer starting
+[12:03:35] [TASK] Analyzer completed (exec #13)
+[12:03:35] 
+=== TICK 26 ===
+[12:03:35] [READY] Task 1 (Collect CPU) ready - interval 1s elapsed
+[12:03:35] [READY] Task 2 (Collect RAM) ready - interval 1s elapsed
+[12:03:35] [READY] Task 3 (Collect DISK) ready - interval 1s elapsed
+[12:03:35] [READY] Task 4 (Collect Network) ready - interval 1s elapsed
+[12:03:35] [DISPATCH] Executing 4 ready task(s) in priority order
+[12:03:35] [DISPATCH] Task 1 (Collect CPU) P3 gets CPU
+[12:03:35] [TASK] CPU Monitor starting
+[12:03:36] [TASK] CPU Monitor completed (exec #25)
+[12:03:36] [DISPATCH] Task 2 (Collect RAM) P3 gets CPU
+[12:03:36] [TASK] RAM Monitor starting
+[12:03:36] [TASK] RAM Monitor completed (exec #18)
+[12:03:36] [DISPATCH] Task 3 (Collect DISK) P2 gets CPU
+[12:03:36] [TASK] Disk Monitor starting
+[12:03:36] [TASK] Disk Monitor completed (exec #13)
+[12:03:36] [DISPATCH] Task 4 (Collect Network) P0 gets CPU
+[12:03:36] [TASK] Network Fetch starting
+[12:03:36] [TASK] Network Fetch completed (exec #13)
+[12:03:36] 
+=== Scheduler Session Ended ===
+[12:03:36] Total ticks: 26
+[12:03:36] Task execution counts: T1=25, T2=18, T3=13, T4=13
