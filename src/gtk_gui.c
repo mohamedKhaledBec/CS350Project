@@ -541,10 +541,13 @@ static void execute_task_collect_network(void) {
 static void execute_task_analyzer(void) {
     g_task_last_run[4] = time(NULL);
     scheduler_log("[TASK] Analyzer starting\n");
+    char cmd[256];
+    snprintf(cmd, sizeof(cmd),
+             "./build/analyze %.1f %.1f %.1f > /dev/null 2>&1",
+             cpu_usage, ram_usage, disk_usage);
 
-    int ret = system(
-        "./build/analyze 50.0 60.0 75.0 logs/net_log.txt > /dev/null 2>&1"
-    );
+    int ret = system(cmd);
+
 
     g_task_last_completed[4] = time(NULL);
     g_task_exec_count[4]++;
@@ -1359,9 +1362,15 @@ static void activate(GtkApplication* app, gpointer user_data) {
     /* Load task configuration */
     load_task_config(widgets->tasks, NUM_TASKS);
 
-    /* FIX: detect system info ONCE */
+    /* detect system info ONCE */
     detect_system_info();
-    
+
+    /* Clear alerts at GUI startup (new monitoring session) */
+    FILE *fp = fopen("logs/alerts.log", "w");
+    if (fp) {
+        fclose(fp);
+    }
+
     /* Apply dark theme */
     apply_dark_theme();
     

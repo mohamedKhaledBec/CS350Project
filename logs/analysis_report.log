@@ -1,1476 +1,525 @@
 
 ════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:49:28
+  Analysis Report - 2025-12-31 12:26:24
 ════════════════════════════════════════════════════════════════
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
+  CPU Usage:       90.0%  [CRITICAL]
+  RAM Usage:       85.0%  [WARNING]
+  Disk Usage:      96.0%  [CRITICAL]
   Network:            0 pkt/s  [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
+  Summary: 3 alert(s) - 1 warning(s), 2 critical(s)
 ════════════════════════════════════════════════════════════════
 
 ════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:49:31
+  Analysis Report - 2025-12-31 12:28:42
 ════════════════════════════════════════════════════════════════
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
+  CPU Usage:       85.0%  [WARNING]
+  RAM Usage:       82.0%  [WARNING]
+  Disk Usage:      91.0%  [WARNING]
   Network:            0 pkt/s  [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
+  Summary: 3 alert(s) - 3 warning(s), 0 critical(s)
 ════════════════════════════════════════════════════════════════
 
 ════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:49:33
+  Analysis Report - 2025-12-31 12:28:43
 ════════════════════════════════════════════════════════════════
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
+  CPU Usage:       85.0%  [WARNING]
+  RAM Usage:       82.0%  [WARNING]
+  Disk Usage:      91.0%  [WARNING]
   Network:            0 pkt/s  [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
+  Summary: 3 alert(s) - 3 warning(s), 0 critical(s)
 ════════════════════════════════════════════════════════════════
 
 ════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:49:35
+  Analysis Report - 2025-12-31 12:28:44
 ════════════════════════════════════════════════════════════════
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
+  CPU Usage:       85.0%  [WARNING]
+  RAM Usage:       82.0%  [WARNING]
+  Disk Usage:      91.0%  [WARNING]
   Network:            0 pkt/s  [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
+  Summary: 3 alert(s) - 3 warning(s), 0 critical(s)
 ════════════════════════════════════════════════════════════════
 
 ════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:49:37
+  Analysis Report - 2025-12-31 12:28:45
 ════════════════════════════════════════════════════════════════
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
+  CPU Usage:       85.0%  [WARNING]
+  RAM Usage:       82.0%  [WARNING]
+  Disk Usage:      91.0%  [WARNING]
   Network:            0 pkt/s  [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
+  Summary: 3 alert(s) - 3 warning(s), 0 critical(s)
 ════════════════════════════════════════════════════════════════
 
 ════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:49:38
+  Analysis Report - 2025-12-31 12:28:46
 ════════════════════════════════════════════════════════════════
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
+  CPU Usage:       85.0%  [WARNING]
+  RAM Usage:       82.0%  [WARNING]
+  Disk Usage:      91.0%  [WARNING]
   Network:            0 pkt/s  [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
+  Summary: 3 alert(s) - 3 warning(s), 0 critical(s)
 ════════════════════════════════════════════════════════════════
 
 ════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:49:39
+  Analysis Report - 2025-12-31 12:28:47
 ════════════════════════════════════════════════════════════════
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
+  CPU Usage:       85.0%  [WARNING]
+  RAM Usage:       82.0%  [WARNING]
+  Disk Usage:      91.0%  [WARNING]
   Network:            0 pkt/s  [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
+  Summary: 3 alert(s) - 3 warning(s), 0 critical(s)
 ════════════════════════════════════════════════════════════════
 
 ════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:49:40
+  Analysis Report - 2025-12-31 12:28:48
 ════════════════════════════════════════════════════════════════
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
+  CPU Usage:       85.0%  [WARNING]
+  RAM Usage:       82.0%  [WARNING]
+  Disk Usage:      91.0%  [WARNING]
   Network:            0 pkt/s  [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
+  Summary: 3 alert(s) - 3 warning(s), 0 critical(s)
 ════════════════════════════════════════════════════════════════
 
 ════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:49:41
+  Analysis Report - 2025-12-31 12:28:49
 ════════════════════════════════════════════════════════════════
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
+  CPU Usage:       85.0%  [WARNING]
+  RAM Usage:       82.0%  [WARNING]
+  Disk Usage:      91.0%  [WARNING]
   Network:            0 pkt/s  [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
+  Summary: 3 alert(s) - 3 warning(s), 0 critical(s)
 ════════════════════════════════════════════════════════════════
 
 ════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:49:42
+  Analysis Report - 2025-12-31 12:28:50
 ════════════════════════════════════════════════════════════════
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
+  CPU Usage:       85.0%  [WARNING]
+  RAM Usage:       82.0%  [WARNING]
+  Disk Usage:      91.0%  [WARNING]
   Network:            0 pkt/s  [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
+  Summary: 3 alert(s) - 3 warning(s), 0 critical(s)
 ════════════════════════════════════════════════════════════════
 
 ════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:49:43
+  Analysis Report - 2025-12-31 12:28:52
 ════════════════════════════════════════════════════════════════
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
+  CPU Usage:       85.0%  [WARNING]
+  RAM Usage:       82.0%  [WARNING]
+  Disk Usage:      91.0%  [WARNING]
   Network:            0 pkt/s  [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
+  Summary: 3 alert(s) - 3 warning(s), 0 critical(s)
 ════════════════════════════════════════════════════════════════
 
 ════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:49:44
+  Analysis Report - 2025-12-31 12:28:54
 ════════════════════════════════════════════════════════════════
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
+  CPU Usage:       85.0%  [WARNING]
+  RAM Usage:       82.0%  [WARNING]
+  Disk Usage:      91.0%  [WARNING]
   Network:            0 pkt/s  [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
+  Summary: 3 alert(s) - 3 warning(s), 0 critical(s)
 ════════════════════════════════════════════════════════════════
 
 ════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:49:45
+  Analysis Report - 2025-12-31 12:28:56
 ════════════════════════════════════════════════════════════════
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
+  CPU Usage:       85.0%  [WARNING]
+  RAM Usage:       82.0%  [WARNING]
+  Disk Usage:      91.0%  [WARNING]
   Network:            0 pkt/s  [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
+  Summary: 3 alert(s) - 3 warning(s), 0 critical(s)
 ════════════════════════════════════════════════════════════════
 
 ════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:49:47
+  Analysis Report - 2025-12-31 12:28:58
 ════════════════════════════════════════════════════════════════
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
+  CPU Usage:       85.0%  [WARNING]
+  RAM Usage:       82.0%  [WARNING]
+  Disk Usage:      91.0%  [WARNING]
   Network:            0 pkt/s  [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
+  Summary: 3 alert(s) - 3 warning(s), 0 critical(s)
 ════════════════════════════════════════════════════════════════
 
 ════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:49:49
+  Analysis Report - 2025-12-31 12:29:00
 ════════════════════════════════════════════════════════════════
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
+  CPU Usage:       85.0%  [WARNING]
+  RAM Usage:       82.0%  [WARNING]
+  Disk Usage:      91.0%  [WARNING]
   Network:            0 pkt/s  [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
+  Summary: 3 alert(s) - 3 warning(s), 0 critical(s)
 ════════════════════════════════════════════════════════════════
 
 ════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:49:51
+  Analysis Report - 2025-12-31 12:29:02
 ════════════════════════════════════════════════════════════════
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
+  CPU Usage:       85.0%  [WARNING]
+  RAM Usage:       82.0%  [WARNING]
+  Disk Usage:      91.0%  [WARNING]
   Network:            0 pkt/s  [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
+  Summary: 3 alert(s) - 3 warning(s), 0 critical(s)
 ════════════════════════════════════════════════════════════════
 
 ════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:49:53
+  Analysis Report - 2025-12-31 12:29:02
 ════════════════════════════════════════════════════════════════
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
+  CPU Usage:       85.0%  [WARNING]
+  RAM Usage:       82.0%  [WARNING]
+  Disk Usage:      91.0%  [WARNING]
   Network:            0 pkt/s  [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
+  Summary: 3 alert(s) - 3 warning(s), 0 critical(s)
 ════════════════════════════════════════════════════════════════
 
 ════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:49:55
+  Analysis Report - 2025-12-31 12:29:03
 ════════════════════════════════════════════════════════════════
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
+  CPU Usage:       85.0%  [WARNING]
+  RAM Usage:       82.0%  [WARNING]
+  Disk Usage:      91.0%  [WARNING]
   Network:            0 pkt/s  [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
+  Summary: 3 alert(s) - 3 warning(s), 0 critical(s)
 ════════════════════════════════════════════════════════════════
 
 ════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:49:57
+  Analysis Report - 2025-12-31 12:29:04
 ════════════════════════════════════════════════════════════════
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
+  CPU Usage:       85.0%  [WARNING]
+  RAM Usage:       82.0%  [WARNING]
+  Disk Usage:      91.0%  [WARNING]
   Network:            0 pkt/s  [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
+  Summary: 3 alert(s) - 3 warning(s), 0 critical(s)
 ════════════════════════════════════════════════════════════════
 
 ════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:49:59
+  Analysis Report - 2025-12-31 12:29:05
 ════════════════════════════════════════════════════════════════
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
+  CPU Usage:       85.0%  [WARNING]
+  RAM Usage:       82.0%  [WARNING]
+  Disk Usage:      91.0%  [WARNING]
   Network:            0 pkt/s  [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
+  Summary: 3 alert(s) - 3 warning(s), 0 critical(s)
 ════════════════════════════════════════════════════════════════
 
 ════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:50:01
+  Analysis Report - 2025-12-31 12:29:06
 ════════════════════════════════════════════════════════════════
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
+  CPU Usage:       85.0%  [WARNING]
+  RAM Usage:       82.0%  [WARNING]
+  Disk Usage:      91.0%  [WARNING]
   Network:            0 pkt/s  [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
+  Summary: 3 alert(s) - 3 warning(s), 0 critical(s)
 ════════════════════════════════════════════════════════════════
 
 ════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:50:03
+  Analysis Report - 2025-12-31 12:29:07
 ════════════════════════════════════════════════════════════════
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
+  CPU Usage:       85.0%  [WARNING]
+  RAM Usage:       82.0%  [WARNING]
+  Disk Usage:      91.0%  [WARNING]
   Network:            0 pkt/s  [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
+  Summary: 3 alert(s) - 3 warning(s), 0 critical(s)
 ════════════════════════════════════════════════════════════════
 
 ════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:50:05
+  Analysis Report - 2025-12-31 12:29:08
 ════════════════════════════════════════════════════════════════
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
+  CPU Usage:       85.0%  [WARNING]
+  RAM Usage:       82.0%  [WARNING]
+  Disk Usage:      91.0%  [WARNING]
   Network:            0 pkt/s  [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
+  Summary: 3 alert(s) - 3 warning(s), 0 critical(s)
 ════════════════════════════════════════════════════════════════
 
 ════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:50:07
+  Analysis Report - 2025-12-31 12:29:09
 ════════════════════════════════════════════════════════════════
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
+  CPU Usage:       85.0%  [WARNING]
+  RAM Usage:       82.0%  [WARNING]
+  Disk Usage:      91.0%  [WARNING]
   Network:            0 pkt/s  [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
+  Summary: 3 alert(s) - 3 warning(s), 0 critical(s)
 ════════════════════════════════════════════════════════════════
 
 ════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:50:09
+  Analysis Report - 2025-12-31 12:29:12
 ════════════════════════════════════════════════════════════════
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
+  CPU Usage:       85.0%  [WARNING]
+  RAM Usage:       82.0%  [WARNING]
+  Disk Usage:      91.0%  [WARNING]
   Network:            0 pkt/s  [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
+  Summary: 3 alert(s) - 3 warning(s), 0 critical(s)
 ════════════════════════════════════════════════════════════════
 
 ════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:50:11
+  Analysis Report - 2025-12-31 12:29:14
 ════════════════════════════════════════════════════════════════
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
+  CPU Usage:       85.0%  [WARNING]
+  RAM Usage:       82.0%  [WARNING]
+  Disk Usage:      91.0%  [WARNING]
   Network:            0 pkt/s  [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
+  Summary: 3 alert(s) - 3 warning(s), 0 critical(s)
 ════════════════════════════════════════════════════════════════
 
 ════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:50:13
+  Analysis Report - 2025-12-31 12:29:16
 ════════════════════════════════════════════════════════════════
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
+  CPU Usage:       85.0%  [WARNING]
+  RAM Usage:       82.0%  [WARNING]
+  Disk Usage:      91.0%  [WARNING]
   Network:            0 pkt/s  [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
+  Summary: 3 alert(s) - 3 warning(s), 0 critical(s)
 ════════════════════════════════════════════════════════════════
 
 ════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:50:15
+  Analysis Report - 2025-12-31 12:29:18
 ════════════════════════════════════════════════════════════════
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
+  CPU Usage:       85.0%  [WARNING]
+  RAM Usage:       82.0%  [WARNING]
+  Disk Usage:      91.0%  [WARNING]
   Network:            0 pkt/s  [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
+  Summary: 3 alert(s) - 3 warning(s), 0 critical(s)
 ════════════════════════════════════════════════════════════════
 
 ════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:50:17
+  Analysis Report - 2025-12-31 12:29:21
 ════════════════════════════════════════════════════════════════
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
+  CPU Usage:       85.0%  [WARNING]
+  RAM Usage:       82.0%  [WARNING]
+  Disk Usage:      91.0%  [WARNING]
   Network:            0 pkt/s  [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
+  Summary: 3 alert(s) - 3 warning(s), 0 critical(s)
 ════════════════════════════════════════════════════════════════
 
 ════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:50:19
+  Analysis Report - 2025-12-31 12:49:59
 ════════════════════════════════════════════════════════════════
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
+  CPU Usage:       85.0%  [WARNING]
+  RAM Usage:       80.0%  [WARNING]
+  Disk Usage:      90.0%  [WARNING]
   Network:            0 pkt/s  [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
+  Summary: 3 alert(s) - 3 warning(s), 0 critical(s)
 ════════════════════════════════════════════════════════════════
 
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:50:21
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:50:23
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:50:25
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:50:27
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:50:29
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:50:31
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:50:33
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:50:35
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:50:38
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:50:40
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:50:42
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:50:44
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:50:48
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:50:50
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:50:52
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:50:54
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:50:57
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:50:59
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:01
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:03
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:05
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:07
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:09
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:12
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:14
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:17
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:19
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:21
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:23
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:25
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:26
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:27
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:28
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:29
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:30
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:31
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:32
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:33
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:34
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:36
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:37
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:38
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:39
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:40
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:41
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:42
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:44
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:46
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:48
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:50
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:52
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:54
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
+=== Analysis Report - 2025-12-31 12:52:26 ===
+CPU: 85.0% [WARNING]
+RAM: 80.0% [WARNING]
+Disk: 92.0% [WARNING]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:56
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:51:58
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:52:00
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:52:02
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:52:04
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:52:05
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:52:06
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:52:07
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:52:08
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:52:09
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:52:11
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:52:13
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:52:18
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:52:20
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:52:25
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:52:45
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:52:47
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:52:50
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:52:52
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:52:54
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:52:56
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:52:58
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:53:00
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:53:02
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:53:05
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:53:09
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:53:12
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 11:53:15
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 12:03:10
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 12:03:12
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
-
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 12:03:14
-════════════════════════════════════════════════════════════════
-
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
+=== Analysis Report - 2025-12-31 12:56:36 ===
+CPU: 7.9% [OK]
+RAM: 59.0% [OK]
+Disk: 34.0% [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
+=== Analysis Report - 2025-12-31 12:56:38 ===
+CPU: 11.5% [OK]
+RAM: 59.1% [OK]
+Disk: 34.0% [OK]
 
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 12:03:16
-════════════════════════════════════════════════════════════════
+=== Analysis Report - 2025-12-31 12:56:40 ===
+CPU: 24.6% [OK]
+RAM: 59.4% [OK]
+Disk: 34.0% [OK]
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
+=== Analysis Report - 2025-12-31 12:56:42 ===
+CPU: 46.7% [OK]
+RAM: 59.5% [OK]
+Disk: 34.0% [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
+=== Analysis Report - 2025-12-31 12:56:45 ===
+CPU: 15.0% [OK]
+RAM: 59.6% [OK]
+Disk: 34.0% [OK]
 
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 12:03:19
-════════════════════════════════════════════════════════════════
+=== Analysis Report - 2025-12-31 12:56:46 ===
+CPU: 39.3% [OK]
+RAM: 59.7% [OK]
+Disk: 34.0% [OK]
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
+=== Analysis Report - 2025-12-31 12:56:48 ===
+CPU: 75.7% [WARNING]
+RAM: 59.9% [OK]
+Disk: 34.0% [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
+=== Analysis Report - 2025-12-31 12:56:50 ===
+CPU: 57.0% [OK]
+RAM: 59.8% [OK]
+Disk: 34.0% [OK]
 
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 12:03:21
-════════════════════════════════════════════════════════════════
+=== Analysis Report - 2025-12-31 12:56:52 ===
+CPU: 53.9% [OK]
+RAM: 59.7% [OK]
+Disk: 34.0% [OK]
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
+=== Analysis Report - 2025-12-31 12:56:54 ===
+CPU: 56.7% [OK]
+RAM: 59.6% [OK]
+Disk: 34.0% [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
+=== Analysis Report - 2025-12-31 12:56:57 ===
+CPU: 55.9% [OK]
+RAM: 59.7% [OK]
+Disk: 34.0% [OK]
 
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 12:03:23
-════════════════════════════════════════════════════════════════
+=== Analysis Report - 2025-12-31 12:56:58 ===
+CPU: 100.0% [CRITICAL]
+RAM: 60.0% [OK]
+Disk: 34.0% [OK]
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
+=== Analysis Report - 2025-12-31 12:56:59 ===
+CPU: 90.2% [CRITICAL]
+RAM: 60.0% [OK]
+Disk: 34.0% [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
+=== Analysis Report - 2025-12-31 12:57:00 ===
+CPU: 84.9% [WARNING]
+RAM: 60.0% [OK]
+Disk: 34.0% [OK]
 
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 12:03:25
-════════════════════════════════════════════════════════════════
+=== Analysis Report - 2025-12-31 12:57:01 ===
+CPU: 81.7% [WARNING]
+RAM: 60.0% [OK]
+Disk: 34.0% [OK]
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
+=== Analysis Report - 2025-12-31 12:57:02 ===
+CPU: 78.3% [WARNING]
+RAM: 60.0% [OK]
+Disk: 34.0% [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
+=== Analysis Report - 2025-12-31 12:57:03 ===
+CPU: 78.5% [WARNING]
+RAM: 59.9% [OK]
+Disk: 34.0% [OK]
 
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 12:03:27
-════════════════════════════════════════════════════════════════
+=== Analysis Report - 2025-12-31 12:57:04 ===
+CPU: 79.7% [WARNING]
+RAM: 59.9% [OK]
+Disk: 34.0% [OK]
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
+=== Analysis Report - 2025-12-31 12:57:06 ===
+CPU: 38.9% [OK]
+RAM: 59.9% [OK]
+Disk: 34.0% [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
+=== Analysis Report - 2025-12-31 12:57:08 ===
+CPU: 27.4% [OK]
+RAM: 59.9% [OK]
+Disk: 34.0% [OK]
 
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 12:03:29
-════════════════════════════════════════════════════════════════
+=== Analysis Report - 2025-12-31 12:57:10 ===
+CPU: 4.2% [OK]
+RAM: 60.0% [OK]
+Disk: 34.0% [OK]
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
+=== Analysis Report - 2025-12-31 12:57:12 ===
+CPU: 1.8% [OK]
+RAM: 60.0% [OK]
+Disk: 34.0% [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
+=== Analysis Report - 2025-12-31 12:57:14 ===
+CPU: 8.2% [OK]
+RAM: 60.0% [OK]
+Disk: 34.0% [OK]
 
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 12:03:31
-════════════════════════════════════════════════════════════════
+=== Analysis Report - 2025-12-31 12:57:16 ===
+CPU: 11.0% [OK]
+RAM: 60.0% [OK]
+Disk: 34.0% [OK]
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
+=== Analysis Report - 2025-12-31 12:57:18 ===
+CPU: 14.2% [OK]
+RAM: 60.0% [OK]
+Disk: 34.0% [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
+=== Analysis Report - 2025-12-31 12:57:20 ===
+CPU: 7.6% [OK]
+RAM: 60.5% [OK]
+Disk: 34.0% [OK]
 
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 12:03:33
-════════════════════════════════════════════════════════════════
+=== Analysis Report - 2025-12-31 12:57:22 ===
+CPU: 2.6% [OK]
+RAM: 60.3% [OK]
+Disk: 34.0% [OK]
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
+=== Analysis Report - 2025-12-31 12:57:24 ===
+CPU: 69.1% [OK]
+RAM: 60.5% [OK]
+Disk: 34.0% [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
+=== Analysis Report - 2025-12-31 12:57:25 ===
+CPU: 3.1% [OK]
+RAM: 59.9% [OK]
+Disk: 34.0% [OK]
 
-════════════════════════════════════════════════════════════════
-  Analysis Report - 2025-12-31 12:03:35
-════════════════════════════════════════════════════════════════
+=== Analysis Report - 2025-12-31 12:57:26 ===
+CPU: 9.4% [OK]
+RAM: 59.8% [OK]
+Disk: 34.0% [OK]
 
-  CPU Usage:       50.0%  [OK]
-  RAM Usage:       60.0%  [OK]
-  Disk Usage:      75.0%  [OK]
-  Network:            0 pkt/s  [OK]
+=== Analysis Report - 2025-12-31 12:57:27 ===
+CPU: 3.0% [OK]
+RAM: 59.8% [OK]
+Disk: 34.0% [OK]
 
-  Summary: 0 alert(s) - 0 warning(s), 0 critical(s)
-════════════════════════════════════════════════════════════════
+=== Analysis Report - 2025-12-31 12:57:29 ===
+CPU: 17.1% [OK]
+RAM: 59.3% [OK]
+Disk: 34.0% [OK]
